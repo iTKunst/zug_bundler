@@ -4,7 +4,6 @@ source LOG.sh
 
 log_enter pSET_TRACE
 
-
 if [ ! -f settings.sh ]; then
   log_file_err settings.sh
   exit
