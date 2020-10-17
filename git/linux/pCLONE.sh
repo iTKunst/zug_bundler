@@ -49,7 +49,7 @@ fi
 
 if [ ! -d Bundler ]; then
   log_dir_err "Bundler"
-  log_cmd "You must create repository from the Bundler template!"
+  log_cmd "You must create the repository from the template 'https://github.com/iTKunst/tmpl_bundler'!"
   exit
 fi
 
