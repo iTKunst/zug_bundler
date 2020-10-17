@@ -47,6 +47,12 @@ if [ ! -f env.sh ]; then
   exit
 fi
 
+if [ ! -f settings.sh ]; then
+  log_file_err settings.sh
+  exit
+fi
+source settings.sh
+
 if [ ! -d Bundler ]; then
   log_dir_err "Bundler"
   log_cmd "You must create the repository from the template 'https://github.com/iTKunst/tmpl_bundler'!"
@@ -68,6 +74,14 @@ fi
 if [ -z "$SYS_GIT" ]; then
   log_invalid "SYS_GIT"
   exit
+fi
+
+if [ "$bSETTING_LOG" == "true" ]; then
+  export GIT_TRACE=1
+  export GIT_CURL_VERBOSE=1
+else
+  export GIT_TRACE=0
+  export GIT_CURL_VERBOSE=0
 fi
 
 if [ ! -d Global ]; then
