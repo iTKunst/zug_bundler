@@ -1,0 +1,9 @@
+@echo off
+
+CALL LOG_ENTER bENV_TKN
+
+SET DOT=.
+SET SPLIT=_
+SET UP=../
+
+CALL LOG_EXIT bENV_TKN

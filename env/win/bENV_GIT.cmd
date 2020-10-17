@@ -1,0 +1,34 @@
+@echo off
+
+CALL LOG_ENTER bENV_GIT
+
+CALL bENV_CAT
+CALL bENV_TKN
+
+if [%GLBL_GIT%]==[] (
+  CALL LOG_INVALID "GLBL_GIT"
+  CALL LOG_CMD "You must set it in .\env.cmd!"
+  GOTO :EOF
+)
+CALL LOG_VAR GLBL_GIT %GLBL_GIT%
+
+if [%PROJ_GIT%]==[] (
+  CALL LOG_INVALID "PROJ_GIT"
+  CALL LOG_CMD "You must set it in .\env.cmd!"
+  GOTO :EOF
+)
+CALL LOG_VAR PROJ_GIT %PROJ_GIT%
+
+IF  [%SYS%]==[] (
+  CALL LOG_INVALID "SYS"
+  CALL LOG_CMD "You must set it in .\env.cmd!"
+  GOTO :EOF
+)
+CALL LOG_VAR SYS %SYS%
+
+SET SYS_GIT=%UP%%SYS%%SPLIT%%SYSTEM%%DOT%%GIT%
+CALL LOG_VAR SYS_GIT %SYS_GIT%
+
+:EOF
+
+CALL LOG_EXIT bENV_GIT
