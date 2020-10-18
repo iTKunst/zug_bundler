@@ -21,8 +21,6 @@ add()
 
   git submodule add -f "$GIT" "$DIR"
 #  git clone "$GIT" "$DIR"
-  git commit -m "adding submodule $GIT"
-  git push
 
   log_exit "add"
 }
@@ -31,8 +29,19 @@ clone()
 {
   log_enter "clone"
 
-  git submodule init
-  git submodule update
+  log_enter "add"
+
+  GIT="$1"
+  DIR="$2"
+
+  log_var GIT "$GIT"
+  log_var DIR "$DIR"
+
+  log_info "Adding $DIR"
+
+  git clone "$GIT" "$DIR"
+
+  log_exit "add"
 
   log_exit "clone"
 }
@@ -52,7 +61,7 @@ source pSET_TRACE.sh
 
 if [ ! -d Bundler ]; then
   log_dir_err "Bundler"
-  log_cmd "You must create the repository from the template 'https://github.com/iTKunst/tmpl_bundler'!"
+  log_cmd "You must create the repository from the template 'https://github.com/iTKunst/zug_tmpl'!"
   exit
 fi
 
@@ -74,7 +83,7 @@ if [ -z "$SYS_GIT" ]; then
 fi
 
 if [ ! -d Global ]; then
-  add "$GLBL_GIT" Global
+  clone "$GLBL_GIT" Global
 else
   log_dup $GLBL_GIT
 fi
@@ -98,7 +107,7 @@ if [ ! -d System ]; then
 fi
 
 if [ ! -d Project ]; then
-  add "$PROJ_GIT" Project
+  clone "$PROJ_GIT" Project
 else
   log_dup $PROJ_GIT
 fi
