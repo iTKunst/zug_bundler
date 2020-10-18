@@ -18,8 +18,8 @@ if [ "$bSETTING_LOG_GIT" == "true" ]; then
   export GIT_CURL_VERBOSE=1
 else
   log_info "Turning Git tracing off"
-  export GIT_TRACE=0
-  export GIT_CURL_VERBOSE=0
+  unset GIT_TRACE
+  unset GIT_CURL_VERBOSE
 fi
 
 log_exit pSET_TRACE
