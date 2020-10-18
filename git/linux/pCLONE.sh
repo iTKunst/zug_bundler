@@ -95,18 +95,6 @@ if [ ! -d Global ]; then
   exit
 fi
 
-if [ ! -d System ]; then
-   add "$SYS_GIT" System
-else
-   log_dup $SYS_GIT
-fi
-
-if [ ! -d System ]; then
-  log_clone_err $SYS_GIT
-  log_err "Does it exist in the repo?"
-  exit
-fi
-
 if [ ! -d Project ]; then
   clone "$PROJ_GIT" Project
 else
@@ -119,7 +107,17 @@ if [ ! -d Project ]; then
   exit
 fi
 
-clone
+if [ ! -d System ]; then
+   add "$SYS_GIT" System
+else
+   log_dup $SYS_GIT
+fi
+
+if [ ! -d System ]; then
+  log_clone_err $SYS_GIT
+  log_err "Does it exist in the repo?"
+  exit
+fi
 
 source ./linux.sh
 
