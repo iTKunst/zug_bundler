@@ -11,7 +11,8 @@ if echo "$PATH" | grep -q "$subPATH" 1>nul; then
 else
   log_info "PATH not yet set for project";
   echo "export PATH=$subPATH:$PATH">path.txt;
-  log_cmd "Please run 'source path.txt', then run pCLONE.sh"
+  export PATH=$subPATH:$PATH
+  log_cmd "Please run 'source path.txt'"
 fi
 
 log_exit mSET_PATH
