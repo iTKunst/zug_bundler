@@ -21,8 +21,8 @@ add()
 
   git submodule add -f "$GIT" "$DIR"
 #  git clone "$GIT" "$DIR"
-#  git commit -m "adding submodule $GIT"
-#  git push
+  git commit -m "adding submodule $GIT"
+  git push
 
   log_exit "add"
 }
