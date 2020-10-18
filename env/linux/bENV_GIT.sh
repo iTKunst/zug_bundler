@@ -10,7 +10,7 @@ source bENV_TKN.sh
 if [ -z "$TMPL_URI" ]; then
   log_invalid TMPL_URI
   log_cmd "You must set it in ./env.sh!"
-  log_cmd "Default value is https//github.com/itkunst"
+  log_cmd "Default value is https://github.com/itkunst"
   exit
 fi
 log_var TMPL_URI $TMPL_URI

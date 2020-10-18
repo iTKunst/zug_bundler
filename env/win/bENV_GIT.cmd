@@ -8,7 +8,7 @@ CALL bENV_TKN
 if [%TMPL_URI%]==[] (
   CALL LOG_INVALID "TMPL_URI"
   CALL LOG_CMD "You must set it in .\env.cmd!"
-  CALL LOG_CMD "Default value is https//github.com/itkunst"
+  CALL LOG_CMD "Default value is https://github.com/itkunst"
   GOTO :EOF
 )
 CALL LOG_VAR TMPL_URI %TMPL_URI%
