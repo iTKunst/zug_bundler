@@ -13,10 +13,10 @@ CALL LOG_INFO "env.cmd exists"
 
 if NOT EXIST Bundler (
   CALL LOG_DIR_ERR "Bundler"
-  CALL LOG_CMD "You must create repository from the Bundler template!"
+  CALL LOG_CMD "You must create the repository from the  ['https://github.com/iTKunst/zug_tmpl'] template!"
   goto :EOF
 )
-CALL LOG_MSG "Bundler exists"
+CALL LOG_INFO "Bundler exists"
 
 CALL bENV
 
@@ -53,18 +53,6 @@ IF NOT EXIST Global (
   goto :EOF
 )
 
-IF NOT EXIST System (
-  CALL pCLONE_REPO %SYS_GIT% System
-) else (
-  CALL LOG_DUP %SYS_GIT%
-)
-
-IF NOT EXIST System (
-  CALL LOG_CLONE_ERR %SYS_GIT%
-  CALL LOG_CMD "Does it exist in the repo?"
-  goto :EOF
-)
-
 IF NOT EXIST Project (
   CALL pCLONE_REPO %PROJ_GIT% Project
 ) else (
@@ -73,6 +61,18 @@ IF NOT EXIST Project (
 
 IF NOT EXIST Project (
   CALL LOG_CLONE_ERR %PROJ_GIT%
+  CALL LOG_CMD "Does it exist in the repo?"
+  goto :EOF
+)
+
+IF NOT EXIST System (
+  CALL pADD_REPO %SYS_GIT% System
+) else (
+  CALL LOG_DUP %SYS_GIT%
+)
+
+IF NOT EXIST System (
+  CALL LOG_CLONE_ERR %SYS_GIT%
   CALL LOG_CMD "Does it exist in the repo?"
   goto :EOF
 )
