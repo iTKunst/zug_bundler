@@ -29,7 +29,7 @@ if [ -z "$SYS" ]; then
 fi
 echo SYS "$SYS"
 
-export GLBL_GIT=$TMPL_URI$SLASH"tmpl_global.git"
+export GLBL_GIT=$TMPL_URI$SLASH"zug_global.git"
 log_var GLBL_GIT $GLBL_GIT
 
 export PROJ_GIT=$TMPL_URI$SLASH$TMPL_NAME$DOT$GIT
