@@ -19,7 +19,8 @@ add()
 
   log_info "Adding $DIR"
 
-  git clone "$GIT" "$DIR"
+  git submodule add -f "$GIT" "$DIR"
+#  git clone "$GIT" "$DIR"
 #  git commit -m "adding submodule $GIT"
 #  git push
 
