@@ -11,5 +11,6 @@ CALL LOG_VAR DIR %DIR%
 git clone %GIT% %DIR%
 git commit -m "adding submodule %DIR%"
 git push
+git submodule update --init --recursive
 
 CALL LOG_EXIT pCLONE_REPO
