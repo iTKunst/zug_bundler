@@ -9,7 +9,7 @@ CALL LOG_VAR GIT %GIT%
 CALL LOG_VAR DIR %DIR%
 
 git clone %GIT% %DIR%
-:: git commit -m "adding submodule %DIR%"
-:: git push
+git commit -m "adding submodule %DIR%"
+git push
 
 CALL LOG_EXIT pCLONE_REPO
