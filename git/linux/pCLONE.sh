@@ -30,19 +30,15 @@ clone()
 {
   log_enter "clone"
 
-  log_enter "add"
-
   GIT="$1"
   DIR="$2"
 
   log_var GIT "$GIT"
   log_var DIR "$DIR"
 
-  log_info "Adding $DIR"
+  log_info "Cloning $DIR"
 
   git clone "$GIT" "$DIR"
-
-  log_exit "add"
 
   log_exit "clone"
 }
