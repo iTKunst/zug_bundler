@@ -16,6 +16,6 @@ IF /I "%bSETTING_LOG_INVALID%"=="FALSE" (
 )
 :: echo is true
 
-CALL ./Bundler/log/win/LOG_MSG "[%1%] - INVALID"
+CALL ./Bundler/log/win/LOG_MSG "(%1) [INVALID]"
 
 :EOF

@@ -16,6 +16,6 @@ IF /I "%bSETTING_LOG_VAR%"=="FALSE" (
 )
 :: echo is true
 
-CALL .\Bundler\log\win\LOG_MSG "%1 is [%2] - VAR"
+CALL .\Bundler\log\win\LOG_MSG "%1 is (%2) [VAR]"
 
 :EOF
