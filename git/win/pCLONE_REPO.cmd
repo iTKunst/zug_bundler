@@ -9,8 +9,10 @@ CALL LOG_VAR GIT %GIT%
 CALL LOG_VAR DIR %DIR%
 
 REM git clone %GIT% %DIR%
-echo "git clone %GIT% %DIR%"
 
-xcopy /q /y ..\tmpl\"tmpl_"%DIR% .\%DIR%
+echo "git clone %GIT% %DIR%"
+SET SRC=..\tmpl\tmpl_%DIR%
+CALL LOG_VAR SRC %SRC%
+xcopy /q /y %SRC% .\%DIR%
 
 CALL LOG_EXIT pCLONE_REPO
