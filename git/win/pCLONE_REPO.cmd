@@ -11,6 +11,6 @@ CALL LOG_VAR DIR %DIR%
 REM git clone %GIT% %DIR%
 echo "git clone %GIT% %DIR%"
 
-xcopy /q /y ..\tmpl\%DIR% .\%DIR%
+xcopy /q /y ..\tmpl\"tmpl_"%DIR% .\%DIR%
 
 CALL LOG_EXIT pCLONE_REPO
