@@ -11,7 +11,7 @@ CALL LOG_VAR DIR %DIR%
 REM git clone %GIT% %DIR%
 
 echo "git clone %GIT% %DIR%"
-SET SRC=..\tmpl\tmpl_%DIR%
+SET SRC=..\..\tmpl\tmpl_%DIR%
 CALL LOG_VAR SRC %SRC%
 xcopy /q /y %SRC% .\%DIR%
 
