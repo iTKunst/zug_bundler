@@ -8,7 +8,7 @@ SET FIND="%CD%\Exe"
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
 echo %PATH% | find /I "%FIND%">Nul && (
-  CALL .\Bundler\log\win\LOG_DUP PATH
+  :: CALL .\Bundler\log\win\LOG_DUP PATH
 ) || (
   SET PATH=%FIND%;%PATH%
 )
