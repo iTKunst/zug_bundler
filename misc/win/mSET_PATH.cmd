@@ -22,5 +22,6 @@ REM  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
 REM   echo %PATH_CMD% >path.cmd
 )
 
+CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
 CALL .\Bundler\log\win\LOG_EXIT mSET_PATH
