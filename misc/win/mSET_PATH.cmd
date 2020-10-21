@@ -17,7 +17,7 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
   Echo.TRUE
 ) || (
   Echo.FALSE
-  SETx /M PATH "%CD%\Env;%FIND%;%PATH%"
+  echo "%CD%\Env;%FIND%;%PATH%" >path.txt
 )
 
 CALL .\Bundler\log\win\LOG_EXIT mSET_PATH
