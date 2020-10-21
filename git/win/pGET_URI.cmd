@@ -2,7 +2,7 @@
 
 CALL LOG_ENTER pGET_URI
 
-SET PROJ_URI=git remote get-url $(git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)|cut -d/ -f1)
+SET PROJ_URI=git config remote.$(git config branch.$(git symbolic-ref -q --short HEAD).remote).urlgit config remote.$(git config branch.$(git symbolic-ref -q --short HEAD).remote).url
 
 CALL LOG_VAR PROJ_URI %PROJ_URI%
 pause
