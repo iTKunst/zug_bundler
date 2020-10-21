@@ -7,6 +7,12 @@ CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 SET FIND="%CD%\Exe"
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
+Echo.Hello world | findstr /C:"world">nul && (
+    Echo.TRUE
+) || (
+    Echo.FALSE
+)
+
 echo %PATH% | find /I "%FIND%">Nul || (
   echo found
   SET PATH=%FIND%;%PATH%
