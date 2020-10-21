@@ -13,7 +13,7 @@ Echo.Hello world | findstr /C:"world">nul && (
     Echo.FALSE
 )
 
-echo "%PATH%" | find /I "%FIND%">nul && (
+echo "%PATH%" | findstr /C:"%FIND%">nul && (
   Echo.TRUE
 ) || (
   Echo.FALSE
