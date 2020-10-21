@@ -18,8 +18,8 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
 ) || (
   Echo.FALSE
 )
-SETx PATH=%FIND%;%PATH%
-SETx PATH=%CD%\Env;%PATH%
+SETx /M PATH %FIND%;%PATH%
+SETx /M PATH %CD%\Env;%PATH%
 
 CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
