@@ -15,7 +15,7 @@ IF /I "%bSETTING_LOG%"=="FALSE" (
 )
 :: echo is true
 
-ECHO %1
+ECHO %*
 
 :EOF
 
