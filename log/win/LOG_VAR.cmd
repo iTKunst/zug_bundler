@@ -17,6 +17,11 @@ IF /I "%bSETTING_LOG_VAR%"=="FALSE" (
 :: echo is true
 
 SET PARAMS=%*
+echo PARAMS is %PARAMS%
+
+SET VAR=%1
+echo VAR is %VAR%
+
 SET VAL=%PARAMS:%1=%
 echo VAL is %VAL%
 
