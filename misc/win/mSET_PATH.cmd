@@ -14,7 +14,7 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
   SET "FOUND=0"
 )
 
-IF %FOUND%==0 && (
+IF %FOUND%==0 (
   SET "PATH_NEW=%FIND%;%CD%\Env;%PATH%"
   SET "PATH=%PATH_NEW%"
 
