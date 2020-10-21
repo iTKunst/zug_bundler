@@ -13,7 +13,7 @@ CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 SET FIND=%CD%\Exe
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
-echo "%PATH%" | findstr /C:"%FIND%">nul && (
+echo %PATH% | findstr /C:%FIND%>nul && (
   Echo.TRUE
 ) || (
   Echo.FALSE
