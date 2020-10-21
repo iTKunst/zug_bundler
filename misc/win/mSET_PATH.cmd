@@ -8,7 +8,7 @@ Echo.Hello world | findstr /C:"world">nul && (
     Echo.FALSE
 )
 
-CALL .\Bundler\log\win\LOG_VAR PATH "%PATH%"
+CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
 SET FIND=%CD%\Exe
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
