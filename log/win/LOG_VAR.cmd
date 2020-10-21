@@ -18,16 +18,16 @@ IF /I "%bSETTING_LOG_VAR%"=="FALSE" (
 :: echo is true
 
 SET "PARAMS=%*"
-echo PARAMS is %PARAMS%
+::echo PARAMS is %PARAMS%
 
 SET "VAR=%1"
-echo VAR is %VAR%
+::echo VAR is %VAR%
 
 CALL :COUNT "%VAR%"
-echo VAR is %length% characters long
+::echo VAR is %length% characters long
 
 SET "VAL=%PARAMS:* =%"
-echo VAL is "%VAL%"
+::echo VAL is "%VAL%"
 
 CALL .\Bundler\log\win\LOG_MSG "%VAR% is (%VAL%) [VAR]"
 
