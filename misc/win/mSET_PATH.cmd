@@ -12,7 +12,7 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
   GOTO :EOF
 )
 
-REM SET "PATH=%CD%\Exe;%CD%\Env;%PATH%"
+SET "PATH=%CD%\Exe;%CD%\Env;%PATH%"
 REM  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
 REM   echo %PATH_CMD% >path.cmd
 
