@@ -2,21 +2,18 @@ REM @echo off
 
 CALL .\Bundler\log\win\LOG_ENTER mSET_PATH
 
-Echo.Hello world | findstr /C:"world">nul && (
-    Echo.TRUE
-) || (
-    Echo.FALSE
-)
-
 CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
 SET "FIND=%CD%\Exe"
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
+SET "FOUND="
 echo "%PATH%" | findstr /C:"%FIND%">nul && (
-  Echo.TRUE
+  SET "FOUND=1"
 ) || (
-  Echo.FALSE
+  SET "FOUND=0"
 )
+
+CALL .\Bundler\log\win\LOG_VAR FOUND %FOUND%
 
 CALL .\Bundler\log\win\LOG_EXIT mSET_PATH
