@@ -23,8 +23,8 @@ SET "VAR=%1"
 echo VAR is %VAR%
 
 SET "VAL=%PARAMS:%VAR% =%"
-echo VAL is %VAL%
+echo VAL is "%VAL%"
 
-CALL .\Bundler\log\win\LOG_MSG "%VAR% is (%VAL%) [VAR]"
+CALL .\Bundler\log\win\LOG_MSG "%VAR% is ("%VAL%") [VAR]"
 
 :EOF
