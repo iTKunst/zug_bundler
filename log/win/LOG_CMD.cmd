@@ -15,6 +15,6 @@ IF /I "%bSETTING_LOG_CMD%"=="FALSE" (
 )
 :: echo is true
 
-CALL ./Bundler/log/win/LOG_MSG "(%i) [CMD]"
+CALL ./Bundler/log/win/LOG_MSG "(%*) [CMD]"
 
 :EOF

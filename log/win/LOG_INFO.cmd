@@ -16,6 +16,6 @@ IF /I "%bSETTING_LOG_INFO%"=="FALSE" (
 )
 :: echo is true
 
-CALL ./Bundler/log/win/LOG_MSG "(%i) [INFO]"
+CALL ./Bundler/log/win/LOG_MSG "(%i*) [INFO]"
 
 :EOF
