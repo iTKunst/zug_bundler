@@ -8,7 +8,7 @@ SET FIND=%CD%\Exe
 CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
 echo %PATH% | findstr "%CD%\Exe" 1>nul
-CALL .\Bundler\log\win\LOG_INFO "findstr called"
+CALL .\Bundler\log\win\LOG_CMD "findstr called"
 
 if errorlevel 1 (
   CALL .\Bundler\log\win\LOG_DUP PATH
