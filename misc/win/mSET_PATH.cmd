@@ -14,7 +14,7 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
 
 SET "PATH=%CD%\Exe;%CD%\Env;%PATH%"
 REM  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
-REM   echo %PATH_CMD% >path.cmd
+echo SET PATH=%CD%\Exe;%CD%\Env;%PATH% >path.cmd
 
 REM CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
