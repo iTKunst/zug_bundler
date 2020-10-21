@@ -18,7 +18,7 @@ IF %FOUND% EQU 0 (
   SET "PATH_NEW=%FIND%;%CD%\Env;%PATH%"
   SET "PATH=%PATH_NEW%"
 
-  SET "PATH_CMD=SET PATH/=%PATH_NEW%"
+  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
   echo %PATH_CMD% >path.cmd
 )
 
