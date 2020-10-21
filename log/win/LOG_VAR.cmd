@@ -22,7 +22,7 @@ echo PARAMS is %PARAMS%
 SET VAR=%1
 echo VAR is %VAR%
 
-SET VAL=%PARAMS:%VAR%=%
+SET VAL=%PARAMS:%VAR% =%
 echo VAL is %VAL%
 
 CALL .\Bundler\log\win\LOG_MSG "%1 is (%VAL%) [VAR]"
