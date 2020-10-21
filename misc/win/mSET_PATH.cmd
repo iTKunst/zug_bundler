@@ -1,15 +1,18 @@
-@echo off
+REM @echo off
 
 CALL .\Bundler\log\win\LOG_ENTER mSET_PATH
 
 CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
 
-:: echo %PATH% | findstr "%CD%\Exe" 1>nul
+SET FIND=%CD%\Exe
+CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
+
+echo %PATH% | findstr "%CD%\Exe" 1>nul
+CALL .\Bundler\log\win\LOG_INFO "findstr called"
+
 if errorlevel 1 (
-::  echo path already set
   CALL .\Bundler\log\win\LOG_DUP PATH
 ) else (
-::  echo "path not set"
   set PATH=%CD%\Exe;%CD%\Env;%PATH%
 )
 
