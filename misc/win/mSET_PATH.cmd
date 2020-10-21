@@ -10,6 +10,7 @@ CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 SET "FOUND="
 echo "%PATH%" | findstr /C:"%FIND%">nul && (
   SET "FOUND=1"
+  GOTO :EOF
 ) || (
   SET "FOUND=0"
 )
@@ -23,5 +24,7 @@ REM   echo %PATH_CMD% >path.cmd
 )
 
 CALL .\Bundler\log\win\LOG_VAR PATH %PATH%
+
+:EOF
 
 CALL .\Bundler\log\win\LOG_EXIT mSET_PATH
