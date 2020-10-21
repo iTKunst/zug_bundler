@@ -9,7 +9,7 @@ CALL .\Bundler\log\win\LOG_VAR FIND %FIND%
 
 echo %PATH% | find/ I "%FIND%">Nul && (
   CALL .\Bundler\log\win\LOG_DUP PATH
-) else (
+) || (
   SET PATH=%FIND%;%PATH%
 )
 
