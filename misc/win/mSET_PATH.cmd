@@ -17,7 +17,10 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
   Echo.TRUE
 ) || (
   Echo.FALSE
-  SET "PATH_CMD=SET PATH=%FIND%;%CD%\Env;%PATH%"
+  SET "PATH_NEW=%FIND%;%CD%\Env;%PATH%"
+  SET "PATH=%PATH_NEW%"
+
+  SET "PATH_CMD=SET PATH=%PATH_NEW%"
   echo %PATH_CMD% >path.cmd
 )
 
