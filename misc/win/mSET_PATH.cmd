@@ -15,11 +15,10 @@ echo "%PATH%" | findstr /C:"%FIND%">nul && (
 )
 
 IF %FOUND% EQU 0 (
-  SET "PATH_NEW=%FIND%;%CD%\Env;%PATH%"
-  SET "PATH=%PATH_NEW%"
-
-  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
-  echo %PATH_CMD% >path.cmd
+  SET PATH=%CD%\Exe;%CD\Env;%PATH%
+  SET PATH 
+REM  SET "PATH_CMD=SET PATH^=%PATH_NEW%"
+REM   echo %PATH_CMD% >path.cmd
 )
 
 CALL .\Bundler\log\win\LOG_VAR FOUND %FOUND%
