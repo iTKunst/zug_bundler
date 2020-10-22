@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 source ./Bundler/log/linux/LOG.sh
-export sMETHOD=/Bundler/misc/linux
+export sMETHOD=/Bundler/misc/init
 
 log_enter $sMETHOD
 
