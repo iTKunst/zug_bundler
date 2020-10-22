@@ -16,7 +16,7 @@ IF /I "%bSETTING_LOG_ENTER%"=="FALSE" (
 )
 :: echo is true
 
-CALL ./Bundler/log/win/LOG_MSG "(%1) [ENTER]"
+CALL .\Bundler\log\win\LOG_MSG "(%1) [ENTER]"
 
 :EOF
 

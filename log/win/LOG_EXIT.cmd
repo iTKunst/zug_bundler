@@ -16,6 +16,6 @@ IF /I "%bSETTING_LOG_EXIT%"=="FALSE" (
 )
 :: echo is true
 
-CALL ./Bundler/log/win/LOG_MSG "(%1) [EXIT]"
+CALL .\Bundler\log\win\LOG_MSG "(%1) [EXIT]"
 
 :EOF
