@@ -94,5 +94,7 @@ CALL init
 
 :EOF
 
+CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
+
 CALL LOG_EXIT pCLONE
 
