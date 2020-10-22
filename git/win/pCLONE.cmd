@@ -34,6 +34,13 @@ if [%PROJ_GIT%]==[] (
 )
 CALL LOG_VAR PROJ_GIT %PROJ_GIT%
 
+if [%SYS%]==[] (
+  CALL LOG_INVALID "SYS"
+  CALL LOG_CMD "Is SYS set in .\env.cmd?"
+  goto :EOF
+)
+CALL LOG_VAR SYS_GIT %SYS_GIT%
+
 if [%SYS_GIT%]==[] (
   CALL LOG_INVALID "SYS_GIT"
   CALL LOG_CMD "Is SYS set in .\env.cmd?"
@@ -66,7 +73,11 @@ IF NOT EXIST Project (
 )
 
 IF NOT EXIST System (
-  CALL pADD_REPO %SYS_GIT% System
+  IF %SYS_GIT% == %SYS_GIT_DEFAULT (
+      CALL pCLONE_REPO %SYS_GIT% System
+    ) else (
+      CALL pADD_REPO %SYS_GIT% System
+    )
 ) else (
   CALL LOG_DUP %SYS_GIT%
 )
