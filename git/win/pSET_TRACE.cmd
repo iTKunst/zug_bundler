@@ -1,5 +1,4 @@
 @echo off
-source LOG.sh
 
 CALL LOG_ENTER pSET_TRACE
 
