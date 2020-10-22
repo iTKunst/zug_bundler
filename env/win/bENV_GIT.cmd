@@ -5,20 +5,6 @@ CALL LOG_ENTER bENV_GIT
 CALL bENV_CAT
 CALL bENV_TKN
 
-if [%TMPL_URI%]==[] (
-  CALL LOG_INVALID "TMPL_URI"
-  CALL LOG_CMD "You must set it in .\env.cmd!"
-  CALL LOG_CMD "Default value is https://github.com/itkunst"
-  GOTO :EOF
-)
-CALL LOG_VAR TMPL_URI %TMPL_URI%
-
-if [%TMPL_NAME%]==[] (
-  CALL LOG_INVALID "TMPL_NAME"
-  CALL LOG_CMD "You must set it in .\env.cmd!"
-  GOTO :EOF
-)
-CALL LOG_VAR TMPL_NAME %TMPL_NAME%
 
 IF  [%SYS%]==[] (
   CALL LOG_INVALID "SYS"
@@ -33,6 +19,21 @@ IF  [%SYS_GIT%]==[] (
   GOTO :EOF
 )
 CALL LOG_VAR SYS_GIT %SYS_GIT%
+
+if [%TMPL_NAME%]==[] (
+  CALL LOG_INVALID "TMPL_NAME"
+  CALL LOG_CMD "You must set it in .\env.cmd!"
+  GOTO :EOF
+)
+CALL LOG_VAR TMPL_NAME %TMPL_NAME%
+
+if [%TMPL_URI%]==[] (
+  CALL LOG_INVALID "TMPL_URI"
+  CALL LOG_CMD "You must set it in .\env.cmd!"
+  CALL LOG_CMD "Default value is https://github.com/itkunst"
+  GOTO :EOF
+)
+CALL LOG_VAR TMPL_URI %TMPL_URI%
 
 SET "GLBL_GIT=%TMPL_URI%%SLASH%zug_global.git"
 CALL LOG_VAR GLBL_GIT %GLBL_GIT%
