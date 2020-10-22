@@ -4,10 +4,10 @@ source ./Bundler/log/linux/LOG.sh
 
 log_enter /Bundler/linux
 
-source ./Bundler/env/linux.sh
-source ./Bundler/git/linux.sh
-source ./Bundler/log/linux.sh
-source ./Bundler/misc/linux.sh
+source ./Bundler/env/init.sh
+source ./Bundler/git/init.sh
+source ./Bundler/log/init.sh
+source ./Bundler/misc/init.sh
 
 log_exit /Bundler/linux
 

@@ -115,7 +115,7 @@ if [ ! -d System ]; then
   exit
 fi
 
-source ./linux.sh
+source ./init.sh
 
 log_cmd "Please run pUPDATE.sh to get the latest changes."
 

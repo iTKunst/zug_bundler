@@ -90,7 +90,7 @@ IF NOT EXIST System (
 
 CALL pCLONE_INIT
 
-CALL win
+CALL init
 
 :EOF
 
