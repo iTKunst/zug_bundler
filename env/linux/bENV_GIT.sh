@@ -29,13 +29,19 @@ if [ -z "$SYS" ]; then
 fi
 echo SYS "$SYS"
 
+if [ -z "$SYS_GIT" ]; then
+  log_invalid SYS_GIT
+  log_cmd "You must set it in ./env.sh!"
+  exit
+fi
+echo SYS_GIT "$SYS_GIT"
+
 export GLBL_GIT=$TMPL_URI$SLASH"zug_global.git"
 log_var GLBL_GIT $GLBL_GIT
 
 export PROJ_GIT=$TMPL_URI$SLASH$TMPL_NAME$DOT$GIT
 log_var PROJ_GIT $PROJ_GIT
 
-export SYS_GIT="$UP""$SYS""$SPLIT""$SYSTEM""$DOT""$GIT"
 log_var SYS_GIT $SYS_GIT
 
 log_exit bENV_GIT
