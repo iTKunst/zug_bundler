@@ -46,8 +46,11 @@ if [%SYS_GIT%]==[] (
 )
 CALL LOG_VAR SYS_GIT %SYS_GIT%
 
+SET RUN_INIT=0
+
 IF NOT EXIST Global (
   CALL pCLONE_REPO %GLBL_GIT% Global
+  SET RUN_INIT=1
 ) else (
   CALL LOG_DUP %GLBL_GIT%
 )
@@ -60,6 +63,7 @@ IF NOT EXIST Global (
 
 IF NOT EXIST Project (
   CALL pCLONE_REPO %PROJ_GIT% Project
+  SET RUN_INIT=1
 ) else (
   CALL LOG_DUP %PROJ_GIT%
 )
@@ -72,6 +76,7 @@ IF NOT EXIST Project (
 
 IF NOT EXIST System (
   CALL pADD_REPO %SYS_GIT% System
+  SET RUN_INIT=1
 ) else (
   CALL LOG_DUP %SYS_GIT%
 )
@@ -82,7 +87,11 @@ IF NOT EXIST System (
   goto :EOF
 )
 
-CALL pINIT
+CALL LOG_VAR RUN_INIT %RUN_INIT%
+
+IF %RUN_INIT% EQU 1 (
+  CALL pINIT
+)
 
 CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
 
