@@ -4,7 +4,6 @@
 CALL LOG_ENTER pINIT
 
 
-SET RUN_CLONE=0
 
 if exist Exe (
   RD /S /Q Exe
@@ -19,6 +18,8 @@ mkdir Env
 CALL .\Bundler\init
 
 CALL .\Exe\mSET_PATH
+
+SET RUN_CLONE=0
 
 if exist Global (
   CALL .\Global\init
@@ -36,6 +37,10 @@ if exist Project (
   CALL .\Project\init
 ) else (
   SET "RUN_CLONE=1"
+)
+
+if RUN_CLONE EQU 1 (
+  CALL pCLONE
 )
 
 CALL LOG_EXIT pINIT
