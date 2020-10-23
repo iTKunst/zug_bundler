@@ -4,16 +4,13 @@
 CALL LOG_ENTER pINIT
 
 
-
-if exist Exe (
-  RD /S /Q Exe
+IF NOT EXIST Exe (
+  mkdir Exe
 )
-mkdir Exe
 
-if exist Env (
-  RD /S /Q Env
+if NOT EXIST Env (
+  mkdir Env
 )
-mkdir Env
 
 CALL .\Bundler\init
 
