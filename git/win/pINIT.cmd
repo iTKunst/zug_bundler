@@ -3,7 +3,6 @@
 
 CALL LOG_ENTER pINIT
 
-CALL .\Exe\mSET_PATH
 
 SET RUN_CLONE=0
 
@@ -16,6 +15,10 @@ if exist Env (
   RD /S /Q Env
 )
 mkdir Env
+
+CALL .\Bundler\init
+
+CALL .\Exe\mSET_PATH
 
 if exist Global (
   CALL .\Global\init
