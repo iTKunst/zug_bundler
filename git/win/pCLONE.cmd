@@ -73,11 +73,7 @@ IF NOT EXIST Project (
 )
 
 IF NOT EXIST System (
-  IF %SYS_GIT% == %SYS_GIT_DEFAULT (
-      CALL pCLONE_REPO %SYS_GIT% System
-    ) else (
-      CALL pADD_REPO %SYS_GIT% System
-    )
+  CALL pADD_REPO %SYS_GIT% System
 ) else (
   CALL LOG_DUP %SYS_GIT%
 )
@@ -92,9 +88,9 @@ CALL pCLONE_INIT
 
 CALL init
 
-:EOF
-
 CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
+
+:EOF
 
 CALL LOG_EXIT pCLONE
 

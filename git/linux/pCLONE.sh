@@ -20,8 +20,8 @@ add()
   log_info "Adding $DIR"
 
   git submodule add -f "$GIT" "$DIR"
-  git commit -m "Added the $DIR to the project."
-  git push
+  git commit -am "Added the $DIR to the project."
+  git push origin master
 
   log_exit "add"
 }
