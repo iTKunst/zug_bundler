@@ -37,7 +37,7 @@ if [%SYS%]==[] (
   CALL LOG_CMD "Is SYS set in .\env.cmd?"
   goto :EOF
 )
-CALL LOG_VAR SYS_GIT %SYS_GIT%
+CALL LOG_VAR SYS %SYS%
 
 if [%SYS_GIT%]==[] (
   CALL LOG_INVALID "SYS_GIT"
@@ -82,9 +82,7 @@ IF NOT EXIST System (
   goto :EOF
 )
 
-CALL pCLONE_INIT
-
-CALL init
+CALL pINIT
 
 CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
 
