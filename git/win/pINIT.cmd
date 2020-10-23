@@ -39,7 +39,9 @@ if exist Project (
   SET "RUN_CLONE=1"
 )
 
-if RUN_CLONE EQU 1 (
+CALL LOG_VAR RUN_CLONE %RUN_CLONE%
+
+if %RUN_CLONE% EQU 1 (
   CALL pCLONE
 )
 
