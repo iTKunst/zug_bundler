@@ -10,9 +10,10 @@ CALL LOG_VAR DIR %DIR%
 
 git clone %GIT% %DIR%
 
-REM echo "git clone %GIT% %DIR%"
-REM SET SRC=..\..\tmpl\tmpl_%DIR%
-REM CALL LOG_VAR SRC %SRC%
-REM xcopy /q /y %SRC% .\%DIR%
+IF %ERRORLEVEL% NEQ 0 (
+  CALL LOG_ERROR_CLONE $DIR%
+)
 
 CALL LOG_EXIT pCLONE_REPO
+
+EXIT /B %ERRORLEVEL%
