@@ -22,14 +22,12 @@ CALL bENV
 
 if [%GLBL_GIT%]==[] (
   CALL LOG_INVALID "GLBL_GIT"
-  CALL LOG_CMD "You must set it in .\env.cmd!"
   goto :EOF
 )
 CALL LOG_VAR GLBL_GIT %GLBL_GIT%
 
 if [%PROJ_GIT%]==[] (
   CALL LOG_INVALID "PROJ_GIT"
-  CALL LOG_CMD "You must set it in .\env.cmd!"
   goto :EOF
 )
 CALL LOG_VAR PROJ_GIT %PROJ_GIT%
