@@ -1,0 +1,9 @@
+@echo off
+
+CALL LOG_ENTER bENV_NAME
+
+SET GLBL_DIR=global
+SET PROJ_DIR=project
+SET SYS_DIR=system
+
+CALL LOG_EXIT bENV_NAME

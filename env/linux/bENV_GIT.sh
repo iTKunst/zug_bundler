@@ -15,13 +15,6 @@ if [ -z "$GLBL_NAME" ]; then
 fi
 log_var GLBL_NAME $GLBL_NAME
 
-if [ -z "$GLBL_NAME" ]; then
-  log_invalid SYS
-  log_cmd "You must set it in ./env.sh!"
-  exit
-fi
-log_var GLBL_NAME $GLBL_NAME
-
 if [ -z "$SYS" ]; then
   log_invalid SYS
   log_cmd "You must set it in ./env.sh!"
@@ -50,7 +43,7 @@ if [ -z $TMPL_URI ]; then
 fi
 echo TMPL_URI $TMPL_URI
 
-export GLBL_GIT=$TMPL_URI$SLASH"zug_global.git"
+export GLBL_GIT=$TMPL_URI$SLASH$GLBL_NAME$DOT$GIT
 log_var GLBL_GIT $GLBL_GIT
 
 export PROJ_GIT=$TMPL_URI$SLASH$TMPL_NAME$DOT$GIT
