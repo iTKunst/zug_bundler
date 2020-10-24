@@ -54,6 +54,7 @@ if [ ! -f env.sh ]; then
   exit
 fi
 
+source bENV.sh
 source pSET_TRACE.sh
 
 if [ ! -d $BNDL_DIR ]; then
@@ -62,57 +63,14 @@ if [ ! -d $BNDL_DIR ]; then
   exit
 fi
 
-source bENV.sh
+source pCLONE_GLBL.sh
+source pCLONE_PROJ.sh
+source pCLONE_SYS.sh
 
-if [ -z "$GLBL_GIT" ]; then
-  log_invalid "$GLBL_GIT"
-  exit
-fi
-
-if [ -z "$PROJ_GIT" ]; then
-  log_invalid "PROJ_GIT"
-  exit
-fi
-
-if [ -z "$SYS_GIT" ]; then
-  log_invalid "SYS_GIT"
-  exit
-fi
-
-if [ ! -d Global ]; then
-  clone "$GLBL_GIT" Global
-else
-  log_dup $GLBL_GIT
-fi
-
-if [ ! -d Global ]; then
-  log_clone_err $GLBL_GIT
-  log_err "Does it exist in the repo?"
-  exit
-fi
-
-if [ ! -d Project ]; then
-  clone "$PROJ_GIT" Project
-else
-  log_dup $PROJ_GIT
-fi
-
-if [ ! -d Project ]; then
-  log_clone_err $PROJ_GIT
-  log_err "Does it exist in the repo?"
-  exit
-fi
-
-if [ ! -d System ]; then
-   add "$SYS_GIT" System
-else
-   log_dup $SYS_GIT
-fi
-
-if [ ! -d System ]; then
-  log_clone_err $SYS_GIT
-  log_err "Does it exist in the repo?"
-  exit
+log_var ERRORLEVEL $ERRORLEVEL
+if [ $ERRORLEVEL -neq 0 ]; then
+	log_clone_err Templates
+	exit /B $ERRORLEVEL
 fi
 
 source ./init.sh
