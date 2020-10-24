@@ -16,7 +16,7 @@ IF /I "%bSETTING_LOG_ERR%"=="FALSE" (
 )
 :: echo is true
 
-CALL .\Bundler\log\win\LOG_MSG "(%*) [ERROR]"
+CALL .\Bundler\log\win\LOG_MSG (%*) [ERROR]
 
 :EOF
 
