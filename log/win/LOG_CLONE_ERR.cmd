@@ -15,6 +15,6 @@ IF /I "%bSETTING_LOG_CLONE_ERR%"=="FALSE" (
 )
 :: echo is true
 
-CALL .\Bundler\log\win\LOG_MSG "(%1) [CLONE_ERR]"
+CALL .\Bundler\log\win\LOG_MSG (%1) [CLONE_ERR]
 
 :EOF
