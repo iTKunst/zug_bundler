@@ -5,7 +5,22 @@ source LOG.sh
 log_enter bENV_GIT
 
 source bENV_CAT.sh
+source bENV_NAME.sh
 source bENV_TKN.sh
+
+if [ -z "$GLBL_NAME" ]; then
+  log_invalid SYS
+  log_cmd "You must set it in ./env.sh!"
+  exit
+fi
+log_var GLBL_NAME $GLBL_NAME
+
+if [ -z "$GLBL_NAME" ]; then
+  log_invalid SYS
+  log_cmd "You must set it in ./env.sh!"
+  exit
+fi
+log_var GLBL_NAME $GLBL_NAME
 
 if [ -z "$SYS" ]; then
   log_invalid SYS
