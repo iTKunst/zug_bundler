@@ -26,22 +26,6 @@ add()
   log_exit "add"
 }
 
-clone()
-{
-  log_enter "clone"
-
-  GIT="$1"
-  DIR="$2"
-
-  log_var GIT "$GIT"
-  log_var DIR "$DIR"
-
-  log_info "Cloning $DIR"
-
-  git clone "$GIT" "$DIR"
-
-  log_exit "clone"
-}
 
 ## Methods End
 ##############################################################################################
