@@ -59,7 +59,7 @@ source pSET_TRACE.sh
 
 if [ ! -d $BNDL_DIR ]; then
   log_dir_err $BNDL_DIR
-  log_cmd "You must create the repository from the template 'https://github.com/iTKunst/zug_tmpl'!"
+  log_cmd "You must create the repository from the base template 'https://github.com/iTKunst/zug_tmpl'!"
   exit
 fi
 
@@ -73,7 +73,10 @@ if [ $ERRORLEVEL -neq 0 ]; then
 	exit /B $ERRORLEVEL
 fi
 
-source ./init.sh
+log_var INIT $INIT
+if [ $INIT -eq 1 ]; then
+  source ./init.sh
+fi
 
 log_cmd "Please run pUPDATE.sh to get the latest changes."
 
