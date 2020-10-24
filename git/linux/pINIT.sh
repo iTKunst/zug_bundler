@@ -1,6 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source ./Bundler/log/linux/LOG.sh
+source ./$BNDL_DIR/log/linux/LOG.sh
 
 log_enter init
 

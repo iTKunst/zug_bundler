@@ -1,9 +1,9 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source ./Bundler/log/linux/LOG.sh
+source ./$BNDL_DIR/log/linux/LOG.sh
 
-log_enter /Bundler/log/init
+log_enter /$BNDL_DIR/log/init
 
-cp ./Bundler/log/linux/*.sh ./Exe
+cp ./$BNDL_DIR/log/linux/*.sh ./Exe
 
-log_exit /Bundler/log/init
+log_exit /$BNDL_DIR/log/init

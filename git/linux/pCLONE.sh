@@ -56,8 +56,8 @@ fi
 
 source pSET_TRACE.sh
 
-if [ ! -d Bundler ]; then
-  log_dir_err "Bundler"
+if [ ! -d $BNDL_DIR ]; then
+  log_dir_err $BNDL_DIR
   log_cmd "You must create the repository from the template 'https://github.com/iTKunst/zug_tmpl'!"
   exit
 fi
