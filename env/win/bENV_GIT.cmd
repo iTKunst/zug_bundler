@@ -13,12 +13,6 @@ IF  [%GLBL_NAME%]==[] (
 )
 CALL LOG_VAR GLBL_NAME %GLBL_NAME%
 
-IF  [%PROJ_NAME%]==[] (
-  CALL LOG_INVALID "PROJ_NAME"
-  GOTO :EOF
-)
-CALL LOG_VAR PROJ_NAME %PROJ_NAME%
-
 IF  [%SYS%]==[] (
   CALL LOG_INVALID "SYS"
   CALL LOG_CMD "You must set it in .\env.cmd!"
