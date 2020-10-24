@@ -1,5 +1,5 @@
 [Home](../README.md)
-# Project Settings
+# base_bundler
 
-Configuration and environment files for the tooling.
+Bundles components required.
 
