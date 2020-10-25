@@ -21,29 +21,28 @@ source ./Exe/pINIT_SYS.sh
 export CLONE=0
 
 CLONE=$(init_glbl)
-log_var CLONE $CLONE
-
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
 log_var CLONE $CLONE
 
-source pINIT_PROJ.sh
+CLONE=$(init_proj)
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
+log_var CLONE $CLONE
 
-source pINIT_SYS.sh
+CLONE=$(init_sys)
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
+log_var CLONE $CLONE
 
 chmod +x ./Exe/*.sh
 
-log_var CLONE $CLONE
 
 if [ $CLONE -eq 1 ]; then
   source pCLONE.sh
