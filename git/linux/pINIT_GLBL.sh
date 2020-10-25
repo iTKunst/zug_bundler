@@ -24,5 +24,4 @@ pINIT_GLBL() {
 	log_exit pINIT_GLBL
 
 	return 0
-
 }

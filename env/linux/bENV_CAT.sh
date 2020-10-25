@@ -8,3 +8,5 @@ export GIT=git
 export SYSTEM=system
 
 log_exit bENV_CAT
+
+return 0

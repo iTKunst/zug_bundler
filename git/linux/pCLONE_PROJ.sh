@@ -20,7 +20,6 @@ pCLONE_PROJ () {
 	fi
 	log_var PROJ_GIT $PROJ_GIT
 
-
 	if [ ! -d $PROJ_DIR ]; then
 		pCLONE_REPO $PROJ_GIT $PROJ_DIR
 		if [ $?  -ne 0 ]; then
@@ -30,7 +29,6 @@ pCLONE_PROJ () {
 	else
 		log_dup $PROJ_GIT
 	fi
-
 
 	log_exit pCLONE_PROJ
 

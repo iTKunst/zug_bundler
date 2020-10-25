@@ -8,3 +8,5 @@ export GLBL_NAME=base_global
 export BASE_NAME=base_tmpl
 
 log_exit bENV_NAME
+
+return 0

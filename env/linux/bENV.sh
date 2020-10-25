@@ -11,3 +11,4 @@ source bENV_NAME.sh
 
 log_exit bENV
 
+return 0

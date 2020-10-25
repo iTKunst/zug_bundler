@@ -10,3 +10,5 @@ export SPLIT=_
 export UP=../
 
 log_exit bENV_TKN
+
+return 0

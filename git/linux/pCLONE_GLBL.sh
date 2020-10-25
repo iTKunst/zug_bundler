@@ -32,7 +32,5 @@ pCLONE_GLBL() {
 
 	log_exit pCLONE_GLBL
 
-	echo $INIT
-
 	return 0
 }

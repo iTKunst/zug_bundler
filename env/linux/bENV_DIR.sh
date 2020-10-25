@@ -9,3 +9,5 @@ export PROJ_DIR=project
 export SYS_DIR=system
 
 log_exit bENV_NAME
+
+return 0
