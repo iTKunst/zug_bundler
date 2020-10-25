@@ -14,10 +14,15 @@ fi
 
 source ./$BNDL_DIR/init.sh
 source ./Exe/mSET_PATH.sh
+source ./Exe/pINIT_GLBL.sh
+source ./Exe/pINIT_PROJ.sh
+source ./Exe/pINIT_SYS.sh
 
 export CLONE=0
 
-source pINIT_GLBL.sh
+CLONE=$(init_glbl)
+log_var CLONE $CLONE
+
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?

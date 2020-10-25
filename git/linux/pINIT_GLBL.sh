@@ -2,7 +2,9 @@
 # shellcheck disable=SC2086
 source LOG.sh
 
-log_enter pINIT_GLBL
+
+init_glbl {
+	log_enter pINIT_GLBL
 
 
 source bENV.sh
@@ -24,5 +26,8 @@ fi
 
 log_exit pINIT_GLBL
 
+echo $CLONE
 
 exit 0
+
+}
