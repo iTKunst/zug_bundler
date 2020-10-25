@@ -20,21 +20,21 @@ source ./Exe/pINIT_SYS.sh
 
 export CLONE=0
 
-CLONE=$(init_glbl)
+init_glbl
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
 log_var CLONE $CLONE
 
-CLONE=$(init_proj)
+init_proj
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
 log_var CLONE $CLONE
 
-CLONE=$(init_sys)
+init_sys
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?

@@ -14,8 +14,6 @@ if [ -z $PROJ_DIR ]; then
 fi
 log_var PROJ_DIR $PROJ_DIR
 
-export CLONE=0
-
 if [ -d $PROJ_DIR ]; then
   source ./$PROJ_DIR/init.sh
 	if [ $?  -ne 0 ]; then
@@ -28,7 +26,6 @@ fi
 
 log_exit pINIT_PROJ
 
-echo $CLONE
 
 exit 0
 

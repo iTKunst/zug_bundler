@@ -14,7 +14,6 @@ if [ -z $SYS_DIR ]; then
 fi
 log_var SYS_DIR $SYS_DIR
 
-export CLONE=0
 
 if [ -d $SYS_DIR ]; then
   source ./$SYS_DIR/init.sh
@@ -27,8 +26,6 @@ fi
 
 
 log_exit pINIT_SYS
-
-echo $CLONE
 
 exit 0
 }
