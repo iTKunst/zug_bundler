@@ -15,10 +15,8 @@ pINIT_GLBL() {
 
 
 	if [ -d "$GLBL_DIR" ]; then
-		echo exists
 		source ./$GLBL_DIR/init.sh
 	else
-		echo not exists
 		CLONE=1
 	fi
 
