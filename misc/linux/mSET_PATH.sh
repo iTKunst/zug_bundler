@@ -2,9 +2,9 @@
 # shellcheck disable=SC2086
 source ./$BNDL_DIR/log/linux/LOG.sh
 
-set_path() {
+mSET_PATH() {
 
-	log_enter set_path
+	log_enter mSET_PATH
 
 	subPATH=$PWD/Exe:$PWD/Env
 
@@ -17,5 +17,5 @@ set_path() {
 		log_cmd "Please run 'source path.txt'"
 	fi
 
-	log_exit set_path
+	log_exit mSET_PATH
 }
