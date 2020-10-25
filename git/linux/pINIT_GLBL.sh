@@ -17,9 +17,6 @@ export CLONE=0
 
 if [ -d $GLBL_DIR ]; then
   source ./$GLBL_DIR/init.sh
-	if [ $? -ne 0 ]; then
-		exit $?
-	fi
 else
   export CLONE=1
 fi
