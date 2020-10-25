@@ -22,7 +22,7 @@ pCLONE_GLBL() {
 	log_var GLBL_GIT $GLBL_GIT
 
 	if [ ! -d $GLBL_DIR ]; then
-		CALL pCLONE $GLBL_GIT $GLBL_DIR
+		pCLONE_REPO $GLBL_GIT $GLBL_DIR
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi

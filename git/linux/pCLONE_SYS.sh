@@ -22,7 +22,7 @@ pCLONE_SYS () {
 	export init=0
 
 	if [ ! -d $SYS_DIR ]; then
-		clone $SYS_GIT $SYS_DIR
+		pADD_SUB $SYS_GIT $SYS_DIR
 		if [ $?  -ne 0 ]; then
 			exit $?
 		fi

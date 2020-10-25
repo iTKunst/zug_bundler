@@ -22,7 +22,7 @@ pCLONE_PROJ () {
 
 
 	if [ ! -d $PROJ_DIR ]; then
-		CALL pCLONE $PROJ_GIT $PROJ_DIR
+		pCLONE_REPO $PROJ_GIT $PROJ_DIR
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi
