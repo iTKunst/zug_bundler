@@ -69,7 +69,7 @@ log_err()
 log_exit()
 {
   if [ "$bSETTING_LOG_EXIT" == "true" ]; then
-    log "($1) [EXIT] "
+    log "$1 [EXIT] "
   fi
 }
 
