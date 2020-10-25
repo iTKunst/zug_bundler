@@ -19,19 +19,18 @@ fi
 log_var PROJ_GIT $PROJ_GIT
 
 export init=0
+
 if [ ! -d $PROJ_DIR ]; then
-  export init=1
   CALL pCLONE $PROJ_GIT $PROJ_DIR
 	if [ $ERRORLEVEL -neq 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
+  export init=1
 else
   log_dup $PROJ_GIT
 fi
 
 
-
-##### Program End
-##############################################################################################
-
 log_exit pCLONE_PROJ
+
+exit /B 0

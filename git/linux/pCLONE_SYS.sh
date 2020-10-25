@@ -19,12 +19,13 @@ fi
 log_var SYS_GIT $SYS_GIT
 
 export init=0
+
 if [ ! -d $SYS_DIR ]; then
-  export init=1
   clone $SYS_GIT $SYS_DIR
 	if [ $ERRORLEVEL -neq 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
+  export init=1
 else
   log_dup $SYS_GIT
 fi

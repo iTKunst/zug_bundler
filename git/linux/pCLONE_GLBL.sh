@@ -22,11 +22,11 @@ log_var GLBL_GIT $GLBL_GIT
 export INIT=0
 
 if [ ! -d $GLBL_DIR ]; then
-	export INIT=1
   CALL pCLONE $GLBL_GIT $GLBL_DIR
 	if [ $ERRORLEVEL -neq 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
+	export INIT=1
 else
   log_dup $GLBL_GIT
 fi

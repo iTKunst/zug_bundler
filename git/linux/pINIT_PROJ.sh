@@ -21,7 +21,7 @@ if [ -d $PROJ_DIR ]; then
 		exit /B $ERRORLEVEL
 	fi
 else
-  CLONE=1
+  export CLONE=1
 fi
 
 

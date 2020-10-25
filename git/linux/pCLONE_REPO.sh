@@ -13,8 +13,6 @@ log_var DIR $DIR
 log_info Cloning $DIR
 
 git clone $GIT $DIR
-log_var ERRORLEVEL $ERRORLEVEL
-
 if [ $ERRORLEVEL -neq 0 ]; then
   log_clone_err $GIT
   log_err Does it exist in the repo?
