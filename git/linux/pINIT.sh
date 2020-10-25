@@ -6,8 +6,8 @@ source ./$BNDL_DIR/git/linux/pINIT_SYS.sh
 source ./$BNDL_DIR/log/linux/LOG.sh
 source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
 
-init () {
-	log_enter init
+pINIT () {
+	log_enter pINIT
 
 	if [ ! -d Exe ]; then
 		mkdir Exe
@@ -51,7 +51,7 @@ init () {
 		fi
 	fi
 
-	log_exit init
+	log_exit pINIT
 
 	exit 0
 
