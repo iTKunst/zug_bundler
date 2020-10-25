@@ -22,6 +22,7 @@ log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
 fi
+log_var CLONE $CLONE
 
 source pINIT_PROJ.sh
 log_var RES $?
