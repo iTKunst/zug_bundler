@@ -27,4 +27,6 @@ log_var CLONE $CLONE
 
 log_exit pINIT_GLBL
 
+echo $CLONE
+
 exit 0
