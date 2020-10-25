@@ -20,4 +20,4 @@ fi
 
 log_exit pCLONE_REPO
 
-exit /B $ERRORLEVEL
+exit $ERRORLEVEL

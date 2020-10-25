@@ -8,13 +8,13 @@ source bENV.sh
 
 if [ -z $PROJ_DIR ]; then
   log_invalid PROJ_DIR
-  exit /B 1
+  exit 1
 fi
 log_var PROJ_DIR $PROJ_DIR
 
 if [ -z $PROJ_GIT ]; then
   log_invalid PROJ_GIT
-  exit /B 1
+  exit 1
 fi
 log_var PROJ_GIT $PROJ_GIT
 
@@ -23,7 +23,7 @@ export init=0
 if [ ! -d $PROJ_DIR ]; then
   CALL pCLONE $PROJ_GIT $PROJ_DIR
 	if [ $ERRORLEVEL -ne 0 ]; then
-		exit /B $ERRORLEVEL
+		exit $ERRORLEVEL
 	fi
   export init=1
 else
@@ -33,4 +33,4 @@ fi
 
 log_exit pCLONE_PROJ
 
-exit /B 0
+exit 0

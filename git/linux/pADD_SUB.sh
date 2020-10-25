@@ -18,7 +18,7 @@ log_var ERRORLEVEL $ERRORLEVEL
 if [ $ERRORLEVEL -ne 0 ]; then
   log_err Error adding sub module $GIT
   log_err Does it exist in the repo?
-  exit /B $ERRORLEVEL
+  exit $ERRORLEVEL
 fi
 
 git commit -am "Added the $DIR to the project."
@@ -26,7 +26,7 @@ log_var ERRORLEVEL $ERRORLEVEL
 
 if [ $ERRORLEVEL -ne 0 ]; then
   log_err Error committing sub module $GIT
-  exit /B $ERRORLEVEL
+  exit $ERRORLEVEL
 fi
 
 git push origin master
@@ -38,4 +38,4 @@ fi
 
 log_exit pADD_SUB
 
-exit /B $ERRORLEVEL
+exit $ERRORLEVEL
