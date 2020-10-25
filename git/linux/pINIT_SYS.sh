@@ -2,21 +2,22 @@
 # shellcheck disable=SC2086
 source LOG.sh
 
-log_enter pINIT_PROJ
+init_sys() {
+	log_enter pINIT_SYS
 
 
 source bENV.sh
 
-if [ -z $PROJ_DIR ]; then
-  log_invalid PROJ_DIR
+if [ -z $SYS_DIR ]; then
+  log_invalid SYS_DIR
 	exit 1
 fi
-log_var PROJ_DIR $PROJ_DIR
+log_var SYS_DIR $SYS_DIR
 
 export CLONE=0
 
-if [ -d $PROJ_DIR ]; then
-  source ./$PROJ_DIR/init.sh
+if [ -d $SYS_DIR ]; then
+  source ./$SYS_DIR/init.sh
 	if [ $?  -ne 0 ]; then
 		exit $?
 	fi
@@ -25,6 +26,9 @@ else
 fi
 
 
-log_exit pINIT_PROJ
+log_exit pINIT_SYS
+
+echo $CLONE
 
 exit 0
+}

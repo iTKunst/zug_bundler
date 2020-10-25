@@ -2,7 +2,8 @@
 # shellcheck disable=SC2086
 source LOG.sh
 
-log_enter pINIT_PROJ
+init_proj() {
+	log_enter pINIT_PROJ
 
 
 source bENV.sh
@@ -27,4 +28,8 @@ fi
 
 log_exit pINIT_PROJ
 
+echo $CLONE
+
 exit 0
+
+}
