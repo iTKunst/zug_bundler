@@ -1,6 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source LOG.sh
+
 
 init_sys() {
 	log_enter pINIT_SYS
