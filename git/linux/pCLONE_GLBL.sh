@@ -7,8 +7,6 @@ pCLONE_GLBL() {
 	log_enter pCLONE_GLBL
 
 
-	source bENV.sh
-
 	if [ -z $GLBL_DIR ]; then
 		log_invalid GLBL_DIR
 		return 1
