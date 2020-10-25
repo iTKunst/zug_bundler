@@ -24,8 +24,10 @@ pINIT () {
 	local CLONE=0
 
 	pINIT_GLBL
-	if [ $? -ne 0 ]; then
-		exit $?
+	RES=$?
+	log_var RES $RES
+	if [ $RES -ne 0 ]; then
+		exit $RES
 	fi
 	log_var CLONE $CLONE
 
