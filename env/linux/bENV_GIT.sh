@@ -27,21 +27,21 @@ if [ -z $SYS_GIT ]; then
   log_cmd "You must set it in ./env.sh!"
   exit
 fi
-echo SYS_GIT $SYS_GIT
+log_var SYS_GIT $SYS_GIT
 
 if [ -z $TMPL_NAME ]; then
   log_invalid TMPL_NAME
   log_cmd "You must set it in ./env.sh!"
   exit
 fi
-echo TMPL_NAME $TMPL_NAME
+log_var TMPL_NAME $TMPL_NAME
 
 if [ -z $TMPL_URI ]; then
   log_invalid TMPL_URI
   log_cmd "You must set it in ./env.sh!"
   exit
 fi
-echo TMPL_URI $TMPL_URI
+log_var TMPL_URI $TMPL_URI
 
 export GLBL_GIT=$TMPL_URI$SLASH$GLBL_NAME$DOT$GIT
 log_var GLBL_GIT $GLBL_GIT
