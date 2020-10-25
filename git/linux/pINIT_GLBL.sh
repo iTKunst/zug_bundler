@@ -10,7 +10,7 @@ pINIT_GLBL() {
 
 	if [ -z $GLBL_DIR ]; then
 		log_invalid GLBL_DIR
-		exit 1
+		return 1
 	fi
 	log_var GLBL_DIR $GLBL_DIR
 

@@ -24,24 +24,23 @@ pINIT () {
 	local CLONE=0
 
 	pINIT_GLBL
-	RES=$?
-	log_var RES $RES
-	if [ $RES -ne 0 ]; then
-		exit $RES
+	log_var RES $?
+	if [ $? -ne 0 ]; then
+		return $?
 	fi
 	log_var CLONE $CLONE
 
 	pINIT_PROJ
 	log_var RES $?
 	if [ $? -ne 0 ]; then
-		exit $?
+		return $?
 	fi
 	log_var CLONE $CLONE
 
 	pINIT_SYS
 	log_var RES $?
 	if [ $? -ne 0 ]; then
-		exit $?
+		return $?
 	fi
 	log_var CLONE $CLONE
 
@@ -51,12 +50,11 @@ pINIT () {
 	if [ $CLONE -eq 1 ]; then
 		source pCLONE.sh
 		if [ $? -ne 0 ]; then
-			exit $?
+			return $?
 		fi
 	fi
 
 	log_exit pINIT
 
-	exit 0
-
+	return 0
 }
