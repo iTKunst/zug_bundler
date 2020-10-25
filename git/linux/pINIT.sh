@@ -9,6 +9,7 @@ source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
 pINIT () {
 
 	log_enter pINIT
+  echo pINIT [ENTER]
 
 	if [ ! -d Exe ]; then
 		mkdir Exe
@@ -57,6 +58,7 @@ pINIT () {
 	fi
 
 	log_exit pINIT
+  echo pINIT [EXIT]
 
 	return 0
 }

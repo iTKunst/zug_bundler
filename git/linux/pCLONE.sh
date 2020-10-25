@@ -10,6 +10,7 @@ source pCLONE_SYS.sh
 pCLONE () {
 
 	log_enter pCLONE
+  echo PCLONE [ENTER]
 
 	source pSET_TRACE.sh
 
@@ -42,6 +43,7 @@ pCLONE () {
 
 	log_exit pCLONE
 
+  echo PCLONE [EXIT]
 	return 0
 
 }
