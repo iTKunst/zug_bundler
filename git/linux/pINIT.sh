@@ -17,7 +17,7 @@ source ./Exe/mSET_PATH.sh
 
 export CLONE=0
 
-source pINIT_GLBL.sh CLONE
+source pINIT_GLBL.sh $CLONE
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
