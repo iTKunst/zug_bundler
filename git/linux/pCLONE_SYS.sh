@@ -9,13 +9,13 @@ pCLONE_SYS () {
 
 	if [ -z $SYS_DIR ]; then
 		log_invalid SYS_DIR
-		exit 1
+		return 1
 	fi
 	log_var SYS_DIR $SYS_DIR
 
 	if [ -z $SYS_GIT ]; then
 		log_invalid SYS_GIT
-		exit 1
+		return 1
 	fi
 	log_var SYS_GIT $SYS_GIT
 
@@ -24,7 +24,7 @@ pCLONE_SYS () {
 	if [ ! -d $SYS_DIR ]; then
 		pADD_SUB $SYS_GIT $SYS_DIR
 		if [ $?  -ne 0 ]; then
-			exit $?
+			return $?
 		fi
 		export init=1
 	else
@@ -34,5 +34,5 @@ pCLONE_SYS () {
 
 	log_exit pCLONE_SYS
 
-	exit 0
+	return 0
 }
