@@ -13,10 +13,6 @@ if [ ! -d Env ]; then
 fi
 
 source ./$BNDL_DIR/init.sh
-if [ $ERRORLEVEL -ne 0 ]; then
-	exit /B $ERRORLEVEL
-fi
-
 source ./Exe/mSET_PATH.sh
 
 source pINIT_GLBL.sh
