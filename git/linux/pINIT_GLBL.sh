@@ -1,13 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source LOG.sh
 
 
 init_glbl() {
 	log_enter pINIT_GLBL
 
-
-source bENV.sh
 
 if [ -z $GLBL_DIR ]; then
   log_invalid GLBL_DIR
