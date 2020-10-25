@@ -19,7 +19,7 @@ if [ -d "$GLBL_DIR" ]; then
   source ./$GLBL_DIR/init.sh
 else
 	echo not exists
-  $1=1
+  $$1=1
 fi
 
 
