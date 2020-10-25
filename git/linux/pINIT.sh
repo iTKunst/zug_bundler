@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 source ./$BNDL_DIR/log/linux/LOG.sh
 
-log_enter init
+log_enter pINIT
 
 if [ ! -d Exe ]; then
   mkdir Exe
@@ -13,33 +13,37 @@ if [ ! -d Env ]; then
 fi
 mkdir Env
 
-source ./$BNDL_DIR/init.sh
+source pINIT_BNDL.sh
+if [ $ERRORLEVEL -neq 0 ]; then
+	exit /B $ERRORLEVEL
+fi
+
 source ./Exe/mSET_PATH.sh
 
-CLONE=0
-
-if [ -d Global ]; then
-  source ./Global/init.sh
-else
-  CLONE=1
+source pINIT_GLBL.sh
+if [ $ERRORLEVEL -neq 0 ]; then
+	exit /B $ERRORLEVEL
 fi
 
-if [ -d System ]; then
-   source ./System/init.sh
-else
-  CLONE=1
+source pINIT_PROJ.sh
+if [ $ERRORLEVEL -neq 0 ]; then
+	exit /B $ERRORLEVEL
 fi
 
-if [ -d Project ]; then
-   source ./Project/init.sh
-else
-  CLONE=1
+source pINIT_SYS.sh
+if [ $ERRORLEVEL -neq 0 ]; then
+	exit /B $ERRORLEVEL
 fi
 
 chmod +x ./Exe/*.sh
 
 if [ $CLONE -eq 1  ]; then
   source pCLONE.sh
+	if [ $ERRORLEVEL -neq 0 ]; then
+		exit /B $ERRORLEVEL
+	fi
 fi
 
-log_exit init
+log_exit pINIT
+
+exit /B 0
