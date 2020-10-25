@@ -1,5 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
+source pADD_SUB.sh
 source pCLONE_GLBL.sh
 source pCLONE_PROJ.sh
 source pCLONE_REPO.sh
