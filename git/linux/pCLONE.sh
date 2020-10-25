@@ -32,8 +32,8 @@ pCLONE () {
 
 	log_var INIT $INIT
 	if [ $INIT -eq 1 ]; then
-		source pINIT.sh
-		if [ $?  -ne 0 ]; then
+		pINIT
+		if [ $? -ne 0 ]; then
 			return $?
 		fi
 	else
