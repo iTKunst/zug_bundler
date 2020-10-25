@@ -14,25 +14,25 @@ if [ ! -d $BNDL_DIR ]; then
 fi
 
 source pCLONE_GLBL.sh
-if [ $ERRORLEVEL -ne 0 ]; then
-	exit $ERRORLEVEL
+if [ $?  -ne 0 ]; then
+	exit $?
 fi
 
 source pCLONE_PROJ.sh
-if [ $ERRORLEVEL -ne 0 ]; then
-	exit $ERRORLEVEL
+if [ $?  -ne 0 ]; then
+	exit $?
 fi
 
 source pCLONE_SYS.sh
-if [ $ERRORLEVEL -ne 0 ]; then
-	exit $ERRORLEVEL
+if [ $?  -ne 0 ]; then
+	exit $?
 fi
 
 log_var INIT $INIT
 if [ $INIT -eq 1 ]; then
   source pINIT.sh
-	if [ $ERRORLEVEL -ne 0 ]; then
-		exit $ERRORLEVEL
+	if [ $?  -ne 0 ]; then
+		exit $?
 	fi
 fi
 

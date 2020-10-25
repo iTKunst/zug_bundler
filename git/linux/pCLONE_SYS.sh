@@ -22,8 +22,8 @@ export init=0
 
 if [ ! -d $SYS_DIR ]; then
   clone $SYS_GIT $SYS_DIR
-	if [ $ERRORLEVEL -ne 0 ]; then
-		exit $ERRORLEVEL
+	if [ $?  -ne 0 ]; then
+		exit $?
 	fi
   export init=1
 else

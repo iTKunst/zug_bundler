@@ -17,8 +17,8 @@ export CLONE=0
 
 if [ -d $PROJ_DIR ]; then
   source ./$PROJ_DIR/init.sh
-	if [ $ERRORLEVEL -ne 0 ]; then
-		exit $ERRORLEVEL
+	if [ $?  -ne 0 ]; then
+		exit $?
 	fi
 else
   export CLONE=1

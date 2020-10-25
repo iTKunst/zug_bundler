@@ -23,8 +23,8 @@ export INIT=0
 
 if [ ! -d $GLBL_DIR ]; then
   CALL pCLONE $GLBL_GIT $GLBL_DIR
-	if [ $ERRORLEVEL -ne 0 ]; then
-		exit $ERRORLEVEL
+	if [ $?  -ne 0 ]; then
+		exit $?
 	fi
 	export INIT=1
 else
