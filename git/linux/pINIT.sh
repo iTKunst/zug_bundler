@@ -18,23 +18,25 @@ pINIT () {
 	fi
 
 	source ./$BNDL_DIR/init.sh
+  mSET_PATH
+  bENV
 
 	local CLONE=0
 
-	init_glbl
+	pINIT_GLBL
 	if [ $? -ne 0 ]; then
 		exit $?
 	fi
 	log_var CLONE $CLONE
 
-	init_proj
+	pINIT_PROJ
 	log_var RES $?
 	if [ $? -ne 0 ]; then
 		exit $?
 	fi
 	log_var CLONE $CLONE
 
-	init_sys
+	pINIT_SYS
 	log_var RES $?
 	if [ $? -ne 0 ]; then
 		exit $?
