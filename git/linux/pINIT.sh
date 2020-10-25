@@ -9,9 +9,8 @@ if [ ! -d Exe ]; then
 fi
 
 if [ ! -d Env ]; then
-  mkdir Exe
+  mkdir Env
 fi
-mkdir Env
 
 source pINIT_BNDL.sh
 if [ $ERRORLEVEL -neq 0 ]; then
