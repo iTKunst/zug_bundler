@@ -26,6 +26,6 @@ pINIT_GLBL() {
 
 	log_exit pINIT_GLBL
 
-	exit 0
+	return 0
 
 }
