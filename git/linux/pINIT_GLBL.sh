@@ -17,7 +17,7 @@ export CLONE=0
 
 if [ -d $GLBL_DIR ]; then
   source ./$GLBL_DIR/init.sh
-	if [ $ERRORLEVEL -neq 0 ]; then
+	if [ $ERRORLEVEL -ne 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
 else

@@ -15,7 +15,7 @@ log_info Adding $DIR
 git submodule add -f $GIT $DIR
 log_var ERRORLEVEL $ERRORLEVEL
 
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
   log_err Error adding sub module $GIT
   log_err Does it exist in the repo?
   exit /B $ERRORLEVEL
@@ -24,7 +24,7 @@ fi
 git commit -am "Added the $DIR to the project."
 log_var ERRORLEVEL $ERRORLEVEL
 
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
   log_err Error committing sub module $GIT
   exit /B $ERRORLEVEL
 fi
@@ -32,7 +32,7 @@ fi
 git push origin master
 log_var ERRORLEVEL $ERRORLEVEL
 
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
   log_err Error pushing the sub module $GIT
 fi
 

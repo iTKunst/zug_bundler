@@ -22,7 +22,7 @@ export init=0
 
 if [ ! -d $SYS_DIR ]; then
   clone $SYS_GIT $SYS_DIR
-	if [ $ERRORLEVEL -neq 0 ]; then
+	if [ $ERRORLEVEL -ne 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
   export init=1

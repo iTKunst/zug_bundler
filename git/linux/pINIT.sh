@@ -13,24 +13,24 @@ if [ ! -d Env ]; then
 fi
 
 source ./$BNDL_DIR/init.sh
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
 	exit /B $ERRORLEVEL
 fi
 
 source ./Exe/mSET_PATH.sh
 
 source pINIT_GLBL.sh
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
 	exit /B $ERRORLEVEL
 fi
 
 source pINIT_PROJ.sh
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
 	exit /B $ERRORLEVEL
 fi
 
 source pINIT_SYS.sh
-if [ $ERRORLEVEL -neq 0 ]; then
+if [ $ERRORLEVEL -ne 0 ]; then
 	exit /B $ERRORLEVEL
 fi
 
@@ -38,7 +38,7 @@ chmod +x ./Exe/*.sh
 
 if [ $CLONE -eq 1  ]; then
   source pCLONE.sh
-	if [ $ERRORLEVEL -neq 0 ]; then
+	if [ $ERRORLEVEL -ne 0 ]; then
 		exit /B $ERRORLEVEL
 	fi
 fi
