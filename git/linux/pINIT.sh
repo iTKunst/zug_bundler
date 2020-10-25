@@ -15,8 +15,8 @@ fi
 source ./$BNDL_DIR/init.sh
 source ./Exe/mSET_PATH.sh
 
-source pINIT_GLBL.sh
-echo global
+export CLONE=$(source pINIT_GLBL.sh)
+log_var CLONE $CLONE
 log_var RES $?
 if [ $? -ne 0 ]; then
 	exit $?
