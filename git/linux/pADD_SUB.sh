@@ -13,7 +13,7 @@ log_var DIR $DIR
 log_info Adding $DIR
 
 git submodule add -f $GIT $DIR
-log_var ?  $?
+log_var RES  $?
 
 if [ $?  -ne 0 ]; then
   log_err Error adding sub module $GIT
@@ -22,7 +22,7 @@ if [ $?  -ne 0 ]; then
 fi
 
 git commit -am "Added the $DIR to the project."
-log_var ?  $?
+log_var RES  $?
 
 if [ $?  -ne 0 ]; then
   log_err Error committing sub module $GIT
@@ -30,7 +30,7 @@ if [ $?  -ne 0 ]; then
 fi
 
 git push origin master
-log_var ?  $?
+log_var RES  $?
 
 if [ $?  -ne 0 ]; then
   log_err Error pushing the sub module $GIT

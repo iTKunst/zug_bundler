@@ -16,20 +16,20 @@ source ./$BNDL_DIR/init.sh
 source ./Exe/mSET_PATH.sh
 
 source pINIT_GLBL.sh
-log_var ?  $?
-if [ $?  -ne 0 ]; then
+log_var RES $?
+if [ $? -ne 0 ]; then
 	exit $?
 fi
 
 source pINIT_PROJ.sh
-log_var ?  $?
-if [ $?  -ne 0 ]; then
+log_var RES $?
+if [ $? -ne 0 ]; then
 	exit $?
 fi
 
 source pINIT_SYS.sh
-log_var ?  $?
-if [ $?  -ne 0 ]; then
+log_var RES $?
+if [ $? -ne 0 ]; then
 	exit $?
 fi
 
@@ -37,9 +37,9 @@ chmod +x ./Exe/*.sh
 
 log_var CLONE $CLONE
 
-if [ $CLONE -eq 1  ]; then
+if [ $CLONE -eq 1 ]; then
   source pCLONE.sh
-	if [ $?  -ne 0 ]; then
+	if [ $? -ne 0 ]; then
 		exit $?
 	fi
 fi
