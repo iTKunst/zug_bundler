@@ -1,5 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
+source ./$BNDL_DIR/git/linux/pCLONE.sh
 source ./$BNDL_DIR/git/linux/pINIT_GLBL.sh
 source ./$BNDL_DIR/git/linux/pINIT_PROJ.sh
 source ./$BNDL_DIR/git/linux/pINIT_SYS.sh
