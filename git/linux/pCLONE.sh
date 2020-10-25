@@ -18,7 +18,7 @@ pCLONE () {
 
 	pCLONE_GLBL
 	if [ $?  -ne 0 ]; then
-		exit $?
+		return $?
 	fi
 
 	pCLONE_PROJ

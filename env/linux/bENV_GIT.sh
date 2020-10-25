@@ -11,35 +11,35 @@ source bENV_TKN.sh
 if [ -z "$GLBL_NAME" ]; then
   log_invalid SYS
   log_cmd "You must set it in ./env.sh!"
-  exit
+  return 1
 fi
 log_var GLBL_NAME $GLBL_NAME
 
 if [ -z "$SYS" ]; then
   log_invalid SYS
   log_cmd "You must set it in ./env.sh!"
-  exit
+  return 1
 fi
 log_var SYS $SYS
 
 if [ -z $SYS_GIT ]; then
   log_invalid SYS_GIT
   log_cmd "You must set it in ./env.sh!"
-  exit
+  return 1
 fi
 log_var SYS_GIT $SYS_GIT
 
 if [ -z $TMPL_NAME ]; then
   log_invalid TMPL_NAME
   log_cmd "You must set it in ./env.sh!"
-  exit
+  return 1
 fi
 log_var TMPL_NAME $TMPL_NAME
 
 if [ -z $TMPL_URI ]; then
   log_invalid TMPL_URI
   log_cmd "You must set it in ./env.sh!"
-  exit
+  return 1
 fi
 log_var TMPL_URI $TMPL_URI
 
