@@ -19,7 +19,7 @@ pINIT () {
 
 	source ./$BNDL_DIR/init.sh
   mSET_PATH
-  bENV
+  source bENV.sh
 
 	local CLONE=0
 
