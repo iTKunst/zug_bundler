@@ -1,10 +1,10 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source ./$BNDL_DIR/log/linux/LOG.sh
-source ./$BNDL_DIR/git/misc/mSET_PATH.sh
 source ./$BNDL_DIR/git/linux/pINIT_GLBL.sh
 source ./$BNDL_DIR/git/linux/pINIT_PROJ.sh
 source ./$BNDL_DIR/git/linux/pINIT_SYS.sh
+source ./$BNDL_DIR/log/linux/LOG.sh
+source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
 
 init () {
 	log_enter init
