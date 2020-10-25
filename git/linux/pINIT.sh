@@ -12,7 +12,7 @@ if [ ! -d Env ]; then
   mkdir Env
 fi
 
-source ./$BNDL_DIR/git/linux/pINIT_BNDL.sh
+source ./$BNDL_DIR/init.sh
 if [ $ERRORLEVEL -neq 0 ]; then
 	exit /B $ERRORLEVEL
 fi
