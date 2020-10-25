@@ -4,6 +4,7 @@ source LOG.sh
 
 log_enter pINIT_GLBL
 
+log_var 1 $1
 
 source bENV.sh
 
