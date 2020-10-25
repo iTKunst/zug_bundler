@@ -1,41 +1,41 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source LOG.sh
 
-log_enter pCLONE
+pCLONE () {
 
-source bENV.sh
-source pSET_TRACE.sh
+	log_enter pCLONE
 
-if [ ! -d $BNDL_DIR ]; then
-  log_dir_err $BNDL_DIR
-  log_cmd You must create the repository from the base template $TMPL_NAME!
-  exit
-fi
+	source pSET_TRACE.sh
 
-source pCLONE_GLBL.sh
-if [ $?  -ne 0 ]; then
-	exit $?
-fi
+	local INIT=0
 
-source pCLONE_PROJ.sh
-if [ $?  -ne 0 ]; then
-	exit $?
-fi
-
-source pCLONE_SYS.sh
-if [ $?  -ne 0 ]; then
-	exit $?
-fi
-
-log_var INIT $INIT
-if [ $INIT -eq 1 ]; then
-  source pINIT.sh
+	pCLONE_GLBL
 	if [ $?  -ne 0 ]; then
 		exit $?
 	fi
-fi
 
-log_cmd "Please run pUPDATE.sh to get the latest changes."
+	pCLONE_PROJ
+	if [ $?  -ne 0 ]; then
+		return $?
+	fi
 
-log_exit pCLONE
+	pCLONE_SYS
+	if [ $?  -ne 0 ]; then
+		return $?
+	fi
+
+	log_var INIT $INIT
+	if [ $INIT -eq 1 ]; then
+		source pINIT.sh
+		if [ $?  -ne 0 ]; then
+			return $?
+		fi
+	else
+		log_cmd "Please run pUPDATE.sh to get the latest changes."
+	fi
+
+	log_exit pCLONE
+
+	return 0
+
+}

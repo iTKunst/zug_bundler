@@ -1,36 +1,38 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source LOG.sh
 
-log_enter pCLONE_PROJ
 
-source bENV.sh
 
-if [ -z $PROJ_DIR ]; then
-  log_invalid PROJ_DIR
-  exit 1
-fi
-log_var PROJ_DIR $PROJ_DIR
+pCLONE_PROJ () {
 
-if [ -z $PROJ_GIT ]; then
-  log_invalid PROJ_GIT
-  exit 1
-fi
-log_var PROJ_GIT $PROJ_GIT
+	log_enter pCLONE_PROJ
 
-export init=0
 
-if [ ! -d $PROJ_DIR ]; then
-  CALL pCLONE $PROJ_GIT $PROJ_DIR
-	if [ $?  -ne 0 ]; then
-		exit $?
+	if [ -z $PROJ_DIR ]; then
+		log_invalid PROJ_DIR
+		return 1
 	fi
-  export init=1
-else
-  log_dup $PROJ_GIT
-fi
+	log_var PROJ_DIR $PROJ_DIR
+
+	if [ -z $PROJ_GIT ]; then
+		log_invalid PROJ_GIT
+		return 1
+	fi
+	log_var PROJ_GIT $PROJ_GIT
 
 
-log_exit pCLONE_PROJ
+	if [ ! -d $PROJ_DIR ]; then
+		CALL pCLONE $PROJ_GIT $PROJ_DIR
+		if [ $?  -ne 0 ]; then
+			return $?
+		fi
+		INIT=1
+	else
+		log_dup $PROJ_GIT
+	fi
 
-exit 0
+
+	log_exit pCLONE_PROJ
+
+	return 0
+}

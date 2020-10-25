@@ -7,6 +7,7 @@ source ./$BNDL_DIR/log/linux/LOG.sh
 source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
 
 pINIT () {
+
 	log_enter pINIT
 
 	if [ ! -d Exe ]; then

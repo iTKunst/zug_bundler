@@ -1,8 +1,8 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source LOG.sh
 
-clone_glbl() {
+
+pCLONE_GLBL() {
 
 	log_enter pCLONE_GLBL
 
@@ -11,24 +11,22 @@ clone_glbl() {
 
 	if [ -z $GLBL_DIR ]; then
 		log_invalid GLBL_DIR
-		exit 1
+		return 1
 	fi
 	log_var GLBL_DIR $GLBL_DIR
 
 	if [ -z "$GLBL_GIT" ]; then
 		log_invalid GLBL_GIT
-		exit 1
+		return 1
 	fi
 	log_var GLBL_GIT $GLBL_GIT
-
-	export INIT=0
 
 	if [ ! -d $GLBL_DIR ]; then
 		CALL pCLONE $GLBL_GIT $GLBL_DIR
 		if [ $?  -ne 0 ]; then
-			exit $?
+			return $?
 		fi
-		export INIT=1
+		INIT=1
 	else
 		log_dup $GLBL_GIT
 	fi
@@ -38,5 +36,5 @@ clone_glbl() {
 
 	echo $INIT
 
-	exit 0
+	return 0
 }

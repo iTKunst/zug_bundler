@@ -6,7 +6,6 @@ pINIT_GLBL() {
 
 	log_enter pINIT_GLBL
 
-  log_var CLONE $CLONE
 
 	if [ -z $GLBL_DIR ]; then
 		log_invalid GLBL_DIR
