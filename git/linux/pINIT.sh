@@ -49,7 +49,7 @@ pINIT () {
 
 
 	if [ $CLONE -eq 1 ]; then
-		sourse pClone.sh
+		source pClone.sh
 		pCLONE
 		if [ $? -ne 0 ]; then
 			return $?
