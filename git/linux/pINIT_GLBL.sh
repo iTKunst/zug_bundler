@@ -3,7 +3,7 @@
 source LOG.sh
 
 
-init_glbl {
+init_glbl() {
 	log_enter pINIT_GLBL
 
 
