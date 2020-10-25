@@ -22,7 +22,7 @@ if [ -d $SYS_DIR ]; then
 		exit $?
 	fi
 else
-  expert CLONE=1
+  CLONE=1
 fi
 
 

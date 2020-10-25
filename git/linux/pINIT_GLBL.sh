@@ -15,6 +15,8 @@ if [ -z $GLBL_DIR ]; then
 fi
 log_var GLBL_DIR $GLBL_DIR
 
+export CLONE=0
+
 if [ -d "$GLBL_DIR" ]; then
 	echo exists
   source ./$GLBL_DIR/init.sh

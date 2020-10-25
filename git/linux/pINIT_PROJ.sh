@@ -22,7 +22,7 @@ if [ -d $PROJ_DIR ]; then
 		exit $?
 	fi
 else
-  export CLONE=1
+  CLONE=1
 fi
 
 
