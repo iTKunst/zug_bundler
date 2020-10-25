@@ -26,7 +26,7 @@ pCLONE () {
 	fi
 
 	pCLONE_SYS
-	if [ $?  -ne 0 ]; then
+	if [ $? -ne 0 ]; then
 		return $?
 	fi
 
