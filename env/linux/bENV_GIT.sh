@@ -52,3 +52,5 @@ log_var PROJ_GIT $PROJ_GIT
 log_var SYS_GIT $SYS_GIT
 
 log_exit bENV_GIT
+
+return 0
