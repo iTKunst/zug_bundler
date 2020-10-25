@@ -15,12 +15,15 @@ log_var GLBL_DIR $GLBL_DIR
 
 export CLONE=0
 
-if [ -d $GLBL_DIR ]; then
+if [ -d "$GLBL_DIR" ]; then
+	echo exists
   source ./$GLBL_DIR/init.sh
 else
+	echo not exists
   export CLONE=1
 fi
 
+log_var CLONE $CLONE
 
 log_exit pINIT_GLBL
 
