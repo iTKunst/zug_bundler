@@ -21,7 +21,7 @@ pINIT () {
   mSET_PATH
   source bENV.sh
 
-	local CLONE=0
+	local CLONE=1
 
 	pINIT_GLBL
 	RES=$?
