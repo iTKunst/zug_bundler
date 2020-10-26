@@ -5,11 +5,11 @@ call :log_enter pCLONE_GLBL
 
 CALL bENV
 
-if [%GLBL_DIR%]==[] (
-  call :log_invalid GLBL_DIR
+if [%DIR_GLBL%]==[] (
+  call :log_invalid DIR_GLBL
   goto :EOF
 )
-call :log_var GLBL_DIR %GLBL_DIR%
+call :log_var DIR_GLBL %DIR_GLBL%
 
 if [%GLBL_GIT%]==[] (
   call :log_invalid GLBL_GIT
@@ -19,8 +19,8 @@ call :log_var GLBL_GIT %GLBL_GIT%
 
 SET INIT=0
 
-IF NOT EXIST %GLBL_DIR% (
-  CALL pCLONE_REPO %GLBL_GIT% %GLBL_DIR%
+IF NOT EXIST %DIR_GLBL% (
+  CALL pCLONE_REPO %GLBL_GIT% %DIR_GLBL%
   SET INIT=1
 ) else (
   call :log_dup %GLBL_GIT%

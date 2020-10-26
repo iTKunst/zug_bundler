@@ -7,15 +7,15 @@ pINIT_GLBL() {
 	log_enter pINIT_GLBL
 
 
-	if [ -z $GLBL_DIR ]; then
-		log_invalid GLBL_DIR
+	if [ -z $DIR_GLBL ]; then
+		log_invalid DIR_GLBL
 		return 1
 	fi
-	log_var GLBL_DIR $GLBL_DIR
+	log_var DIR_GLBL $DIR_GLBL
 
 
-	if [ -d "$GLBL_DIR" ]; then
-		source ./$GLBL_DIR/init.sh
+	if [ -d "$DIR_GLBL" ]; then
+		source ./$DIR_GLBL/init.sh
 	else
 		CLONE=1
 	fi
