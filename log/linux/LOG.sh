@@ -5,7 +5,7 @@ source ./settings.sh
 
 log()
 {
-  if [ "$bSETTING_LOG" == "true" ]; then
+  if [ "$LOG_ON"== "true" ]; then
 
     export MSG=""
 
@@ -19,91 +19,91 @@ log()
 
 log_clone_err()
 {
-  if [ "$bSETTING_LOG_CLONE_ERR" == "true" ]; then
+  if [ "$LOG_CLONE_ERR_ON"== "true" ]; then
     log "Error cloning repo ($1) [CMD] "
   fi
 }
 
 log_cmd()
 {
-  if [ "$bSETTING_LOG_CMD" == "true" ]; then
+  if [ "$LOG_CMD_ON"== "true" ]; then
     log "$* [CMD] "
   fi
 }
 
 log_dbg()
 {
-  if [ "$bSETTING_LOG_DBG" == "true" ]; then
+  if [ "$LOG_DBG_ON"== "true" ]; then
     log "$* [DBG] "
   fi
 }
 
 log_dir_err()
 {
-  if [ "$bSETTING_LOG_DIR_ERR" == "true" ]; then
+  if [ "$LOG_DIR_ERR_ON"== "true" ]; then
     log "($1) [DIR_ERR] "
   fi
 }
 
 log_dup()
 {
-  if [ "$bSETTING_LOG_DUP" == "true" ]; then
+  if [ "$LOG_DUP_ON"== "true" ]; then
     log "($1) already exists [DUP] "
   fi
 }
 
 log_enter()
 {
-  if [ "$bSETTING_LOG_ENTER" == "true" ]; then
+  if [ "$LOG_ENTER_ON"== "true" ]; then
     log "$1 [ENTER] "
   fi
 }
 
 log_err()
 {
-  if [ "$bSETTING_LOG_ERR" == "true" ]; then
+  if [ "$LOG_ERR_ON"== "true" ]; then
     log "$* [ERR] "
   fi
 }
 
 log_exit()
 {
-  if [ "$bSETTING_LOG_EXIT" == "true" ]; then
+  if [ "$LOG_EXIT_ON"== "true" ]; then
     log "$1 [EXIT] "
   fi
 }
 
 log_file_err()
 {
-  if [ "$bSETTING_LOG_FILE_ERR" == "true" ]; then
+  if [ "$LOG_FILE_ERR_ON"== "true" ]; then
     log "($1) [FILE_ERR] "
   fi
 }
 
 log_info()
 {
-  if [ "$bSETTING_LOG_INFO" == "true" ]; then
+  if [ "$LOG_INFO_ON"== "true" ]; then
     log "$* [INFO] "
   fi
 }
 
 log_invalid()
 {
-  if [ "$bSETTING_LOG_INVALID" == "true" ]; then
+  if [ "$LOG_INVALID_ON"== "true" ]; then
     log "!!!!!!! ($1) is invalid !!!!!!  [INVALID]"
   fi
 }
 
 log_var()
 {
-  if [ "$bSETTING_LOG_VAR" == "true" ]; then
+  if [ "$LOG_VAR_ON"== "true" ]; then
     log "$1 is ($2) [VAR]"
   fi
 }
 
 log_warn()
 {
-  if [ "$bSETTING_LOG_WARN" == "true" ]; then
+  if [ "$LOG_WARN_ON"== "true" ]; then
     log "$* [WARN]"
   fi
 }

@@ -1,21 +1,8 @@
 @echo off
-setlocal enabledelayedexpansion
-CALL .\settings
 
-:: echo %bSETTING_LOG_VAR%
-
-
-if NOT DEFINED bSETTING_LOG_VAR (
-::  echo not defined
+IF %LOG_CMD_ON% NEQ 1 (
   GOTO :EOF
 )
-::echo is defined
-
-IF /I "%bSETTING_LOG_VAR%"=="FALSE" (
-::  echo is false
-  GOTO :EOF
-)
-:: echo is true
 
 SET "PARAMS=%*"
 ::echo PARAMS is %PARAMS%
