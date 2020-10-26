@@ -30,8 +30,8 @@ if exist SYSTEM (
   SET "RUN_CLONE=1"
 )
 
-if exist Project (
-  CALL .\Project\init
+if exist DIR_PROJ (
+  CALL .\DIR_PROJ\init
 ) else (
   SET "RUN_CLONE=1"
 )
