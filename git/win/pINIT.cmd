@@ -5,10 +5,12 @@ echo pINIT.cmd [LOADED]
 
 
 IF NOT EXIST Exe (
+  echo create Exe
   mkdir Exe
 )
 
 if NOT EXIST Env (
+  echo create Env
   mkdir Env
 )
 
