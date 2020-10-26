@@ -13,22 +13,22 @@ pCLONE_SYS () {
 	fi
 	log_var SYS_DIR $SYS_DIR
 
-	if [ -z $URI_URI_SYS_GIT ]; then
-		log_invalid URI_URI_SYS_GIT
+	if [ -z $URI_SYS_GIT ]; then
+		log_invalid URI_SYS_GIT
 		return 1
 	fi
-	log_var URI_URI_SYS_GIT $URI_URI_SYS_GIT
+	log_var URI_SYS_GIT $URI_SYS_GIT
 
 	export init=0
 
 	if [ ! -d $SYS_DIR ]; then
-		pADD_SUB $URI_URI_SYS_GIT $SYS_DIR
+		pADD_SUB $URI_SYS_GIT $SYS_DIR
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi
 		export init=1
 	else
-		log_dup $URI_URI_SYS_GIT
+		log_dup $URI_SYS_GIT
 	fi
 
 
