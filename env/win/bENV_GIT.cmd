@@ -11,28 +11,28 @@ IF  [%GLBL_NAME%]==[] (
   CALL LOG_INVALID "GLBL_NAME"
   GOTO :EOF
 )
-CALL LOG_VAR GLBL_NAME %GLBL_NAME%
+call :log_var GLBL_NAME %GLBL_NAME%
 
 IF  [%SYS%]==[] (
   CALL LOG_INVALID "SYS"
   CALL LOG_CMD "You must set it in .\env.cmd!"
   GOTO :EOF
 )
-CALL LOG_VAR SYS %SYS%
+call :log_var SYS %SYS%
 
 IF  [%SYS_GIT%]==[] (
   CALL LOG_INVALID "SYS_GIT"
   CALL LOG_CMD "You must set it in .\env.cmd!"
   GOTO :EOF
 )
-CALL LOG_VAR SYS_GIT %SYS_GIT%
+call :log_var SYS_GIT %SYS_GIT%
 
 if [%TMPL_NAME%]==[] (
   CALL LOG_INVALID "TMPL_NAME"
   CALL LOG_CMD "You must set it in .\env.cmd!"
   GOTO :EOF
 )
-CALL LOG_VAR TMPL_NAME %TMPL_NAME%
+call :log_var TMPL_NAME %TMPL_NAME%
 
 if [%TMPL_URI%]==[] (
   CALL LOG_INVALID "TMPL_URI"
@@ -40,15 +40,15 @@ if [%TMPL_URI%]==[] (
   CALL LOG_CMD "Default value is https://github.com/itkunst"
   GOTO :EOF
 )
-CALL LOG_VAR TMPL_URI %TMPL_URI%
+call :log_var TMPL_URI %TMPL_URI%
 
 SET "GLBL_GIT=%TMPL_URI%%SLASH%%GLOBAL_NAME%%DOT%%GIT%"
-CALL LOG_VAR GLBL_GIT %GLBL_GIT%
+call :log_var GLBL_GIT %GLBL_GIT%
 
 SET "PROJ_GIT=%TMPL_URI%%SLASH%%TMPL_NAME%%DOT%%GIT%"
-CALL LOG_VAR PROJ_GIT %PROJ_GIT%
+call :log_var PROJ_GIT %PROJ_GIT%
 
-CALL LOG_VAR SYS_GIT %SYS_GIT%
+call :log_var SYS_GIT %SYS_GIT%
 
 :EOF
 

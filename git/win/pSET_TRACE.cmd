@@ -9,7 +9,7 @@ if not exist settings.cmd (
 
 CALL settings.cmd
 
-CALL LOG_VAR bSETTING_LOG_GIT %bSETTING_LOG_GIT%
+call :log_var bSETTING_LOG_GIT %bSETTING_LOG_GIT%
 
 IF  "%bSETTING_LOG_GIT%"=="true" (
   CALL LOG_INFO "Turning Git tracing on"
