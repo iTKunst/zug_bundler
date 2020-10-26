@@ -42,5 +42,5 @@ if %RUN_CLONE% EQU 1 (
   CALL pCLONE
 )
 
-CALL LOG_EXIT pINIT
+call :log_exit pINIT
 

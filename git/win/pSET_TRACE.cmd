@@ -23,4 +23,4 @@ IF  "%bSETTING_LOG_GIT%"=="true" (
   SET GIT_TRACE_PACKET=
 )
 
-CALL LOG_EXIT pSET_TRACE
+call :log_exit pSET_TRACE

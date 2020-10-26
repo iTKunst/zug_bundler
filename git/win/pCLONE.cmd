@@ -33,5 +33,5 @@ CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
 
 :EOF
 
-CALL LOG_EXIT pCLONE
+call :log_exit pCLONE
 

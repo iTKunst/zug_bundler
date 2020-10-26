@@ -12,4 +12,4 @@ git submodule add -f %GIT% %DIR%
 git commit -m "adding submodule %DIR%"
 git push
 
-CALL LOG_EXIT pADD_REPO
+call :log_exit pADD_REPO

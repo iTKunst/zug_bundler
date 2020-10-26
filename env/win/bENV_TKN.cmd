@@ -7,4 +7,4 @@ SET SLASH=/
 SET SPLIT=_
 SET UP=..\
 
-CALL LOG_EXIT bENV_TKN
+call :log_exit bENV_TKN

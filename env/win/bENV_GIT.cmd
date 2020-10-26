@@ -52,4 +52,4 @@ CALL LOG_VAR SYS_GIT %SYS_GIT%
 
 :EOF
 
-CALL LOG_EXIT bENV_GIT
+call :log_exit bENV_GIT
