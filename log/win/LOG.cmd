@@ -1,5 +1,6 @@
 @ECHO OFF
 
+
 :log
 	IF %LOG_CMD_ON% EQ 1 (
 	  ECHO %*
