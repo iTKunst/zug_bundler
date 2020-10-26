@@ -1,32 +1,26 @@
 @echo off
 
 
-call :log_enter pCLONE
+echo pCLONE.cmd [LOADED]
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Program
 
-if NOT EXIST env.cmd (
-  CALL :log_file_err "env.cmd"
-  goto :EOF
+IF NOT EXIST Exe (
+  mkdir Exe
 )
-call :log_info "env.cmd exists"
-
-if NOT EXIST Bundler (
-  call :log_dir_err "Bundler"
-  call :log_cmd "You must create the repository from the  ['https://github.com/iTKunst/zug_tmpl'] template!"
-  goto :EOF
+IF NOT EXIST Env (
+  mkdir Env
 )
-call :log_info "Bundler exists"
 
 CALL bENV
 
 CALL pCLONE_GLBL
 CALL pCLONE_PROJ
 CALL pCLONE_SYS
-call :log_var RUN_INIT %RUN_INIT%
+call :log_var INIT %INIT%
 
-IF %RUN_INIT% EQU 1 (
+IF %INIT% EQU 1 (
   CALL pINIT
 )
 

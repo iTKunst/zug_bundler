@@ -99,7 +99,7 @@ goto :eof
 		SET "VAL=%PARAMS:* =%"
 		::echo VAL is "%VAL%"
 
-		CALL .\Bundler\log\win\LOG_MSG %VAR% is (%VAL%) [VAR]
+		CALL .\%DIR_BNDL%\log\win\LOG_MSG %VAR% is (%VAL%) [VAR]
 	)
 goto :eof
 

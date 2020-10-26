@@ -4,7 +4,7 @@
 call :log_enter pSET_TRACE
 
 if not exist settings.cmd (
-  CALL .\Bundler\log\win\LOG_FILE_ERR "settings.cmd"
+  CALL .\%DIR_BNDL%\log\win\LOG_FILE_ERR "settings.cmd"
   goto :EOF
 )
 

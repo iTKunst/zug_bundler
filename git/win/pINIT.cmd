@@ -1,7 +1,7 @@
 @echo off
 
 
-call :log_enter pINIT
+echo pINIT.cmd [LOADED]
 
 
 IF NOT EXIST Exe (
@@ -12,33 +12,33 @@ if NOT EXIST Env (
   mkdir Env
 )
 
-CALL .\Bundler\init
+CALL .\%DIR_BNDL%\init
 
 CALL .\Exe\mSET_PATH
 
-SET RUN_CLONE=0
+SET CLONE=0
 
-if exist Global (
-  CALL .\Global\init
+if exist %DIR_GLBL% (
+  CALL .\%DIR_GLBL%\init
 ) else (
-  SET RUN_CLONE=1
+  SET CLONE=1
 )
 
-if exist SYSTEM (
-  CALL .\System\init
+if exist %DIR_SYS% (
+  CALL .\%DIR_SYS%\init
 ) else (
-  SET "RUN_CLONE=1"
+  SET "CLONE=1"
 )
 
-if exist DIR_PROJ (
-  CALL .\DIR_PROJ\init
+if exist %DIR_PROJ% (
+  CALL .\%DIR_PROJ%\init
 ) else (
-  SET "RUN_CLONE=1"
+  SET "CLONE=1"
 )
 
 call :log_var RUN_CLONE %RUN_CLONE%
 
-if %RUN_CLONE% EQU 1 (
+if %CLONE% EQU 1 (
   CALL pCLONE
 )
 
