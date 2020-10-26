@@ -36,17 +36,17 @@ if [ -z $TMPL_NAME ]; then
 fi
 log_var TMPL_NAME $TMPL_NAME
 
-if [ -z $TMPL_URI ]; then
-  log_invalid TMPL_URI
+if [ -z $URI_TMPL_GIT_BASE ]; then
+  log_invalid URI_TMPL_GIT_BASE
   log_cmd "You must set it in ./env.sh!"
   return 1
 fi
-log_var TMPL_URI $TMPL_URI
+log_var URI_TMPL_GIT_BASE $URI_TMPL_GIT_BASE
 
-export GLBL_GIT=$TMPL_URI$SLASH$GLBL_NAME$DOT$GIT
+export GLBL_GIT=$URI_TMPL_GIT_BASE$SLASH$GLBL_NAME$DOT$GIT
 log_var GLBL_GIT $GLBL_GIT
 
-export PROJ_GIT=$TMPL_URI$SLASH$TMPL_NAME$DOT$GIT
+export PROJ_GIT=$URI_TMPL_GIT_BASE$SLASH$TMPL_NAME$DOT$GIT
 log_var PROJ_GIT $PROJ_GIT
 
 log_var URI_SYS_GIT $URI_SYS_GIT
