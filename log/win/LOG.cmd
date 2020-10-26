@@ -1,6 +1,8 @@
 @ECHO OFF
 
 
+echo LOG.cmd [LOADED]
+
 :log
 	IF %LOG_CMD_ON% EQ 1 (
 	  ECHO %*
@@ -102,3 +104,6 @@ goto :eof
 goto :eof
 
 :eof
+
+
+echo LOG.cmd [UNLOADED]
