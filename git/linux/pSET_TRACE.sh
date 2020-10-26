@@ -6,15 +6,9 @@ pSET_TRACE () {
 
 	log_enter pSET_TRACE
 
-	if [ ! -f settings.sh ]; then
-		log_file_err settings.sh
-		return 1
-	fi
-	source settings.sh
+	log_var LOG_GIT_ON $LOG_GIT_ON
 
-	log_var bSETTING_LOG_GIT $bSETTING_LOG_GIT
-
-	if [ "$bSETTING_LOG_GIT" == "true" ]; then
+	if [ $LOG_GIT_ON -equ 1 ]; then
 		log_info "Turning Git tracing on"
 		export GIT_CURL_VERBOSE=1
 		export GIT_TRACE=1
