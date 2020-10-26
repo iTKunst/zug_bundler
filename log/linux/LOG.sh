@@ -1,7 +1,6 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-
 log()
 {
   if [ $LOG_ON -eq 1 ]; then
