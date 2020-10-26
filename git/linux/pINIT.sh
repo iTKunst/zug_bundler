@@ -52,7 +52,6 @@ pINIT () {
 
 
 	if [ $CLONE -eq 1 ]; then
-		source pCLONE.sh
 		pCLONE
 		if [ $? -ne 0 ]; then
 			return $?
