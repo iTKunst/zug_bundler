@@ -6,7 +6,7 @@ call :log_enter pCLONE
 :: Program
 
 if NOT EXIST env.cmd (
-  CALL LOG_FILE_ERR "env.cmd"
+  CALL :log_file_err "env.cmd"
   goto :EOF
 )
 call :log_info "env.cmd exists"
