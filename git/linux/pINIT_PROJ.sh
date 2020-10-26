@@ -1,6 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
+
 pINIT_PROJ() {
 
 	log_enter pINIT_PROJ

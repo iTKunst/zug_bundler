@@ -1,5 +1,6 @@
 @echo off
 
+
 call :log_enter pSET_TRACE
 
 if not exist settings.cmd (

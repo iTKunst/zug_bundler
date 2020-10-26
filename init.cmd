@@ -1,10 +1,11 @@
 @echo off
 
-CALL .\Bundler\log\win\LOG_ENTER \Bundler\init
 
-CALL .\Bundler\env\init
-CALL .\Bundler\git\init
-CALL .\Bundler\log\init
-CALL .\Bundler\misc\init
+CALL .\$DIR_BNDL\log\win\LOG_ENTER \$DIR_BNDL\init
 
-CALL .\Bundler\log\win\LOG_EXIT \Bundler\init
+CALL .\$DIR_BNDL\env\init
+CALL .\$DIR_BNDL\git\init
+CALL .\$DIR_BNDL\log\init
+CALL .\$DIR_BNDL\misc\init
+
+CALL .\$DIR_BNDL\log\win\LOG_EXIT \$DIR_BNDL\init

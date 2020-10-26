@@ -1,5 +1,6 @@
 @echo off
 
+
 call :log_enter bENV_TKN
 
 SET DOT=.

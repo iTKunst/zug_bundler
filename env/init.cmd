@@ -1,7 +1,8 @@
 @echo off
 
-CALL .\Bundler\log\win\LOG_ENTER \Bundler\env\init
 
-xcopy /q /y .\Bundler\env\win\*.cmd .\Env
+CALL .\$DIR_BNDL\log\win\LOG_ENTER \$DIR_BNDL\env\init
 
-CALL .\Bundler\log\win\LOG_EXIT \Bundler\env\init
+xcopy /q /y .\$DIR_BNDL\env\win\*.cmd .\Env
+
+CALL .\$DIR_BNDL\log\win\LOG_EXIT \$DIR_BNDL\env\init

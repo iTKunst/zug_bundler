@@ -1,5 +1,6 @@
 @echo off	
 
+
 call :log_enter pCLONE_REPO
 
 SET GIT=%1

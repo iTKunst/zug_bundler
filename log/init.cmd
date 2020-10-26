@@ -1,7 +1,8 @@
 @echo off
 
-CALL .\Bundler\log\win\LOG_ENTER \Bundler\log\init
 
-xcopy /q /y .\Bundler\log\win\*.cmd .\Exe
+CALL .\$DIR_BNDL\log\win\LOG_ENTER \$DIR_BNDL\log\init
 
-CALL .\Bundler\log\win\LOG_EXIT \Bundler\log\init
+xcopy /q /y .\$DIR_BNDL\log\win\*.cmd .\Exe
+
+CALL .\$DIR_BNDL\log\win\LOG_EXIT \$DIR_BNDL\log\init
