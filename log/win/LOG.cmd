@@ -3,6 +3,8 @@
 
 echo LOG.cmd [LOADED]
 
+goto :eof
+
 :log
 	IF %LOG_CMD_ON% EQ 1 (
 	  ECHO %*
