@@ -1,11 +1,11 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source ./$BNDL_DIR/git/linux/pCLONE.sh
-source ./$BNDL_DIR/git/linux/pINIT_GLBL.sh
-source ./$BNDL_DIR/git/linux/pINIT_PROJ.sh
-source ./$BNDL_DIR/git/linux/pINIT_SYS.sh
-source ./$BNDL_DIR/log/linux/LOG.sh
-source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
+source ./$DIR_BNDL/git/linux/pCLONE.sh
+source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
+source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
+source ./$DIR_BNDL/git/linux/pINIT_SYS.sh
+source ./$DIR_BNDL/log/linux/LOG.sh
+source ./$DIR_BNDL/misc/linux/mSET_PATH.sh
 
 pINIT () {
 
@@ -21,7 +21,7 @@ pINIT () {
 		mkdir Env
 	fi
 
-	source ./$BNDL_DIR/init.sh
+	source ./$DIR_BNDL/init.sh
   mSET_PATH
   source bENV.sh
 

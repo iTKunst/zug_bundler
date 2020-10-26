@@ -1,6 +1,6 @@
  #!/bin/bash
 # shellcheck disable=SC2086
-source ./$BNDL_DIR/log/linux/LOG.sh
+source ./$DIR_BNDL/log/linux/LOG.sh
 
 mSET_PATH() {
 
