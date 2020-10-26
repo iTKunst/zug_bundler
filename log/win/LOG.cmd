@@ -3,7 +3,9 @@
 
 echo LOG.cmd [LOADED]
 
-goto :eof
+call :%*
+exit /b %errorlevel%
+
 
 :log
 	IF %LOG_CMD_ON% EQ 1 (

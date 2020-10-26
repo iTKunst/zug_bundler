@@ -1,22 +1,22 @@
 @echo off
 
 
-call :log_enter pCLONE_PROJ
+CALL LOG log_enter pCLONE_PROJ
 
 
 CALL bENV
 
 if [%DIR_PROJ%]==[] (
-  call :log_invalid DIR_PROJ
+  CALL LOG log_invalid DIR_PROJ
   goto :EOF
 )
-call :log_var DIR_PROJ %DIR_PROJ%
+CALL LOG log_var DIR_PROJ %DIR_PROJ%
 
 if [%PROJ_GIT%]==[] (
-  call :log_invalid PROJ_GIT
+  CALL LOG log_invalid PROJ_GIT
   goto :EOF
 )
-call :log_var PROJ_GIT %PROJ_GIT%
+CALL LOG log_var PROJ_GIT %PROJ_GIT%
 
 SET INIT=0
 
