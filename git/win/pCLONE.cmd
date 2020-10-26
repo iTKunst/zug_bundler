@@ -12,7 +12,7 @@ if NOT EXIST env.cmd (
 call :log_info "env.cmd exists"
 
 if NOT EXIST Bundler (
-  CALL LOG_DIR_ERR "Bundler"
+  call :log_dir_err "Bundler"
   call :log_cmd "You must create the repository from the  ['https://github.com/iTKunst/zug_tmpl'] template!"
   goto :EOF
 )

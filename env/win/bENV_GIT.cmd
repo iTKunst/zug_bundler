@@ -8,34 +8,34 @@ CALL bENV_TKN
 
 
 IF  [%GLBL_NAME%]==[] (
-  CALL LOG_INVALID "GLBL_NAME"
+  call :log_invalid "GLBL_NAME"
   GOTO :EOF
 )
 call :log_var GLBL_NAME %GLBL_NAME%
 
 IF  [%SYS%]==[] (
-  CALL LOG_INVALID "SYS"
+  call :log_invalid "SYS"
   call :log_cmd "You must set it in .\env.cmd!"
   GOTO :EOF
 )
 call :log_var SYS %SYS%
 
 IF  [%SYS_GIT%]==[] (
-  CALL LOG_INVALID "SYS_GIT"
+  call :log_invalid "SYS_GIT"
   call :log_cmd "You must set it in .\env.cmd!"
   GOTO :EOF
 )
 call :log_var SYS_GIT %SYS_GIT%
 
 if [%TMPL_NAME%]==[] (
-  CALL LOG_INVALID "TMPL_NAME"
+  call :log_invalid "TMPL_NAME"
   call :log_cmd "You must set it in .\env.cmd!"
   GOTO :EOF
 )
 call :log_var TMPL_NAME %TMPL_NAME%
 
 if [%TMPL_URI%]==[] (
-  CALL LOG_INVALID "TMPL_URI"
+  call :log_invalid "TMPL_URI"
   call :log_cmd "You must set it in .\env.cmd!"
   call :log_cmd "Default value is https://github.com/itkunst"
   GOTO :EOF

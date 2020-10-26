@@ -6,13 +6,13 @@ call :log_enter pCLONE_PROJ
 CALL bENV
 
 if [%PROJ_DIR%]==[] (
-  CALL LOG_INVALID PROJ_DIR
+  call :log_invalid PROJ_DIR
   goto :EOF
 )
 call :log_var PROJ_DIR %PROJ_DIR%
 
 if [%PROJ_GIT%]==[] (
-  CALL LOG_INVALID PROJ_GIT
+  call :log_invalid PROJ_GIT
   goto :EOF
 )
 call :log_var PROJ_GIT %PROJ_GIT%
@@ -28,7 +28,7 @@ IF NOT EXIST %PROJ_DIR% (
 call :log_var ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
-  CALL LOG_CLONE_ERR %PROJ_GIT%
+  call :log_clone_err %PROJ_GIT%
   call :log_cmd "Does it exist in the repo?"
   goto :EOF
 )

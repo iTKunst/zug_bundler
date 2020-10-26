@@ -6,13 +6,13 @@ call :log_enter pCLONE_SYS
 CALL bENV
 
 if [%SYS_DIR%]==[] (
-  CALL LOG_INVALID SYS_DIR
+  call :log_invalid SYS_DIR
   goto :EOF
 )
 call :log_var SYS_DIR %SYS_DIR%
 
 if [%SYS_GIT%]==[] (
-  CALL LOG_INVALID SYS_GIT
+  call :log_invalid SYS_GIT
   goto :EOF
 )
 call :log_var SYS_GIT %SYS_GIT%
@@ -28,7 +28,7 @@ IF NOT EXIST %SYS_DIR% (
 call :log_var ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
-  CALL LOG_CLONE_ERR %SYS_GIT%
+  call :log_clone_err %SYS_GIT%
   call :log_cmd "Does it exist in the repo?"
   goto :EOF
 )
