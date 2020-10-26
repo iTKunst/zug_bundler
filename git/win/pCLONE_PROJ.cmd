@@ -5,11 +5,11 @@ call :log_enter pCLONE_PROJ
 
 CALL bENV
 
-if [%PROJ_DIR%]==[] (
-  call :log_invalid PROJ_DIR
+if [%DIR_PROJ%]==[] (
+  call :log_invalid DIR_PROJ
   goto :EOF
 )
-call :log_var PROJ_DIR %PROJ_DIR%
+call :log_var DIR_PROJ %DIR_PROJ%
 
 if [%PROJ_GIT%]==[] (
   call :log_invalid PROJ_GIT
@@ -19,8 +19,8 @@ call :log_var PROJ_GIT %PROJ_GIT%
 
 SET INIT=0
 
-IF NOT EXIST %PROJ_DIR% (
-  CALL pCLONE_REPO %PROJ_GIT% %PROJ_DIR%
+IF NOT EXIST %DIR_PROJ% (
+  CALL pCLONE_REPO %PROJ_GIT% %DIR_PROJ%
   SET INIT=1
 ) else (
   call :log_dup %PROJ_GIT%

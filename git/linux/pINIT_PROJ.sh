@@ -6,14 +6,14 @@ pINIT_PROJ() {
 	log_enter pINIT_PROJ
 
 
-	if [ -z $PROJ_DIR ]; then
-		log_invalid PROJ_DIR
+	if [ -z $DIR_PROJ ]; then
+		log_invalid DIR_PROJ
 		return 1
 	fi
-	log_var PROJ_DIR $PROJ_DIR
+	log_var DIR_PROJ $DIR_PROJ
 
-	if [ -d $PROJ_DIR ]; then
-		source ./$PROJ_DIR/init.sh
+	if [ -d $DIR_PROJ ]; then
+		source ./$DIR_PROJ/init.sh
 	else
 		CLONE=1
 	fi

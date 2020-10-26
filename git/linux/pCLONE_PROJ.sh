@@ -8,11 +8,11 @@ pCLONE_PROJ () {
 	log_enter pCLONE_PROJ
 
 
-	if [ -z $PROJ_DIR ]; then
-		log_invalid PROJ_DIR
+	if [ -z $DIR_PROJ ]; then
+		log_invalid DIR_PROJ
 		return 1
 	fi
-	log_var PROJ_DIR $PROJ_DIR
+	log_var DIR_PROJ $DIR_PROJ
 
 	if [ -z $PROJ_GIT ]; then
 		log_invalid PROJ_GIT
@@ -20,8 +20,8 @@ pCLONE_PROJ () {
 	fi
 	log_var PROJ_GIT $PROJ_GIT
 
-	if [ ! -d $PROJ_DIR ]; then
-		pCLONE_REPO $PROJ_GIT $PROJ_DIR
+	if [ ! -d $DIR_PROJ ]; then
+		pCLONE_REPO $PROJ_GIT $DIR_PROJ
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi
