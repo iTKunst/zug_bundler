@@ -64,3 +64,5 @@ pINIT () {
 
 	return 0
 }
+
+pINIT
