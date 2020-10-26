@@ -1,10 +1,11 @@
 #!/bin/bash
 # shellcheck disable=SC2086
-source pADD_SUB.sh
-source pCLONE_GLBL.sh
-source pCLONE_PROJ.sh
-source pCLONE_REPO.sh
-source pCLONE_SYS.sh
+source ./$BNDL_DIR/git/linux/pADD_SUB.sh
+source ./$BNDL_DIR/git/linux/pCLONE_GLBL.sh
+source ./$BNDL_DIR/git/linux/pCLONE_PROJ.sh
+source ./$BNDL_DIR/git/linux/pCLONE_REPO.sh
+source ./$BNDL_DIR/log/linux/pCLONE_SYS.sh
+source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
 
 
 pCLONE () {
