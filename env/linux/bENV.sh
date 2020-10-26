@@ -4,7 +4,6 @@ source LOG.sh
 
 log_enter bENV
 
-source settings.sh
 source bENV_GIT.sh
 source bENV_NAME.sh
 
