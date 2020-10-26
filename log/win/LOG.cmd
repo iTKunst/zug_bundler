@@ -75,13 +75,13 @@ goto :eof
 
 :log_load
 	IF %LOG_LOAD_ON% EQ 1 (
-	  CALL :log %1 [LOADED]
+	  CALL :log %1.cmd [LOADED]
 	)
 goto :eof
 
 :log_unload
 	IF %LOG_UNLOAD_ON% EQ 1 (
-	  CALL :log %1 [UNLOADED]
+	  CALL :log %1.cmd [UNLOADED]
 	)
 goto :eof
 

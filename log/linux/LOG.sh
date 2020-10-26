@@ -96,14 +96,14 @@ log_invalid()
 log_load()
 {
   if [ $LOG_LOAD_ON -eq 1 ]; then
-    log "$1 [LOADED]"
+    log "$1.sh [LOADED]"
   fi
 }
 
 log_unload()
 {
   if [ $LOG_UNLOAD_ON -eq 1 ]; then
-    log "$1 [UNLOADED]"
+    log "$1.sh [UNLOADED]"
   fi
 }
 
