@@ -1,9 +1,8 @@
 @echo off
-CALL .\%DIR_BNDL%\log\win\LOG
 
 
-CALL LOG log_load \%DIR_BNDL%\env\init
+CALL .\%DIR_BNDL%\log\win\LOG_LOAD \%DIR_BNDL%\env\init
 
 xcopy /q /y .\%DIR_BNDL%\env\win\*.cmd .\Env
 
-CALL LOG log_unload \%DIR_BNDL%\env\init
+CALL .\%DIR_BNDL%\log\win\LOG_UNLOAD \%DIR_BNDL%\env\init
