@@ -9,14 +9,14 @@ if NOT EXIST env.cmd (
   CALL LOG_FILE_ERR "env.cmd"
   goto :EOF
 )
-CALL LOG_INFO "env.cmd exists"
+call :log_info "env.cmd exists"
 
 if NOT EXIST Bundler (
   CALL LOG_DIR_ERR "Bundler"
-  CALL LOG_CMD "You must create the repository from the  ['https://github.com/iTKunst/zug_tmpl'] template!"
+  call :log_cmd "You must create the repository from the  ['https://github.com/iTKunst/zug_tmpl'] template!"
   goto :EOF
 )
-CALL LOG_INFO "Bundler exists"
+call :log_info "Bundler exists"
 
 CALL bENV
 
@@ -29,7 +29,7 @@ IF %RUN_INIT% EQU 1 (
   CALL pINIT
 )
 
-CALL LOG_CMD "Please run pUPDATE.sh to get the latest changes."
+call :log_cmd "Please run pUPDATE.sh to get the latest changes."
 
 :EOF
 
