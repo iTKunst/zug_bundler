@@ -1,4 +1,4 @@
-@ECHO OFF
+rem @ECHO OFF
 CALL settings
 
 echo LOG.cmd [LOADED]
