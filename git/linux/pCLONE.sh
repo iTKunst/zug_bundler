@@ -4,8 +4,7 @@ source ./$BNDL_DIR/git/linux/pADD_SUB.sh
 source ./$BNDL_DIR/git/linux/pCLONE_GLBL.sh
 source ./$BNDL_DIR/git/linux/pCLONE_PROJ.sh
 source ./$BNDL_DIR/git/linux/pCLONE_REPO.sh
-source ./$BNDL_DIR/log/linux/pCLONE_SYS.sh
-source ./$BNDL_DIR/misc/linux/mSET_PATH.sh
+source ./$BNDL_DIR/git/linux/pCLONE_SYS.sh
 
 
 pCLONE () {
