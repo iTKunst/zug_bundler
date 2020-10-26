@@ -92,6 +92,20 @@ log_invalid()
   fi
 }
 
+log_load()
+{
+  if [ $LOG_LOAD_ON -eq 1 ]; then
+    log "$1 [LOADED]"
+  fi
+}
+
+log_unload()
+{
+  if [ $LOG_UNLOAD_ON -eq 1 ]; then
+    log "$1 [UNLOADED]"
+  fi
+}
+
 log_var()
 {
   if [ $LOG_VAR_ON -eq 1 ]; then
