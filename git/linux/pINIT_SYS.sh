@@ -7,15 +7,15 @@ pINIT_SYS() {
 	log_enter pINIT_SYS
 
 
-	if [ -z $SYS_DIR ]; then
-		log_invalid SYS_DIR
+	if [ -z $DIR_SYS ]; then
+		log_invalid DIR_SYS
 		return 1
 	fi
-	log_var SYS_DIR $SYS_DIR
+	log_var DIR_SYS $DIR_SYS
 
 
-	if [ -d $SYS_DIR ]; then
-		source ./$SYS_DIR/init.sh
+	if [ -d $DIR_SYS ]; then
+		source ./$DIR_SYS/init.sh
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi

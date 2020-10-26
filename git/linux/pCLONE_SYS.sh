@@ -7,11 +7,11 @@ pCLONE_SYS () {
 	log_enter pCLONE_SYS
 
 
-	if [ -z $SYS_DIR ]; then
-		log_invalid SYS_DIR
+	if [ -z $DIR_SYS ]; then
+		log_invalid DIR_SYS
 		return 1
 	fi
-	log_var SYS_DIR $SYS_DIR
+	log_var DIR_SYS $DIR_SYS
 
 	if [ -z $URI_SYS_GIT ]; then
 		log_invalid URI_SYS_GIT
@@ -21,8 +21,8 @@ pCLONE_SYS () {
 
 	export init=0
 
-	if [ ! -d $SYS_DIR ]; then
-		pADD_SUB $URI_SYS_GIT $SYS_DIR
+	if [ ! -d $DIR_SYS ]; then
+		pADD_SUB $URI_SYS_GIT $DIR_SYS
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi

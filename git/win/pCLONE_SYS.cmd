@@ -5,11 +5,11 @@ call :log_enter pCLONE_SYS
 
 CALL bENV
 
-if [%SYS_DIR%]==[] (
-  call :log_invalid SYS_DIR
+if [%DIR_SYS%]==[] (
+  call :log_invalid DIR_SYS
   goto :EOF
 )
-call :log_var SYS_DIR %SYS_DIR%
+call :log_var DIR_SYS %DIR_SYS%
 
 if [%SYS_GIT%]==[] (
   call :log_invalid SYS_GIT
@@ -19,8 +19,8 @@ call :log_var SYS_GIT %SYS_GIT%
 
 SET INIT=0
 
-IF NOT EXIST %SYS_DIR% (
-  CALL pCLONE_REPO %SYS_GIT% %SYS_DIR%
+IF NOT EXIST %DIR_SYS% (
+  CALL pCLONE_REPO %SYS_GIT% %DIR_SYS%
   SET INIT=1
 ) else (
   call :log_dup %SYS_GIT%
