@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo pINIT.sh [ENTER]
+echo pINIT.sh [LOAD]
 
 source ./$DIR_BNDL/git/linux/pCLONE.sh
 source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
@@ -67,4 +67,4 @@ pINIT () {
 	return 0
 }
 
-echo pINIT.sh [EXIT]
+echo pINIT.sh [UNLOAD]
