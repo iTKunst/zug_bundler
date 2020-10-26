@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER pCLONE
+call :log_enter pCLONE
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 :: Program

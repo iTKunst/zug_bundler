@@ -1,7 +1,7 @@
 @echo off
 
 
-CALL LOG_ENTER pINIT
+call :log_enter pINIT
 
 
 IF NOT EXIST Exe (

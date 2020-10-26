@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER bENV_TKN
+call :log_enter bENV_TKN
 
 SET DOT=.
 SET SLASH=/

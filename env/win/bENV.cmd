@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER bENV
+call :log_enter bENV
 
 CALL env
 CALL bENV_GIT

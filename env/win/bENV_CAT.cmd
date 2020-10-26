@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER bENV_CAT
+call :log_enter bENV_CAT
 
 SET GIT=git
 SET SYSTEM=system

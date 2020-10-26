@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER pSET_TRACE
+call :log_enter pSET_TRACE
 
 if not exist settings.cmd (
   CALL .\Bundler\log\win\LOG_FILE_ERR "settings.cmd"

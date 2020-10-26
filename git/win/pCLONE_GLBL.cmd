@@ -1,6 +1,6 @@
 @echo off
 
-CALL LOG_ENTER pCLONE_GLBL
+call :log_enter pCLONE_GLBL
 
 
 CALL bENV

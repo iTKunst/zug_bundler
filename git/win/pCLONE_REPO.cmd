@@ -1,6 +1,6 @@
 @echo off	
 
-CALL LOG_ENTER pCLONE_REPO
+call :log_enter pCLONE_REPO
 
 SET GIT=%1
 SET DIR=%2

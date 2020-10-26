@@ -1,6 +1,6 @@
 @echo off	
 
-CALL LOG_ENTER pADD_REPO
+call :log_enter pADD_REPO
 
 SET GIT=%1
 SET DIR=%2
