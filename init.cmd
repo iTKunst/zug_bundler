@@ -1,4 +1,5 @@
 @echo off
+CALL settings
 CALL .\$DIR_BNDL\log\win\LOG
 
 
