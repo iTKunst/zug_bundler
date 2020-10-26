@@ -2,7 +2,7 @@
 
 call :log_enter bENV
 
-CALL env
+CALL settigns
 CALL bENV_GIT
 
 call :log_exit bENV
