@@ -73,6 +73,18 @@ goto :eof
 	)
 goto :eof
 
+:log_load
+	IF %LOG_LOAD_ON% EQ 1 (
+	  CALL :log %1 [LOADED]
+	)
+goto :eof
+
+:log_unload
+	IF %LOG_UNLOAD_ON% EQ 1 (
+	  CALL :log %1 [UNLOADED]
+	)
+goto :eof
+
 :log_var
 	IF %LOG_VAR_ON% EQ 1 (
 		SET "PARAMS=%*"
