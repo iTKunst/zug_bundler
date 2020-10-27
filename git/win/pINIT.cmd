@@ -46,3 +46,4 @@ if %CLONE% EQU 1 (
 
 call LOG_EXIT pINIT
 
+EXIT /B %ERRORLEVEL%

@@ -18,8 +18,19 @@ CALL bENV
 SET "INIT=0"
 
 CALL pCLONE_GLBL
+IF %ERRORLEVEL% NEQ 0 (
+  goto :EOF
+)
+
 CALL pCLONE_PROJ
+IF %ERRORLEVEL% NEQ 0 (
+  goto :EOF
+)
+
 CALL pCLONE_SYS
+IF %ERRORLEVEL% NEQ 0 (
+  goto :EOF
+)
 
 call LOG_VAR INIT %INIT%
 
@@ -33,3 +44,4 @@ call LOG_CMD "Please run pUPDATE.sh to get the latest changes."
 
 call LOG_UNLOAD pCLONE
 
+EXIT /B %ERRORLEVEL%
