@@ -29,7 +29,7 @@ if exist %DIR_GLBL% (
   SET "CLONE=1"
 )
 
-if exist %DIR_SYS% (
+if exist %DIR_SYS% && if exist .\%DIR_SYS%\init.cmd (
   CALL .\%DIR_SYS%\init
 ) else (
   SET "CLONE=1"
