@@ -1,9 +1,9 @@
 @echo off
 
 
-call :log_enter bENV_NAME
+call LOG_ENTER bENV_NAME
 
 SET "GLBL_NAME=base_global"
 SET "BASE_NAME=base_tmpl"
 
-call :log_exit bENV_CAT
+call LOG_EXIT bENV_CAT

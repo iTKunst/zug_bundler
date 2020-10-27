@@ -1,22 +1,22 @@
 @echo off
 
 
-call :log_enter pCLONE_GLBL
+call LOG_ENTER pCLONE_GLBL
 
 
 CALL bENV
 
 if [%DIR_GLBL%]==[] (
-  call :log_invalid DIR_GLBL
+  call LOG_INVALID DIR_GLBL
   goto :EOF
 )
-call :log_var DIR_GLBL %DIR_GLBL%
+call LOG_VAR DIR_GLBL %DIR_GLBL%
 
 if [%GLBL_GIT%]==[] (
-  call :log_invalid GLBL_GIT
+  call LOG_INVALID GLBL_GIT
   goto :EOF
 )
-call :log_var GLBL_GIT %GLBL_GIT%
+call LOG_VAR GLBL_GIT %GLBL_GIT%
 
 SET INIT=0
 
@@ -26,16 +26,16 @@ IF NOT EXIST %DIR_GLBL% (
 ) else (
   call :log_dup %GLBL_GIT%
 )
-call :log_var ERRORLEVEL %ERRORLEVEL%
+call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
   call :log_clone_err %GLBL_GIT%
-  call :log_cmd "Does it exist in the repo?"
+  call LOG_CMD "Does it exist in the repo?"
   goto :EOF
 )
 
 :EOF
 
-call :log_exit pCLONE_GLBL
+call LOG_EXIT pCLONE_GLBL
 
 EXIT /B %ERRORLEVEL%

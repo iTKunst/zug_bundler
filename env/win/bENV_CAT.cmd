@@ -1,10 +1,10 @@
 @echo off
 
 
-call :log_enter bENV_CAT
+call LOG_ENTER bENV_CAT
 
 SET GIT=git
 SET SYSTEM=system
 
-call :log_exit bENV_CAT
+call LOG_EXIT bENV_CAT
 

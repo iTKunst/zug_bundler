@@ -1,7 +1,7 @@
 @echo off
 
 
-call :log_enter pSET_TRACE
+call LOG_ENTER pSET_TRACE
 
 if not exist settings.cmd (
   CALL .\%DIR_BNDL%\log\win\LOG_FILE_ERR "settings.cmd"
@@ -10,7 +10,7 @@ if not exist settings.cmd (
 
 CALL settings.cmd
 
-call :log_var bSETTING_LOG_GIT %bSETTING_LOG_GIT%
+call LOG_VAR bSETTING_LOG_GIT %bSETTING_LOG_GIT%
 
 IF  "%bSETTING_LOG_GIT%"=="true" (
   call :log_info "Turning Git tracing on"
@@ -24,4 +24,4 @@ IF  "%bSETTING_LOG_GIT%"=="true" (
   SET GIT_TRACE_PACKET=
 )
 
-call :log_exit pSET_TRACE
+call LOG_EXIT pSET_TRACE

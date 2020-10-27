@@ -1,9 +1,9 @@
 @echo off
 
 
-call :log_enter bENV
+call LOG_ENTER bENV
 
 CALL bENV_GIT
 
-call :log_exit bENV
+call LOG_EXIT bENV
 

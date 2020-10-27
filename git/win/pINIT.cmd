@@ -38,11 +38,11 @@ if exist %DIR_PROJ% (
   SET "CLONE=1"
 )
 
-call :log_var RUN_CLONE %RUN_CLONE%
+call LOG_VAR RUN_CLONE %RUN_CLONE%
 
 if %CLONE% EQU 1 (
   CALL pCLONE
 )
 
-call :log_exit pINIT
+call LOG_EXIT pINIT
 

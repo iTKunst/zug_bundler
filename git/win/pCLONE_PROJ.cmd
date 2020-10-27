@@ -26,16 +26,16 @@ IF NOT EXIST %DIR_PROJ% (
 ) else (
   call :log_dup %PROJ_GIT%
 )
-call :log_var ERRORLEVEL %ERRORLEVEL%
+call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
   call :log_clone_err %PROJ_GIT%
-  call :log_cmd "Does it exist in the repo?"
+  call LOG_CMD "Does it exist in the repo?"
   goto :EOF
 )
 
 :EOF
 
-call :log_exit pCLONE_PROJ
+call LOG_EXIT pCLONE_PROJ
 
 EXIT /B %ERRORLEVEL%
