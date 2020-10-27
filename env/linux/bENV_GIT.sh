@@ -10,35 +10,35 @@ source bENV_TKN.sh
 
 if [ -z "$GLBL_NAME" ]; then
   log_invalid SYS
-  log_cmd "You must set it in ./env.sh!"
+  log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
 log_var GLBL_NAME $GLBL_NAME
 
 if [ -z "$SYS" ]; then
   log_invalid SYS
-  log_cmd "You must set it in ./env.sh!"
+  log_cmd "You must set it in settings.sh!"
   return 1
 fi
 log_var SYS $SYS
 
 if [ -z $URI_SYS_GIT ]; then
   log_invalid URI_SYS_GIT
-  log_cmd "You must set it in ./env.sh!"
+  log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
 log_var URI_SYS_GIT $URI_SYS_GIT
 
 if [ -z $TMPL_NAME ]; then
   log_invalid TMPL_NAME
-  log_cmd "You must set it in ./env.sh!"
+  log_cmd "You must set it in settings.sh!"
   return 1
 fi
 log_var TMPL_NAME $TMPL_NAME
 
 if [ -z $URI_TMPL_GIT_BASE ]; then
   log_invalid URI_TMPL_GIT_BASE
-  log_cmd "You must set it in ./env.sh!"
+  log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
 log_var URI_TMPL_GIT_BASE $URI_TMPL_GIT_BASE
