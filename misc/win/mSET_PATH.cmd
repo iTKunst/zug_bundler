@@ -1,7 +1,7 @@
 REM @echo off
 
 
-CALL .\%DIR_BNDL%\log\win\LOG_ENTER mSET_PATH
+CALL .\%DIR_BNDL%\log\win\LOG_LOAD mSET_PATH
 
 CALL .\%DIR_BNDL%\log\win\LOG_VAR PATH %PATH%
 
@@ -18,4 +18,4 @@ echo "SET PATH=%CD%\Exe;%CD%\Env;%PATH%" >path.cmd
 
 :EOF
 
-CALL .\%DIR_BNDL%\log\win\LOG_EXIT mSET_PATH
+CALL .\%DIR_BNDL%\log\win\LOG_UNLOADED mSET_PATH
