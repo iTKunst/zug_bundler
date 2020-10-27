@@ -4,7 +4,9 @@
 call LOG_LOAD pCLONE_GLBL
 
 
-CALL bENV
+:: CALL bENV
+
+call LOG_VAR INIT %INIT%
 
 if [%DIR_GLBL%]==[] (
   call LOG_INVALID DIR_GLBL
