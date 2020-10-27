@@ -18,4 +18,4 @@ echo "SET PATH=%CD%\Exe;%CD%\Env;%PATH%" >path.cmd
 
 :EOF
 
-CALL .\%DIR_BNDL%\log\win\LOG_UNLOADED mSET_PATH
+CALL .\%DIR_BNDL%\log\win\LOG_UNLOAD mSET_PATH
