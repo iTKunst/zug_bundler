@@ -29,16 +29,16 @@ if exist %DIR_GLBL% (
 if exist %DIR_SYS% (
   CALL .\%DIR_SYS%\init
 ) else (
-  SET "CLONE=1"
+  CLONE=1
 )
 
 if exist %DIR_PROJ% (
   CALL .\%DIR_PROJ%\init
 ) else (
-  SET "CLONE=1"
+  CLONE=1
 )
 
-call LOG_VAR RUN_CLONE %RUN_CLONE%
+call LOG_VAR CLONE %CLONE%
 
 if %CLONE% EQU 1 (
   CALL pCLONE
