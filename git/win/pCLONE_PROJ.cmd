@@ -24,12 +24,12 @@ IF NOT EXIST %DIR_PROJ% (
   CALL pCLONE_REPO %PROJ_GIT% %DIR_PROJ%
   SET INIT=1
 ) else (
-  call :log_dup %PROJ_GIT%
+  call LOG_DUP %PROJ_GIT%
 )
 call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
-  call :log_clone_err %PROJ_GIT%
+  call LOG_CLONE_ERR %PROJ_GIT%
   call LOG_CMD "Does it exist in the repo?"
   goto :EOF
 )

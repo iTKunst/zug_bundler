@@ -23,12 +23,12 @@ IF NOT EXIST %DIR_GLBL% (
   CALL pCLONE_REPO %GLBL_GIT% %DIR_GLBL%
   INIT=1
 ) else (
-  call :log_dup %GLBL_GIT%
+  call LOG_DUP %GLBL_GIT%
 )
 call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
 IF %ERRORLEVEL% NEQU 0 (
-  call :log_clone_err %GLBL_GIT%
+  call LOG_CLONE_ERR %GLBL_GIT%
   call LOG_CMD "Does it exist in the repo?"
   goto :EOF
 )
