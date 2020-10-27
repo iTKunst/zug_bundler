@@ -21,6 +21,8 @@ CALL bENV
 
 SET "CLONE=0"
 
+CALL LOG_VAR DIR_GLBL %DIR_GLBL%
+
 if exist %DIR_GLBL% (
   CALL .\%DIR_GLBL%\init
 ) else (
