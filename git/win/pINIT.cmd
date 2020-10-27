@@ -19,7 +19,7 @@ CALL .\%DIR_BNDL%\init
 CALL .\Exe\mSET_PATH
 CALL bENV
 
-SET CLONE=0
+SET "CLONE=0"
 
 if exist %DIR_GLBL% (
   CALL .\%DIR_GLBL%\init
