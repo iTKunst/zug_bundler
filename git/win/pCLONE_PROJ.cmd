@@ -28,7 +28,7 @@ IF NOT EXIST %DIR_PROJ% (
 )
 call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
-IF %ERRORLEVEL% NEQU 0 (
+IF %ERRORLEVEL% NEQ 0 (
   call LOG_CLONE_ERR %PROJ_GIT%
   call LOG_CMD "Does it exist in the repo?"
   goto :EOF

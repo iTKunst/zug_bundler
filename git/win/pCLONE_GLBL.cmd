@@ -27,7 +27,7 @@ IF NOT EXIST %DIR_GLBL% (
 )
 call LOG_VAR ERRORLEVEL %ERRORLEVEL%
 
-IF %ERRORLEVEL% NEQU 0 (
+IF %ERRORLEVEL% NEQ 0 (
   call LOG_CLONE_ERR %GLBL_GIT%
   call LOG_CMD "Does it exist in the repo?"
   goto :EOF
