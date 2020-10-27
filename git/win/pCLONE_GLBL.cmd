@@ -23,7 +23,7 @@ call LOG_VAR GLBL_GIT %GLBL_GIT%
 
 IF NOT EXIST %DIR_GLBL% (
   CALL pCLONE_REPO %GLBL_GIT% %DIR_GLBL%
-  SET INIT=1
+  INIT=1
 ) else (
   call :log_dup %GLBL_GIT%
 )
