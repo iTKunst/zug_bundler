@@ -24,19 +24,19 @@ SET "CLONE=0"
 if exist %DIR_GLBL% (
   CALL .\%DIR_GLBL%\init
 ) else (
-  CLONE=1
+  SET "CLONE=1"
 )
 
 if exist %DIR_SYS% (
   CALL .\%DIR_SYS%\init
 ) else (
-  CLONE=1
+  SET "CLONE=1"
 )
 
 if exist %DIR_PROJ% (
   CALL .\%DIR_PROJ%\init
 ) else (
-  CLONE=1
+  SET "CLONE=1"
 )
 
 call LOG_VAR CLONE %CLONE%
