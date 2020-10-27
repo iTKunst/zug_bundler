@@ -17,6 +17,7 @@ if NOT EXIST Env (
 CALL .\%DIR_BNDL%\init
 
 CALL .\Exe\mSET_PATH
+CALL bENV
 
 SET CLONE=0
 
