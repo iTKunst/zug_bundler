@@ -3,12 +3,6 @@
 
 call LOG_ENTER pSET_TRACE
 
-if not exist settings.cmd (
-  CALL .\%DIR_BNDL%\log\win\LOG_FILE_ERR "settings.cmd"
-  goto :EOF
-)
-
-CALL settings.cmd
 
 call LOG_VAR bSETTING_LOG_GIT %bSETTING_LOG_GIT%
 
