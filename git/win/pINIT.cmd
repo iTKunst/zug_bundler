@@ -18,9 +18,8 @@ if exist %DIR_GLBL% (
 CALL LOG_VAR DIR_SYS %DIR_SYS%
 
 if exist %DIR_SYS% (
-  if exist .\%DIR_SYS%\init.cmd (
-     CALL .\%DIR_SYS%\init
-  else (
+  CALL .\%DIR_SYS%\init
+	if %ERRORLEVEL% NEQ 0 (
     SET "CLONE=1"
     GOTO :CLONE
 ) else (
