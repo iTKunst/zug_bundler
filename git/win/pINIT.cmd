@@ -6,6 +6,13 @@ echo pINIT.cmd [LOADED]
 
 SET "CLONE=0"
 
+CALL LOG_VAR DIR_BNDL %DIR_BNDL%
+
+if NOT exist %DIR_BNDL% (
+  EXIT /B 1
+)
+CALL .\%DIR_GLBL%\init
+
 CALL LOG_VAR DIR_GLBL %DIR_GLBL%
 
 if exist %DIR_GLBL% (
