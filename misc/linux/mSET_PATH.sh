@@ -19,3 +19,5 @@ mSET_PATH() {
 
 	log_exit mSET_PATH
 }
+
+mSET_PATH
