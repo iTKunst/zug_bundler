@@ -13,10 +13,15 @@ pINIT_SYS() {
 	fi
 	log_var DIR_SYS $DIR_SYS
 
+  git submodule init
+	if [ $? -ne 0 ]; then
+		log_err Unable to initialize submodule
+		return $?
+	fi
 
 	if [ -d $DIR_SYS ]; then
 		source ./$DIR_SYS/init.sh
-		if [ $?  -ne 0 ]; then
+		if [ $? -ne 0 ]; then
 			return $?
 		fi
 	else
