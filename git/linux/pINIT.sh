@@ -14,19 +14,6 @@ pINIT () {
 
 	log_enter pINIT
 
-  # echo pINIT [ENTER]
-
-	if [ ! -d Exe ]; then
-		mkdir Exe
-	fi
-
-	if [ ! -d Env ]; then
-		mkdir Env
-	fi
-
-	source ./$DIR_BNDL/init.sh
-  mSET_PATH
-  source bENV.sh
 
 	local CLONE=0
 
@@ -63,9 +50,9 @@ pINIT () {
 
 	log_exit pINIT
 
-  # echo pINIT [EXIT]
 
 	return 0
 }
+
 
 echo pINIT.sh [UNLOADED]
