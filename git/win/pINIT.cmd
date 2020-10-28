@@ -4,20 +4,6 @@
 echo pINIT.cmd [LOADED]
 
 
-IF NOT EXIST Exe (
-  echo create Exe
-  mkdir Exe
-)
-
-if NOT EXIST Env (
-  echo create Env
-  mkdir Env
-)
-
-CALL .\%DIR_BNDL%\init
-
-CALL .\Exe\mSET_PATH
-CALL bENV
 
 SET "CLONE=0"
 
