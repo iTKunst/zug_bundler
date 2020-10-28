@@ -9,6 +9,7 @@ SET "FIND=%CD%\Exe"
 CALL .\%DIR_BNDL%\log\win\LOG_VAR FIND %FIND%
 
 echo "%PATH%" | findstr /C:"%FIND%">nul && (
+  CALL LOG_DUP PATH
   GOTO :EOF
 )
 
@@ -18,4 +19,4 @@ echo "SET PATH=%CD%\Exe;%CD%\Env;%PATH%" >path.cmd
 
 :EOF
 
-CALL .\%DIR_BNDL%\log\win\LOG_UNLOAD mSET_PATH
+CALL LOG_UNLOAD mSET_PATH
