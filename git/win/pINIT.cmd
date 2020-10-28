@@ -4,7 +4,6 @@
 echo pINIT.cmd [LOADED]
 
 
-
 SET "CLONE=0"
 
 CALL LOG_VAR DIR_GLBL %DIR_GLBL%

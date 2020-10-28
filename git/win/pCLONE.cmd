@@ -13,8 +13,6 @@ IF NOT EXIST Env (
   mkdir Env
 )
 
-CALL bENV
-
 SET "INIT=0"
 
 CALL pCLONE_GLBL
