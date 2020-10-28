@@ -19,6 +19,12 @@ pINIT_SYS() {
 		return $?
 	fi
 
+  git submodule update
+	if [ $? -ne 0 ]; then
+		log_err Unable to update submodule
+		return $?
+	fi
+
 	if [ -d $DIR_SYS ]; then
 		source ./$DIR_SYS/init.sh
 		if [ $? -ne 0 ]; then
