@@ -24,7 +24,7 @@ if exist %DIR_GLBL% (
 CALL LOG_VAR DIR_SYS %DIR_SYS%
 
 if exist %DIR_SYS% (
-  CALL .\%DIR_SYS%\init
+  CALL pINIT_SYS
 ) else (
   SET "CLONE=1"
 )
