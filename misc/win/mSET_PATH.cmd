@@ -20,3 +20,6 @@ echo "SET PATH=%CD%\Exe;%CD%\Env;%PATH%" >path.cmd
 :EOF
 
 CALL LOG_UNLOAD mSET_PATH
+
+EXIT /B %ERRORLEVEL%
+
