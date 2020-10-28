@@ -4,8 +4,6 @@
 CALL LOG_ENTER pCLONE_PROJ
 
 
-CALL bENV
-
 call LOG_VAR INIT %INIT%
 
 if [%DIR_PROJ%]==[] (
