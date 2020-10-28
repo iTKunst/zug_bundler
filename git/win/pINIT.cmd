@@ -19,7 +19,6 @@ if exist %DIR_GLBL% (
   CALL .\%DIR_GLBL%\init
 ) else (
   SET "CLONE=1"
-  GOTO :CLONE
 )
 
 CALL LOG_VAR DIR_SYS %DIR_SYS%
@@ -29,10 +28,8 @@ if exist %DIR_SYS% (
 	if %ERRORLEVEL% NEQ 0 (
 	  echo system\init caused error
     SET "CLONE=1"
-    GOTO :CLONE
 ) else (
   SET "CLONE=1"
-  GOTO :CLONE
 )
 
 CALL LOG_VAR DIR_PROJ %DIR_PROJ%
@@ -41,7 +38,6 @@ if exist %DIR_PROJ% (
   CALL .\%DIR_PROJ%\init
 ) else (
   SET "CLONE=1"
-  GOTO :CLONE
 )
 
 :CLONE
