@@ -27,6 +27,7 @@ CALL LOG_VAR DIR_SYS %DIR_SYS%
 if exist %DIR_SYS% (
   CALL .\%DIR_SYS%\init
 	if %ERRORLEVEL% NEQ 0 (
+	  echo system\init caused error
     SET "CLONE=1"
     GOTO :CLONE
 ) else (
