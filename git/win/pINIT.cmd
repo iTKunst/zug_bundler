@@ -21,6 +21,7 @@ if exist %DIR_SYS% (
      CALL .\%DIR_SYS%\init
   else (
     SET "CLONE=1"
+    GOTO :CLONE
 ) else (
   SET "CLONE=1"
   GOTO :CLONE
