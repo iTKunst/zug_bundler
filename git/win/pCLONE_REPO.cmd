@@ -12,7 +12,7 @@ call LOG_VAR DIR %DIR%
 git clone %GIT% %DIR%
 
 IF %ERRORLEVEL% NEQ 0 (
-  call LOG_ERROR_CLONE $DIR%
+  call LOG_ERROR_CLONE %DIR%
 )
 
 call LOG_EXIT pCLONE_REPO
