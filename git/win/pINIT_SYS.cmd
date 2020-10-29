@@ -11,6 +11,9 @@ CALL LOG_LOAD pINIT_SYS
 	  GOTO :EOF
 	)
 
+  cd %DIR_SYS%
+  echo in system folder
+
   git submodule init
 	if %ERRORLEVEL% NEQ 0 (
 		CALL LOG_ERR Unable to initialize submodule
@@ -22,6 +25,9 @@ CALL LOG_LOAD pINIT_SYS
 		CALL LOG_ERR Unable to update submodule
 		return ERRORLEVEL
 	)
+
+  cd ..
+  echo exit system folder
 
   CALL .\%DIR_SYS%\init
 
