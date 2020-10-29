@@ -11,8 +11,8 @@ CALL LOG_LOAD pINIT_SYS
 	  GOTO :EOF
 	)
 
-  cd %DIR_SYS%
-  echo in system folder
+  rem cd %DIR_SYS%
+  rem echo in system folder
 
   git submodule init %DIR_SYS%
 	if %ERRORLEVEL% NEQ 0 (
@@ -26,8 +26,8 @@ CALL LOG_LOAD pINIT_SYS
 		return ERRORLEVEL
 	)
 
-  cd ..
-  echo exit system folder
+  rem cd ..
+  rem echo exit system folder
 
   CALL .\%DIR_SYS%\init
 
