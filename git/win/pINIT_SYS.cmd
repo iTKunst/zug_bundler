@@ -14,13 +14,13 @@ CALL LOG_LOAD pINIT_SYS
   cd %DIR_SYS%
   echo in system folder
 
-  git submodule init
+  git submodule init %DIR_SYS%
 	if %ERRORLEVEL% NEQ 0 (
 		CALL LOG_ERR Unable to initialize submodule
 		return ERRORLEVEL
 	)
 
-  git submodule update
+  git submodule update %DIR_SYS%
 	if %ERRORLEVEL% NEQ 0 (
 		CALL LOG_ERR Unable to update submodule
 		return ERRORLEVEL
