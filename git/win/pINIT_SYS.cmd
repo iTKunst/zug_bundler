@@ -11,23 +11,23 @@ CALL LOG_LOAD pINIT_SYS
 	  GOTO :EOF
 	)
 
-  rem cd %DIR_SYS%
-  rem echo in system folder
+  cd %DIR_SYS%
+  echo in system folder
 
-  git submodule init %DIR_SYS%
+  git submodule init
 	if %ERRORLEVEL% NEQ 0 (
 		CALL LOG_ERR Unable to initialize submodule
 		return ERRORLEVEL
 	)
 
-  git submodule update %DIR_SYS%
+  git submodule update
 	if %ERRORLEVEL% NEQ 0 (
 		CALL LOG_ERR Unable to update submodule
 		return ERRORLEVEL
 	)
 
-  rem cd ..
-  rem echo exit system folder
+  cd ..
+  echo exit system folder
 
   CALL .\%DIR_SYS%\init
 
