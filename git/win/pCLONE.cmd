@@ -34,7 +34,7 @@ IF %INIT% EQU 1 (
   CALL pINIT
 )
 
-call LOG_CMD "Please run pUPDATE.sh to get the latest changes."
+call LOG_CMD Please run pUPDATE to get the latest changes.
 
 :EOF
 
