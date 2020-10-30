@@ -1,6 +1,6 @@
 @echo off
 
-IF %LOG_CMD_ON% NEQ 1 (
+IF %LOG_VAR_ON% NEQ 1 (
   GOTO :EOF
 )
 
