@@ -1,7 +1,7 @@
 #!/bin/bash
 # shellcheck disable=SC2086
 
-echo pCLONE.sh [LOAD]
+# echo pCLONE.sh [LOAD]
 
 source ./$DIR_BNDL/git/linux/pADD_SUB.sh
 source ./$DIR_BNDL/git/linux/pCLONE_GLBL.sh
@@ -53,4 +53,4 @@ pCLONE () {
 
 }
 
-echo pCLONE.sh [UNLOAD]
+# echo pCLONE.sh [UNLOAD]

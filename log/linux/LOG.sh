@@ -12,7 +12,7 @@ log()
       MSG="$MSG $i"
     done
 
-    echo $MSG
+    ECHO $MSG
   fi
 }
 

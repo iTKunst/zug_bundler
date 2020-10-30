@@ -1,7 +1,7 @@
 @echo off
 
 
-echo pINIT.cmd [LOADED]
+:: echo pINIT.cmd [LOADED]
 
 
 SET "CLONE=0"

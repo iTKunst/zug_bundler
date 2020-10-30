@@ -2,7 +2,7 @@
 # shellcheck disable=SC2086
 
 
-echo pINIT.sh [LOADED]
+# echo pINIT.sh [LOADED]
 
 source ./$DIR_BNDL/git/linux/pCLONE.sh
 source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
@@ -55,4 +55,4 @@ pINIT () {
 }
 
 
-echo pINIT.sh [UNLOADED]
+# echo pINIT.sh [UNLOADED]
