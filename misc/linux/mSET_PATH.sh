@@ -11,7 +11,7 @@ mSET_PATH() {
 		log_info "PATH already set for project";
 	else
 		log_info "PATH not yet set for project";
-		ECHO "export PATH=$subPATH:$PATH">path.txt;
+		echo "export PATH=$subPATH:$PATH">path.txt;
 		export PATH=$subPATH:$PATH
 		log_cmd "Please run 'source path.txt'"
 	fi
