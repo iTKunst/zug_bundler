@@ -1,7 +1,5 @@
 @echo off
 
-echo LOG_VAR_ON is %LOG_VAR_ON%
-
 IF %LOG_VAR_ON% NEQ 1 (
   GOTO :EOF
 )
