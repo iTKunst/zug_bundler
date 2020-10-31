@@ -3,6 +3,6 @@
 
 CALL .\%DIR_BNDL%\log\win\LOG_LOAD \%DIR_BNDL%\misc\init
 
-xcopy /q /y .\%DIR_BNDL%\misc\win\*.cmd .\Exe
+xcopy /q /y .\%DIR_BNDL%\misc\win\*.cmd .\Exe > NUL
 
 CALL .\%DIR_BNDL%\log\win\LOG_UNLOAD \%DIR_BNDL%\misc\init
