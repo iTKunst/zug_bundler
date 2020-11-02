@@ -25,5 +25,5 @@ pCLONE_REPO () {
 
 	log_exit pCLONE_REPO
 
-	exit 0
+	return 0
 }
