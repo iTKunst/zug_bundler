@@ -5,6 +5,7 @@
 # echo pINIT.sh [LOADED]
 
 source ./$DIR_BNDL/git/linux/pCLONE.sh
+source ./$DIR_BNDL/git/linux/pINIT_BNDL.sh
 source ./$DIR_BNDL/git/linux/pINIT_GLBL.sh
 source ./$DIR_BNDL/git/linux/pINIT_PROJ.sh
 source ./$DIR_BNDL/git/linux/pINIT_SYS.sh
@@ -14,8 +15,11 @@ pINIT () {
 
 	log_enter pINIT
 
-
-	local CLONE=0
+	pINIT_BNDL
+	log_var RES $?
+	if [ $? -ne 0 ]; then
+		return $?
+	fi
 
 	pINIT_GLBL
 	log_var RES $?

@@ -22,16 +22,20 @@ pCLONE () {
 
 	pCLONE_GLBL
 	if [ $?  -ne 0 ]; then
+		INIT=0
 		return $?
 	fi
 
 	pCLONE_PROJ
+	log_var RES
 	if [ $?  -ne 0 ]; then
+		INIT=0
 		return $?
 	fi
 
 	pCLONE_SYS
 	if [ $? -ne 0 ]; then
+		INIT=0
 		return $?
 	fi
 
