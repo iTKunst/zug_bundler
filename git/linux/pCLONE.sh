@@ -24,28 +24,27 @@ pCLONE () {
 	pCLONE_GLBL
 	if [ $?  -ne 0 ]; then
 		INIT=0
-		RES=1
+		return $?
 	fi
 
 	pCLONE_PROJ
-	log_var RES $?
+	log_var RES
 	if [ $?  -ne 0 ]; then
 		INIT=0
-		RES=1
-		return RES
+		return 1
 	fi
 
 	pCLONE_SYS
 	if [ $? -ne 0 ]; then
 		INIT=0
-		RES=1
+		return 1
 	fi
 
 	log_var INIT $INIT
 	if [ $INIT -eq 1 ]; then
 		pINIT
 		if [ $? -ne 0 ]; then
-			RES=1
+			return 1
 		fi
 	else
 		log_cmd "Please run pUPDATE.sh to get the latest changes."
