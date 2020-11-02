@@ -32,6 +32,7 @@ pCLONE () {
 	if [ $?  -ne 0 ]; then
 		INIT=0
 		RES=1
+		return RES
 	fi
 
 	pCLONE_SYS
