@@ -20,7 +20,7 @@ pCLONE_REPO () {
 	if [ $? -ne 0 ]; then
 		log_clone_err $GIT
 		log_err Does it exist in the repo?
-		return $?
+		return 1
 	fi
 
 	log_exit pCLONE_REPO
