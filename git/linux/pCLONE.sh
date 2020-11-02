@@ -28,7 +28,7 @@ pCLONE () {
 	fi
 
 	pCLONE_PROJ
-	log_var RES
+	log_var RES $?
 	if [ $?  -ne 0 ]; then
 		INIT=0
 		return 1
