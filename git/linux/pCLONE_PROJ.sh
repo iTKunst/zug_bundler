@@ -22,6 +22,7 @@ pCLONE_PROJ () {
 
 	if [ ! -d $DIR_PROJ ]; then
 		pCLONE_REPO $PROJ_GIT $DIR_PROJ
+		log_var RES $?
 		if [ $?  -ne 0 ]; then
 			return $?
 		fi
