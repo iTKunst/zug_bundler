@@ -16,14 +16,16 @@ pCLONE_REPO () {
 
 	log_info Cloning $DIR
 
+	export RES=0
+
 	git clone $GIT $DIR
 	if [ $? -ne 0 ]; then
 		log_clone_err $GIT
 		log_err Does it exist in the repo?
-		exit 1
+		RES=1
 	fi
 
 	log_exit pCLONE_REPO
 
-	return 0
+	return $RES
 }
