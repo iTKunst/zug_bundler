@@ -20,11 +20,13 @@ pCLONE_PROJ () {
 	fi
 	log_var PROJ_GIT $PROJ_GIT
 
+  export RES=0
+
 	if [ ! -d $DIR_PROJ ]; then
 		pCLONE_REPO $PROJ_GIT $DIR_PROJ
 		log_var RES $?
 		if [ $?  -ne 0 ]; then
-			return $?
+			RES=1
 		fi
 		INIT=1
 	else
@@ -33,5 +35,5 @@ pCLONE_PROJ () {
 
 	log_exit pCLONE_PROJ
 
-	return 0
+	return $RES
 }
