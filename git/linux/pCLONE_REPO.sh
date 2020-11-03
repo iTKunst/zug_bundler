@@ -22,10 +22,11 @@ pCLONE_REPO () {
 	if [ $? -ne 0 ]; then
 		log_clone_err $GIT
 		log_err Does it exist in the repo?
-		RES=1
+		RES_CLONE=1
+		exit
 	fi
 
 	log_exit pCLONE_REPO
 
-	return $RES
+	return
 }
