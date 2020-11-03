@@ -20,6 +20,7 @@ pINIT () {
 	if [ $? -ne 0 ]; then
 		return $?
 	fi
+	log_var CLONE $CLONE
 
 	pINIT_GLBL
 	log_var RES $?

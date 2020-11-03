@@ -18,9 +18,6 @@ pCLONE () {
 
 	source pSET_TRACE.sh
 
-	local INIT=0
-  local RES_CLONE=0
-
 	pCLONE_GLBL
 	log_var RES_CLONE $RES_CLONE
 	if [ $RES_CLONE -ne 0 ]; then
