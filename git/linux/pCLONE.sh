@@ -18,33 +18,15 @@ pCLONE () {
 
 	source pSET_TRACE.sh
 
+  INIT=1
+
 	pCLONE_GLBL
-	log_var RES_CLONE $RES_CLONE
-	if [ $RES_CLONE -ne 0 ]; then
-		INIT=0
-		exit 1
-	fi
-
 	pCLONE_PROJ
-	log_var RES_CLONE $RES_CLONE
-	if [ $RES_CLONE -ne 0 ]; then
-		INIT=0
-		exit 1
-	fi
-
 	pCLONE_SYS
-	log_var RES_CLONE $RES_CLONE
-	if [ $RES_CLONE -ne 0 ]; then
-		INIT=0
-		exit 1
-	fi
 
 	log_var INIT $INIT
 	if [ $INIT -eq 1 ]; then
 		pINIT
-		if [ $? -ne 0 ]; then
-			exit 1
-		fi
 	else
 		log_cmd "Please run pUPDATE.sh to get the latest changes."
 	fi
