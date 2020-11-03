@@ -15,6 +15,8 @@ pINIT () {
 
 	log_enter pINIT
 
+  CLONE=0
+
 	pINIT_BNDL
 	pINIT_GLBL
   pINIT_PROJ
