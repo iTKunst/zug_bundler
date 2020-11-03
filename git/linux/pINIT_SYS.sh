@@ -25,13 +25,15 @@ pINIT_SYS() {
 		return $?
 	fi
 
-	if [ -d $DIR_SYS ]; then
-		source ./$DIR_SYS/init.sh
-		if [ $? -ne 0 ]; then
-			return $?
-		fi
-	else
-		CLONE=1
+	if [ ! -d "$DIR_SYS" ]; then
+		log_dir_error $DIR_SYS
+		exit
+	fi
+
+	source ./$DIR_SYS/init.sh
+	if [ $? ne 0]; then
+		log_error Error initializing $DIR_SYS
+	  exit
 	fi
 
 

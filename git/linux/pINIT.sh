@@ -16,41 +16,15 @@ pINIT () {
 	log_enter pINIT
 
 	pINIT_BNDL
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		return $?
-	fi
-	log_var CLONE $CLONE
-
 	pINIT_GLBL
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		return $?
-	fi
-	log_var CLONE $CLONE
-
-	pINIT_PROJ
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		return $?
-	fi
-	log_var CLONE $CLONE
-
+  pINIT_PROJ
 	pINIT_SYS
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		return $?
-	fi
-	log_var CLONE $CLONE
 
 	chmod +x ./Exe/*.sh
 
 
 	if [ $CLONE -eq 1 ]; then
 		pCLONE
-		if [ $? -ne 0 ]; then
-			return $?
-		fi
 	fi
 
 	log_exit pINIT

@@ -22,7 +22,6 @@ pCLONE_REPO () {
 	if [ $? -ne 0 ]; then
 		log_clone_err $GIT
 		log_err Does it exist in the repo?
-		RES_CLONE=1
 		exit
 	fi
 

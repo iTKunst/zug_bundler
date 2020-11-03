@@ -9,15 +9,20 @@ pINIT_BNDL() {
 
 	if [ -z $DIR_BNDL ]; then
 		log_invalid DIR_BNDL
-		return 1
+		exit
 	fi
 	log_var DIR_BNDL $DIR_BNDL
 
 
-	if [ -d "$DIR_BNDL" ]; then
-		source ./$DIR_BNDL/init.sh
-	else
-		return 1
+	if [ ! -d "$DIR_BNDL" ]; then
+		log_dir_error $DIR_BNDL
+		exit
+	fi
+
+	source ./$DIR_BNDL/init.sh
+	if [ $? ne 0]; then
+		log_error Error initializing $DIR_BNDL
+	  exit
 	fi
 
 

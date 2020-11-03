@@ -9,15 +9,19 @@ pINIT_GLBL() {
 
 	if [ -z $DIR_GLBL ]; then
 		log_invalid DIR_GLBL
-		return 1
+		exit
 	fi
 	log_var DIR_GLBL $DIR_GLBL
 
+	if [ ! -d "$DIR_GLBL" ]; then
+		log_dir_error $DIR_GLBL
+		exit
+	fi
 
-	if [ -d "$DIR_GLBL" ]; then
-		source ./$DIR_GLBL/init.sh
-	else
-		CLONE=1
+	source ./$DIR_GLBL/init.sh
+	if [ $? ne 0]; then
+		log_error Error initializing $DIR_GLBL
+	  exit
 	fi
 
 
