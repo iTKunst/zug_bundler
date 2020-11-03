@@ -15,7 +15,7 @@ pINIT_BNDL() {
 
 
 	if [ ! -d "$DIR_BNDL" ]; then
-		log_dir_error $DIR_BNDL
+		log_dir_err $DIR_BNDL
 		exit
 	fi
 

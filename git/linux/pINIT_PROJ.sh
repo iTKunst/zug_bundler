@@ -14,7 +14,7 @@ pINIT_PROJ() {
 	log_var DIR_PROJ $DIR_PROJ
 
 	if [ ! -d "$DIR_PROJ" ]; then
-		log_dir_error $DIR_PROJ
+		log_dir_err $DIR_PROJ
 		exit
 	fi
 

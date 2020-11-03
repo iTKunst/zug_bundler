@@ -26,7 +26,7 @@ pINIT_SYS() {
 	fi
 
 	if [ ! -d "$DIR_SYS" ]; then
-		log_dir_error $DIR_SYS
+		log_dir_err $DIR_SYS
 		exit
 	fi
 

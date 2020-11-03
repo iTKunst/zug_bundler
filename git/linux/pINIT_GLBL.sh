@@ -14,7 +14,7 @@ pINIT_GLBL() {
 	log_var DIR_GLBL $DIR_GLBL
 
 	if [ ! -d "$DIR_GLBL" ]; then
-		log_dir_error $DIR_GLBL
+		log_dir_err $DIR_GLBL
 		exit
 	fi
 
