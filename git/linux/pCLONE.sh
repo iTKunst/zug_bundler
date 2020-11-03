@@ -19,23 +19,25 @@ pCLONE () {
 	source pSET_TRACE.sh
 
 	local INIT=0
-  export RES=0
+  local RES_CLONE=0
 
 	pCLONE_GLBL
-	if [ $?  -ne 0 ]; then
+	log_var RES_CLONE $RES_CLONE
+	if [ $RES_CLONE -ne 0 ]; then
 		INIT=0
-		return $?
+		exit 1
 	fi
 
 	pCLONE_PROJ
-	log_var RES $?
-	if [ $?  -ne 0 ]; then
+	log_var RES_CLONE $RES_CLONE
+	if [ $RES_CLONE -ne 0 ]; then
 		INIT=0
 		exit 1
 	fi
 
 	pCLONE_SYS
-	if [ $? -ne 0 ]; then
+	log_var RES_CLONE $RES_CLONE
+	if [ $RES_CLONE -ne 0 ]; then
 		INIT=0
 		exit 1
 	fi
