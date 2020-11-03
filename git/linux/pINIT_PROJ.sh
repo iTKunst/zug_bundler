@@ -19,7 +19,8 @@ pINIT_PROJ() {
 	fi
 
 	source ./$DIR_PROJ/init.sh
-	if [ $? ne 0]; then
+	RES=$?
+	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_PROJ
 	  exit
 	fi

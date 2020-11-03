@@ -16,27 +16,29 @@ pADD_SUB() {
 	log_info Adding $DIR
 
 	git submodule add -f $GIT $DIR
-	log_var RES $?
-	if [ $? -ne 0 ]; then
+	RES=$?
+	if [ $RES -ne 0 ]; then
 		log_err Error adding sub module $GIT
 		log_err Does it exist in the repo?
-		return $?
+		exit
 	fi
 
 	git commit -am "Added the $DIR to the project."
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		log_err Error committing sub module $GIT
-		return $?
+	RES=$?
+	if [ $RES -ne 0 ]; then
+		log_err Error committing sub module $GIT. Do you have access?
+		exit
 	fi
 
 	git push origin master
-	log_var RES $?
-	if [ $? -ne 0 ]; then
-		log_err Error pushing the sub module $GIT
+	RES=$?
+	if [ $RES -ne 0 ]; then
+		log_err Error pushing the sub module $GIT. Do you have Access?
+		exit
 	fi
+
 
 	log_exit pADD_SUB
 
-	return $?
+	return 0
 }

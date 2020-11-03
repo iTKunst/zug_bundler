@@ -31,7 +31,8 @@ pINIT_SYS() {
 	fi
 
 	source ./$DIR_SYS/init.sh
-	if [ $? ne 0]; then
+	RES=$?
+	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_SYS
 	  exit
 	fi

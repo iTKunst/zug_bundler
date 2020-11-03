@@ -25,11 +25,12 @@ pCLONE () {
 	pCLONE_SYS
 
 	log_var INIT $INIT
-	if [ $INIT -eq 1 ]; then
-		pINIT
-	else
+	if [ $INIT -eq 0 ]; then
 		log_cmd "Please run pUPDATE.sh to get the latest changes."
+		exit
 	fi
+
+	pINIT
 
 	log_exit pCLONE
 

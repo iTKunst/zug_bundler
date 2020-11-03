@@ -19,7 +19,8 @@ pINIT_GLBL() {
 	fi
 
 	source ./$DIR_GLBL/init.sh
-	if [ $? ne 0]; then
+	RES=$?
+	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_GLBL
 	  exit
 	fi

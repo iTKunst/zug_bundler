@@ -20,7 +20,8 @@ pINIT_BNDL() {
 	fi
 
 	source ./$DIR_BNDL/init.sh
-	if [ $? ne 0]; then
+	RES=$?
+	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_BNDL
 	  exit
 	fi
