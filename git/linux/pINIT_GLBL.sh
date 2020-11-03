@@ -14,11 +14,11 @@ pINIT_GLBL() {
 	log_var DIR_GLBL $DIR_GLBL
 
 	if [ ! -d "$DIR_GLBL" ]; then
-		log_dir_err $DIR_GLBL
-		exit
+		CLONE=1
+	else
+		source ./$DIR_GLBL/init.sh
 	fi
 
-	source ./$DIR_GLBL/init.sh
 	RES=$?
 	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_GLBL

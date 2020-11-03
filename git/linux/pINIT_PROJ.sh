@@ -14,11 +14,11 @@ pINIT_PROJ() {
 	log_var DIR_PROJ $DIR_PROJ
 
 	if [ ! -d "$DIR_PROJ" ]; then
-		log_dir_err $DIR_PROJ
-		exit
+		CLONE=1
+	else
+  	source ./$DIR_PROJ/init.sh
 	fi
 
-	source ./$DIR_PROJ/init.sh
 	RES=$?
 	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_PROJ

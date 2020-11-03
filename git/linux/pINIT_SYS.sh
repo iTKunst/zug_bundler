@@ -26,11 +26,11 @@ pINIT_SYS() {
 	fi
 
 	if [ ! -d "$DIR_SYS" ]; then
-		log_dir_err $DIR_SYS
-		exit
+		CLONE=1
+	else
+	  source ./$DIR_SYS/init.sh
 	fi
 
-	source ./$DIR_SYS/init.sh
 	RES=$?
 	if [ $RES -ne 0 ]; then
 		log_error Error initializing $DIR_SYS
