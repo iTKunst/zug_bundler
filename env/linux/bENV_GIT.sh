@@ -27,7 +27,7 @@ if [ -z $URI_SYS_GIT_BASE ]; then
   log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
-log_var $URI_SYS_GIT_BASE $$URI_SYS_GIT_BASE
+log_var URI_SYS_GIT_BASE $URI_SYS_GIT_BASE
 
 if [ -z $TMPL_NAME ]; then
   log_invalid TMPL_NAME
