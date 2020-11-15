@@ -22,12 +22,12 @@ if [ -z "$SYS" ]; then
 fi
 log_var SYS $SYS
 
-if [ -z $URI_SYS_GIT ]; then
-  log_invalid URI_SYS_GIT
+if [ -z $URI_SYS_GIT_BASE ]; then
+  log_invalid $URI_SYS_GIT_BASE
   log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
-log_var URI_SYS_GIT $URI_SYS_GIT
+log_var $URI_SYS_GIT_BASE $$URI_SYS_GIT_BASE
 
 if [ -z $TMPL_NAME ]; then
   log_invalid TMPL_NAME
@@ -49,7 +49,8 @@ log_var GLBL_GIT $GLBL_GIT
 export PROJ_GIT=$URI_TMPL_GIT_BASE$SLASH$TMPL_NAME$DOT$GIT
 log_var PROJ_GIT $PROJ_GIT
 
-log_var URI_SYS_GIT $URI_SYS_GIT
+export SYS_GIT=$URI_SYS_GIT_BASE$SLASH$SYS_NAME$DOT$GIT
+log_var SYS_GIT $SYS_GIT
 
 log_exit bENV_GIT
 
