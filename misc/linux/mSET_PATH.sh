@@ -1,5 +1,7 @@
  #!/bin/bash
 # shellcheck disable=SC2086
+source settings.sh
+source log.sh
 
 mSET_PATH() {
 
