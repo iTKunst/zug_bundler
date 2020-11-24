@@ -23,7 +23,7 @@ fi
 log_var SYS $SYS
 
 if [ -z $URI_SYS_GIT_BASE ]; then
-  log_invalid $URI_SYS_GIT_BASE
+  log_invalid URI_SYS_GIT_BASE
   log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
