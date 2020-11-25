@@ -24,18 +24,18 @@ pADD_SUB() {
 	fi
 
 	git commit -am "Added the $DIR to the project."
-	RES=$?
-	if [ $RES -ne 0 ]; then
+	#RES=$?
+	#if [ $RES -ne 0 ]; then
 		#log_err Error committing sub module $GIT. Do you have access?
 		#exit
-	fi
+	#fi
 
 	git push origin master
-	RES=$?
-	if [ $RES -ne 0 ]; then
+	#RES=$?
+	#if [ $RES -ne 0 ]; then
 		#log_err Error pushing the sub module $GIT. Do you have Access?
 		#exit
-	fi
+	#fi
 
 
 	log_exit pADD_SUB
