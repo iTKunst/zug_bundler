@@ -4,7 +4,7 @@
 
 log_enter /$DIR_BNDL/init
 
-source ./$DIR_BNDL/bin/init.sh
+source ./$DIR_BNDL/env/init.sh
 source ./$DIR_BNDL/git/init.sh
 source ./$DIR_BNDL/log/init.sh
 source ./$DIR_BNDL/misc/init.sh
