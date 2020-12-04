@@ -5,3 +5,5 @@ rm -fr project
 rm -fr system
 rm -fr .git/modules
 rm .gitmodules
+rm null
+rm path.txt
