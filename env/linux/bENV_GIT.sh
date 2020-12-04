@@ -23,7 +23,7 @@ fi
 log_var SYS $SYS
 
 export URI_SYS_GIT_BASE=
-source mGET_SYS_GIT_BASE_URI
+source mGET_SYS_GIT_BASE_URI.sh
 
 if [ -z $URI_SYS_GIT_BASE ]; then
   log_invalid URI_SYS_GIT_BASE
