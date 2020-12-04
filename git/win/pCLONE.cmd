@@ -7,9 +7,6 @@ CALL LOG_LOAD pCLONE
 IF NOT EXIST bin (
   mkdir bin
 )
-IF NOT EXIST Env (
-  mkdir Env
-)
 
 SET "INIT=0"
 
