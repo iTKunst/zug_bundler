@@ -4,8 +4,8 @@
 CALL LOG_LOAD pCLONE
 
 
-IF NOT EXIST Exe (
-  mkdir Exe
+IF NOT EXIST bin (
+  mkdir bin
 )
 IF NOT EXIST Env (
   mkdir Env

@@ -5,7 +5,7 @@ CALL .\%DIR_BNDL%\log\win\LOG_LOAD mSET_PATH
 
 CALL .\%DIR_BNDL%\log\win\LOG_VAR PATH %PATH%
 
-SET "FIND=%CD%\Exe"
+SET "FIND=%CD%\bin"
 CALL .\%DIR_BNDL%\log\win\LOG_VAR FIND %FIND%
 
 ECHO "%PATH%" | findstr /C:"%FIND%">nul && (
@@ -13,8 +13,8 @@ ECHO "%PATH%" | findstr /C:"%FIND%">nul && (
   GOTO :EOF
 )
 
-SET "PATH=%CD%\Exe;%CD%\Env;%PATH%"
-ECHO "SET PATH=%CD%\Exe;%CD%\Env;%PATH%" >path.cmd
+SET "PATH=%CD%\bin;%CD%\Env;%PATH%"
+ECHO "SET PATH=%CD%\bin;%CD%\Env;%PATH%" >path.cmd
 
 
 :EOF

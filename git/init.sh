@@ -4,7 +4,7 @@
 
 log_enter /$DIR_BNDL/git/init
 
-cp ./$DIR_BNDL/git/linux/*.sh ./Exe
+cp ./$DIR_BNDL/git/linux/*.sh ./bin
 
 log_exit /$DIR_BNDL/git/init
 

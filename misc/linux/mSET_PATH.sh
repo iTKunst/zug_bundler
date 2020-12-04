@@ -5,9 +5,9 @@ source log.sh
 
 mSET_PATH() {
 
-	log_enter mSET_PATH
+	echo mSET_PATH [ENTER]
 
-	subPATH=$PWD/Exe:$PWD/Env
+	subPATH=$PWD/bin:$PWD/Env
 
 	if echo "$PATH" | grep -q "$subPATH" 1>nul; then
 		log_info "PATH already set for project";
@@ -18,7 +18,7 @@ mSET_PATH() {
 		log_cmd "Please run 'source path.txt'"
 	fi
 
-	log_exit mSET_PATH
+	#log_exit mSET_PATH
 }
 
 mSET_PATH

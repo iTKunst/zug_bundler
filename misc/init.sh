@@ -4,6 +4,6 @@
 
 log_enter /$DIR_BNDL/misc/init
 
-cp ./$DIR_BNDL/misc/linux/*.sh ./Exe
+cp ./$DIR_BNDL/misc/linux/*.sh ./bin
 
 log_exit /$DIR_BNDL/misc/init

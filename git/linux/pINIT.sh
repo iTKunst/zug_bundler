@@ -22,7 +22,7 @@ pINIT () {
   pINIT_PROJ
 	pINIT_SYS
 
-	chmod +x ./Exe/*.sh
+	chmod +x ./bin/*.sh
 
 
 	if [ $CLONE -eq 1 ]; then
