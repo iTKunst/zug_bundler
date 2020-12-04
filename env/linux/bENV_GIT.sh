@@ -22,9 +22,11 @@ if [ -z "$SYS" ]; then
 fi
 log_var SYS $SYS
 
+export URI_SYS_GIT_BASE=
+source mGET_SYS_GIT_BASE_URI
+
 if [ -z $URI_SYS_GIT_BASE ]; then
   log_invalid URI_SYS_GIT_BASE
-  log_cmd "You must set it in settings_uri.sh!"
   return 1
 fi
 log_var URI_SYS_GIT_BASE $URI_SYS_GIT_BASE
