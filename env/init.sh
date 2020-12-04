@@ -2,8 +2,8 @@
 # shellcheck disable=SC2086
 
 
-log_enter /$DIR_BNDL/env/init
+log_enter /$DIR_BNDL/bin/init
 
-cp ./$DIR_BNDL/env/linux/*.sh ./bin
+cp ./$DIR_BNDL/bin/linux/*.sh ./bin
 
-log_exit /$DIR_BNDL/env/init
+log_exit /$DIR_BNDL/bin/init
