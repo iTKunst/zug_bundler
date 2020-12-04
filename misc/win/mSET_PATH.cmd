@@ -13,8 +13,8 @@ ECHO "%PATH%" | findstr /C:"%FIND%">nul && (
   GOTO :EOF
 )
 
-SET "PATH=%CD%\bin;%CD%\Env;%PATH%"
-ECHO "SET PATH=%CD%\bin;%CD%\Env;%PATH%" >path.cmd
+SET "PATH=%CD%\bin;%CD%\bin;%PATH%"
+ECHO "SET PATH=%CD%\bin;%CD%\bin;%PATH%" >path.cmd
 
 
 :EOF
