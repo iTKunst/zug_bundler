@@ -7,7 +7,7 @@ mSET_PATH() {
 
 	echo mSET_PATH [ENTER]
 
-	subPATH=$PWD/bin:$PWD/Env
+	subPATH=$PWD/bin:$PWD/bin
 
 	if echo "$PATH" | grep -q "$subPATH" 1>nul; then
 		log_info "PATH already set for project";
