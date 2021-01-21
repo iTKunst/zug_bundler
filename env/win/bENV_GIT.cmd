@@ -14,6 +14,13 @@ IF  [%GLBL_NAME%]==[] (
 )
 call LOG_VAR GLBL_NAME %GLBL_NAME%
 
+IF  [%PROJ_NAME%]==[] (
+  call LOG_INVALID "PROJ_NAME"
+  call LOG_CMD "You must set it in settings.cmd!"
+  GOTO :EOF
+)
+call LOG_VAR PROJ_NAME %PROJ_NAME%
+
 IF  [%SYS%]==[] (
   call LOG_INVALID "SYS"
   call LOG_CMD "You must set it in settings.cmd!"

@@ -15,6 +15,13 @@ if [ -z "$GLBL_NAME" ]; then
 fi
 log_var GLBL_NAME $GLBL_NAME
 
+if [ -z "$PROJ_NAME" ]; then
+  log_invalid PROJ_NAME
+  log_cmd "You must set it in settings.sh!"
+  return 1
+fi
+log_var PROJ_NAME $PROJ_NAME
+
 if [ -z "$SYS" ]; then
   log_invalid SYS
   log_cmd "You must set it in settings.sh!"
