@@ -13,10 +13,22 @@ pINIT_SYS() {
 	fi
 	log_var DIR_SYS $DIR_SYS
 
+  git submodule init
+	if [ $? -ne 0 ]; then
+		log_err Unable to initialize submodule
+		return $?
+	fi
+
+  git submodule update
+	if [ $? -ne 0 ]; then
+		log_err Unable to update submodule
+		return $?
+	fi
+
 	if [ ! -d "$DIR_SYS" ]; then
 		CLONE=1
 	else
-  	source $DIR_SYS/init.sh
+	  source $DIR_SYS/init.sh
 	fi
 
 	RES=$?
@@ -24,6 +36,7 @@ pINIT_SYS() {
 		log_error Error initializing $DIR_SYS
 	  exit
 	fi
+
 
 	log_exit pINIT_SYS
 
