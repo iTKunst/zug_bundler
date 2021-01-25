@@ -16,7 +16,7 @@ pINIT_TMPL() {
 	if [ ! -d "$DIR_TMPL" ]; then
 		CLONE=1
 	else
-  	source ./$DIR_TMPL/init.sh
+  	source $DIR_TMPL/init.sh
 	fi
 
 	RES=$?

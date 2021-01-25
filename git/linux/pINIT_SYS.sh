@@ -28,7 +28,7 @@ pINIT_SYS() {
 	if [ ! -d "$DIR_SYS" ]; then
 		CLONE=1
 	else
-	  source ./$DIR_SYS/init.sh
+	  source $DIR_SYS/init.sh
 	fi
 
 	RES=$?

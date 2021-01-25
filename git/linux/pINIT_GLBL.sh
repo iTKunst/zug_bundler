@@ -16,7 +16,7 @@ pINIT_GLBL() {
 	if [ ! -d "$DIR_GLBL" ]; then
 		CLONE=1
 	else
-		source ./$DIR_GLBL/init.sh
+		source $DIR_GLBL/init.sh
 	fi
 
 	RES=$?

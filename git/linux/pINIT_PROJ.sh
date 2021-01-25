@@ -16,7 +16,7 @@ pINIT_PROJ() {
 	if [ ! -d "$DIR_PROJ" ]; then
 		CLONE=1
 	else
-  	source ./$DIR_PROJ/init.sh
+  	source $DIR_PROJ/init.sh
 	fi
 
 	RES=$?
