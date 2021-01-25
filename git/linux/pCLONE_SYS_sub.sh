@@ -22,7 +22,7 @@ pCLONE_SYS () {
 	export init=0
 
 	if [ ! -d $DIR_SYS ]; then
-		pCLONE_REPO $SYS_GIT $DIR_SYS
+		pADD_SUB $SYS_GIT $DIR_SYS
 		export init=1
 	else
 		log_dup $SYS_GIT
