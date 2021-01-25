@@ -5,7 +5,7 @@
 
 source ./$DIR_BNDL/git/linux/pADD_SUB.sh
 source ./$DIR_BNDL/git/linux/pCLONE_GLBL.sh
-source ./$DIR_BNDL/git/linux/pCLONE_PROJ.sh
+source ./$DIR_BNDL/git/linux/pCLONE_TMPL.sh
 source ./$DIR_BNDL/git/linux/pCLONE_REPO.sh
 source ./$DIR_BNDL/git/linux/pCLONE_SYS.sh
 
