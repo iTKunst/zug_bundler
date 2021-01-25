@@ -1,0 +1,39 @@
+@echo off
+
+
+CALL LOG_ENTER pCLONE_TMPL
+
+
+call LOG_VAR INIT %INIT%
+
+if [%DIR_TMPL%]==[] (
+  CALL LOG_INVALID DIR_TMPL
+  goto :EOF
+)
+CALL LOG_VAR DIR_TMPL %DIR_TMPL%
+
+if [%TMPL_GIT%]==[] (
+  CALL LOG_INVALID TMPL_GIT
+  goto :EOF
+)
+CALL LOG_VAR TMPL_GIT %TMPL_GIT%
+
+IF NOT EXIST %DIR_TMPL% (
+  CALL pCLONE_REPO %TMPL_GIT% %DIR_TMPL%
+  SET "INIT=1"
+) else (
+  call LOG_DUP %TMPL_GIT%
+)
+call LOG_VAR ERRORLEVEL %ERRORLEVEL%
+
+IF %ERRORLEVEL% NEQ 0 (
+  call LOG_CLONE_ERR %TMPL_GIT%
+  call LOG_CMD "Does it exist in the repo?"
+  goto :EOF
+)
+
+:EOF
+
+call LOG_EXIT pCLONE_TMPL
+
+EXIT /B %ERRORLEVEL%

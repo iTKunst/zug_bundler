@@ -11,12 +11,12 @@ CALL LOG_VAR DIR_BNDL %DIR_BNDL%
 if NOT exist %DIR_BNDL% (
   EXIT /B 1
 )
-CALL .\%DIR_BNDL%\init
+CALL %DIR_BNDL%\init
 
 CALL LOG_VAR DIR_GLBL %DIR_GLBL%
 
 if exist %DIR_GLBL% (
-  CALL .\%DIR_GLBL%\init
+  CALL %DIR_GLBL%\init
 ) else (
   SET "CLONE=1"
 )
@@ -27,10 +27,18 @@ if exist %DIR_SYS% (
   SET "CLONE=1"
 )
 
+CALL LOG_VAR DIR_TMPL %DIR_TMPL%
+
+if exist %DIR_TMPL% (
+  CALL %DIR_TMPL%\init
+) else (
+  SET "CLONE=1"
+)
+
 CALL LOG_VAR DIR_PROJ %DIR_PROJ%
 
 if exist %DIR_PROJ% (
-  CALL .\%DIR_PROJ%\init
+  CALL %DIR_PROJ%\init
 ) else (
   SET "CLONE=1"
 )
