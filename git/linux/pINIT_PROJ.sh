@@ -6,17 +6,12 @@ pINIT_PROJ() {
 
 	log_enter pINIT_PROJ
 
-
-	if [ -z $DIR_PROJ ]; then
-		log_invalid DIR_PROJ
-		return 1
-	fi
-	log_var DIR_PROJ $DIR_PROJ
-
-	if [ ! -d "$DIR_PROJ" ]; then
-		CLONE=1
+	if [ ! -d "project" ]; then
+		mkdir -p project/env/linux
+	  cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
+	     project/env/linux/pENV_MOD.sh
 	else
-  	source $DIR_PROJ/init.sh
+  	copy project/env/linux/*.sh bin
 	fi
 
 	RES=$?
