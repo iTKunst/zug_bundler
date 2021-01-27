@@ -11,7 +11,7 @@ pINIT_PROJ() {
 	  cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
 	     project/pENV_MOD.sh
 	else
-  	copy project/*.sh bin
+  	cp project/*.sh bin
 	fi
 
 	RES=$?
