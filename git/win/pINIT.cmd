@@ -35,13 +35,8 @@ if exist %DIR_TMPL% (
   SET "CLONE=1"
 )
 
-if not exist project (
-  mkdir -p project
-  xcopy %DIR_TMPL\env\win\pENV_MOD.sample.cmd ^
-        project\pENV_MOD.cmd
-) else (
-  xcopy project\*.cmd bin
-)
+
+CALL pINIT_PROJ
 
 :CLONE
 call LOG_VAR CLONE %CLONE%
