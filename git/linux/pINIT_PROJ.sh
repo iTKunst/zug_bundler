@@ -7,11 +7,11 @@ pINIT_PROJ() {
 	log_enter pINIT_PROJ
 
 	if [ ! -d "project" ]; then
-		mkdir -p project/env/linux
+		mkdir -p project
 	  cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
-	     project/env/linux/pENV_MOD.sh
+	     project/pENV_MOD.sh
 	else
-  	copy project/env/linux/*.sh bin
+  	copy project/*.sh bin
 	fi
 
 	RES=$?

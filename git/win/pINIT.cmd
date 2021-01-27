@@ -35,12 +35,12 @@ if exist %DIR_TMPL% (
   SET "CLONE=1"
 )
 
-CALL LOG_VAR DIR_PROJ %DIR_PROJ%
-
-if exist %DIR_PROJ% (
-  CALL %DIR_PROJ%\init
+if not exist project (
+  mkdir -p project
+  xcopy %DIR_TMPL\env\linux\pENV_MOD.sample.cmd ^
+        project\pENV_MOD.cmd
 ) else (
-  SET "CLONE=1"
+  xcopy project\*.cmd bin
 )
 
 :CLONE
