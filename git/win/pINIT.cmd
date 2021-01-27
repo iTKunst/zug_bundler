@@ -37,7 +37,7 @@ if exist %DIR_TMPL% (
 
 if not exist project (
   mkdir -p project
-  xcopy %DIR_TMPL\env\linux\pENV_MOD.sample.cmd ^
+  xcopy %DIR_TMPL\env\win\pENV_MOD.sample.cmd ^
         project\pENV_MOD.cmd
 ) else (
   xcopy project\*.cmd bin
