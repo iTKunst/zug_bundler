@@ -12,22 +12,21 @@ pINIT_PROJ() {
 	fi
 	log_var DIR_TMPL $DIR_TMPL
 
-	if [ ! -d "$DIR_TMPL" ]; then
-		CLONE=1
-	else
-    if [ ! -d "project" ]; then
-      mkdir project
-    fi
+	if [ -d "$DIR_TMPL" ]; then
 
-    cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
-       project/pENV_MOD.sample.sh
+	    if [ ! -d "project" ]; then
+	      mkdir project
+	    fi
 
-    if [ ! -f "project/pENV_MOD.sh" ]; then
-      cp project/pENV_MOD.sample.sh \
-         project/pENV_MOD.sh
-    fi
+	    cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
+	       project/pENV_MOD.sample.sh
 
-    cp project/pENV_MOD.sh bin
+	    if [ ! -f "project/pENV_MOD.sh" ]; then
+	      cp project/pENV_MOD.sample.sh \
+	         project/pENV_MOD.sh
+	    fi
+
+	    cp project/pENV_MOD.sh bin
   fi
 
 	log_exit pINIT_PROJ
