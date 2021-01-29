@@ -15,6 +15,11 @@ if [ -z "$GLBL_NAME" ]; then
 fi
 log_var GLBL_NAME $GLBL_NAME
 
+if [ -z "$PROJ_MODE" ]; then
+  export PROJ_MODE=d
+fi
+log_var PROJ_MODE $PROJ_MODE
+
 if [ -z "$PROJ_NAME" ]; then
   log_invalid PROJ_NAME
   log_cmd "You must set it in settings.sh!"
@@ -22,12 +27,12 @@ if [ -z "$PROJ_NAME" ]; then
 fi
 log_var PROJ_NAME $PROJ_NAME
 
-if [ -z "$SYS" ]; then
+if [ -z "$SYS_NAME" ]; then
   log_invalid SYS
   log_cmd "You must set it in settings.sh!"
   return 1
 fi
-log_var SYS $SYS
+log_var SYS_NAME $SYS_NAME
 
 export URI_SYS_GIT_BASE=
 source mGET_SYS_GIT_BASE_URI.sh
@@ -58,7 +63,7 @@ log_var GLBL_GIT $GLBL_GIT
 export TMPL_GIT=$URI_TMPL_GIT_BASE$SLASH$TMPL_NAME$DOT$GIT
 log_var TMPL_GIT $TMPL_GIT
 
-export SYS_GIT=$URI_SYS_GIT_BASE$SLASH$SYS"_system"$DOT$GIT
+export SYS_GIT=$URI_SYS_GIT_BASE$SLASH$SYS_NAME"_system"$DOT$GIT
 log_var SYS_GIT $SYS_GIT
 
 log_exit bENV_GIT
