@@ -31,12 +31,11 @@ CALL LOG_VAR DIR_TMPL %DIR_TMPL%
 
 if exist %DIR_TMPL% (
   CALL %DIR_TMPL%\init
+  CALL pINIT_PROJ
 ) else (
   SET "CLONE=1"
 )
 
-
-CALL pINIT_PROJ
 
 :CLONE
 call LOG_VAR CLONE %CLONE%
