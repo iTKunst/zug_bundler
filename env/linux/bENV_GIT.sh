@@ -28,7 +28,7 @@ fi
 log_var PROJ_NAME $PROJ_NAME
 
 if [ -z "$SYS_NAME" ]; then
-  log_invalid SYS
+  log_invalid SYS_NAME
   log_cmd "You must set it in settings.sh!"
   return 1
 fi
