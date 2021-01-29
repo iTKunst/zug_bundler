@@ -6,6 +6,11 @@
 
 CALL LOG_VAR DIR_BNDL %DIR_BNDL%
 
+if [%DIR_TMPL%]==[] (
+  CALL LOG_INVALID DIR_TMPL
+  goto :EOF
+)
+
 if exist %DIR_TMPL% (
 
     if NOT exist project (
@@ -23,5 +28,7 @@ if exist %DIR_TMPL% (
     xcopy project\pENV_MOD.cmd bin
 
 )
+
+:EOF
 
 EXIT /B
