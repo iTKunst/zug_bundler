@@ -18,15 +18,11 @@ pINIT_PROJ() {
 	      mkdir project
 	    fi
 
-	    cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
-	       project/pENV_MOD.sample.sh
-
 	    if [ ! -f "project/pENV_MOD.sh" ]; then
-	      cp project/pENV_MOD.sample.sh \
+	      cp $DIR_TMPL/env/linux/pENV_MOD.sample.sh \
 	         project/pENV_MOD.sh
 	    fi
 
-	    cp project/pENV_MOD.sh bin
   fi
 
 	log_exit pINIT_PROJ

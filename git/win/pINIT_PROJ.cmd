@@ -17,15 +17,10 @@ if exist %DIR_TMPL% (
       mkdir project
     )
 
-    xcopy %DIR_TMPL%\env\linux\pENV_MOD.sample.cmd ^
-          project\pENV_MOD.sample.cmd
-
     if NOT exist project\pENV_MOD.cmd (
-      xcopy project\pENV_MOD.sample.cmd ^
+      xcopy %DIR_TMPL%\env\linux\pENV_MOD.sample.cmd ^
             project\pENV_MOD.cmd
     )
-
-    xcopy project\pENV_MOD.cmd bin
 
 )
 
