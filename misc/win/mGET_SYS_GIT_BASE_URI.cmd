@@ -11,7 +11,7 @@ rem echo sss is %sss%
 rem SET ttt=%sss:remote.origin.url=%
 rem echo ttt is %ttt%
 
-rem SET uuu=%ttt:~1,22%
+rem SET uuu=%ttt:~1%
 rem echo uuu
 
 rem SET "rrr=(sed s/remote.origin.url=//g <<< $sss)"
