@@ -20,6 +20,6 @@ rem cho rrr is %rrr%
 rem SET "BASE={rrr%/*}"
 rem echo BASE is %BASE%
 
-SET URI_SYS_GIT_BASE=https://gitlab/templates
+SET URI_SYS_GIT_BASE=https://github.com/itkunst
 echo URI_SYS_GIT_BASE is %URI_SYS_GIT_BASE%
 
