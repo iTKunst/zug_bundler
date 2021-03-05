@@ -33,6 +33,9 @@ IF  [%SYS_NAME%]==[] (
 )
 call LOG_VAR SYS_NAME %SYS_NAME%
 
+SET "URI_SYS_GIT_BASE="
+CALL mGET_SYS_BASE_URL
+
 IF  [%URI_SYS_GIT_BASE%]==[] (
   call LOG_INVALID "URI_SYS_GIT_BASE"
   call LOG_CMD "You must set it in settings_uri.cmd!"
