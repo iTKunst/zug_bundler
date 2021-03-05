@@ -10,6 +10,10 @@ sGET_SYS_BASE_URI() {
 	#echo rrr is $rrr
 	BASE=${rrr%/*}
 	#echo BASE is $BASE
+
+	SET "URI_SYS_GIT_BASE=%{rrr%/*}%
+	echo URI_SYS_GIT_BASE is %URI_SYS_GIT_BASE%
+
 }
 
 sGET_SYS_BASE_URI
