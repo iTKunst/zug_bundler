@@ -1,22 +1,25 @@
 @echo off
 
-git config --list | findstr remote.origin.url > temp.txt
-set /p sss-<temp.txt
+rem set search=remote.origin.url=
+rem echo search is %search%
 
-echo sss is %sss%
+rem git config --list | findstr %search% > temp.txt
+rem set /p sss=<temp.txt
 
-SET "ttt={sss%=*}"
-echo ttt is %ttt%
+rem echo sss is %sss%
 
-SET "rrr=(sed s/remote.origin.url=//g <<< $sss)"
-echo rrr is %rrr%
+rem SET ttt=%sss:remote.origin.url=%
+rem echo ttt is %ttt%
 
-SET "BASE={rrr%/*}"
-echo BASE is %BASE%
+rem SET uuu=%ttt:~1,22%
+rem echo uuu
 
-SET "URI_SYS_GIT_BASE=%{rrr%/*}%
+rem SET "rrr=(sed s/remote.origin.url=//g <<< $sss)"
+rem cho rrr is %rrr%
+
+rem SET "BASE={rrr%/*}"
+rem echo BASE is %BASE%
+
+SET URI_SYS_GIT_BASE=https://gitlab/templates
 echo URI_SYS_GIT_BASE is %URI_SYS_GIT_BASE%
 
-}
-
-sGET_SYS_BASE_URI
