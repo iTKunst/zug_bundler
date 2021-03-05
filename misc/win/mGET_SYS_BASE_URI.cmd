@@ -1,18 +1,19 @@
-#!/bin/bash
-# shellcheck disable=SC2086
+@echo off
 
-sGET_SYS_BASE_URI() {
-	sss=$(git config --list | grep remote.origin.url)
-	#echo sss is $sss
-	ttt=${sss%=*}
-	#echo ttt is $ttt
-	rrr=$(sed s/remote.origin.url=//g <<< $sss)
-	#echo rrr is $rrr
-	BASE=${rrr%/*}
-	#echo BASE is $BASE
+SET	sss=(git config --list | grep remote.origin.url)
+echo sss is $sss
 
-	SET "URI_SYS_GIT_BASE=%{rrr%/*}%
-	echo URI_SYS_GIT_BASE is %URI_SYS_GIT_BASE%
+ttt={sss%=*}
+echo ttt is $ttt
+
+rrr=(sed s/remote.origin.url=//g <<< $sss)
+echo rrr is $rrr
+
+BASE={rrr%/*}
+echo BASE is $BASE
+
+SET "URI_SYS_GIT_BASE=%{rrr%/*}%
+echo URI_SYS_GIT_BASE is %URI_SYS_GIT_BASE%
 
 }
 
