@@ -1,6 +1,8 @@
 @echo off
 
-SET	"sss=(git config --list | findstr /C remote.origin.url)"
+git config --list | findstr remote.origin.url > temp.txt
+set /p sss-<temp.txt
+
 echo sss is %sss%
 
 SET "ttt={sss%=*}"
